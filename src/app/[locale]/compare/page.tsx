@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { GlassCard } from "@/components/GlassCard";
@@ -17,6 +17,20 @@ import clsx from "clsx";
 const MAX_SELECT = 4;
 
 export default function ComparePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="mx-8 mb-12">
+          <p className="text-sm text-ink-muted">Loading compare page...</p>
+        </div>
+      }
+    >
+      <ComparePageContent />
+    </Suspense>
+  );
+}
+
+function ComparePageContent() {
   const t = useTranslations("compare");
   const td = useTranslations("difficulty");
   const resorts = useLocalizedResorts();
