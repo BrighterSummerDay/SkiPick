@@ -1,0 +1,332 @@
+{
+  "meta": {
+    "title": "SkiPick — 日本雪场横向对比",
+    "description": "地图化浏览东京周边雪场，横向对比价格、雪道与交通时间，帮雪友更快做决定。"
+  },
+  "nav": {
+    "brand": "SkiPick",
+    "map": "雪场地图",
+    "compare": "雪场对比",
+    "resorts": "雪场一览",
+    "news": "更新公告"
+  },
+  "footer": {
+    "note": "SkiPick · 数据由社区与官方信息共同维护",
+    "edition": "© 2026 xiaotouming"
+  },
+  "difficulty": {
+    "beginner": "初级",
+    "intermediate": "中级",
+    "advanced": "高级"
+  },
+  "home": {
+    "eyebrow": "东京日归专题",
+    "titleLine1": "一张地图，",
+    "titleLine2": "看懂东京周边雪场",
+    "subtitle": "地图上直接圈出雪场范围，一目了然。\n多个雪场横向对比，雪票价格、雪道结构、交通耗时——把决定的时间还给滑雪本身。",
+    "ctaCompare": "雪场对比",
+    "ctaMap": "雪场地图",
+    "ctaResorts": "雪场一览",
+    "howItWorks": "How it works",
+    "feature1Index": "区域可视化",
+    "feature1Title": "雪场地图定位",
+    "feature1Desc": "真实地形底图上叠加雪场区块轮廓，位置、范围、临近雪场关系一目了然，而不是一个孤零零的图钉。",
+    "feature2Index": "数据对比",
+    "feature2Title": "横向并排对比",
+    "feature2Desc": "勾选 2–4 座雪场，价格、雪道占比、缆车数量、交通耗时并排呈现，像比价机票一样比价雪场。",
+    "feature3Index": "社区共建",
+    "feature3Title": "雪友实时反馈(开发中)",
+    "feature3Desc": "箱型缆车是否开放、今日雪质如何——这些官网不更新的信息，由到场雪友随手补充，越用越准。",
+    "featured": "Featured",
+    "featuredTitle": "本周热门雪场",
+    "news": "News",
+    "newsTitle": "最新动态",
+    "newsIntro": "汇总网站更新、版本说明和功能变化。",
+    "newsViewAll": "查看全部公告与更新",
+    "minutes": "分钟",
+    "courses": "条雪道"
+  },
+  "news": {
+    "pageTitle": "公告与更新",
+    "pageSubtitle": "汇总网站更新、版本说明和功能变化。",
+    "backHome": "返回首页",
+    "categories": {
+      "announcement": "公告",
+      "changelog": "更新日志"
+    },
+    "2026-08-06": {
+      "title": "Version 0.5 更新",
+      "excerpt": "SkiPick 0.5版本发布，目前处于测试阶段，仅支持东京周边地区雪场。",
+      "content": "一个人开发的网站，时间有限敬请见谅。\n当前版本仅支持东京周边雪场。数据来源于25-26雪季的官方信息，暂未更新26-27雪季数据。\n\n后续开发计划：\n- 26-27雪季早鸟数据\n- 支持社区反馈功能\n- 支持全国雪场"
+    },
+    "site-refresh-2026-08": {
+      "title": "网站首页焕新，体验更清晰",
+      "excerpt": "首页视觉与信息层级已重构，让雪场概览和对比入口更容易理解。",
+      "content": "我们重构了首页的整体视觉与信息流，让地图入口、精选雪场和更新公告的展示更自然。新访客可以更快地理解网站的核心价值。"
+    },
+    "compare-flow-update": {
+      "title": "对比流程优化，决策更快",
+      "excerpt": "对比页将最关键的指标前置展示，帮助你更快完成横向筛选。",
+      "content": "我们重新整理了对比页面的内容顺序，让交通时间、价格和雪道结构一眼可看。这样用户可以更快地缩小候选范围，并做出更清晰的选择。"
+    },
+    "map-guidance-update": {
+      "title": "地图引导与详情页体验提升",
+      "excerpt": "地图的探索路径和详情页说明得到了更清晰的优化。",
+      "content": "我们优化了地图的操作引导，让用户更容易从地图进入目标雪场详情页。整体浏览体验更加顺畅，尤其适合想快速了解某个雪场的用户。"
+    }
+  },
+  "map": {
+    "title": "雪场地图",
+    "subtitle": "点击地图上的色块区域查看该雪场详情，出发地默认为东京站。",
+    "statBasePrice": "单日券",
+    "statTravel": "东京出发",
+    "statShinkansen": "新干线 {min} 分",
+    "statCar": "自驾约 {min} 分",
+    "statCourses": "雪道结构",
+    "statCoursesValue": "{total} 条 · 最长 {km}km",
+    "statVertical": "海拔落差",
+    "viewDetail": "查看雪场详情",
+    "compareResort": "进入雪场对比",
+    "emptyHint": "点击地图上的雪场查看详情"
+  },
+  "compare": {
+    "title": "雪场横向对比",
+    "subtitle": "最多选择 {max} 座雪场并排比较，出发地默认为东京站。",
+    "emptyHint": "请选择至少一座雪场开始对比。",
+    "emptyMetrics": "请选择至少一个对比项。",
+    "metricSectionTitle": "选择对比项",
+    "basePriceLabel": "单日券",
+    "seasonPassLabel": "季卡",
+    "rowTravel": "东京出发",
+    "shinkansen": "新干线 {min} 分 · ¥{price}",
+    "car": "自驾 {min} 分 · {km}km",
+    "rowCourses": "雪道数量",
+    "coursesValue": "{total} 条 · 最长 {km}km",
+    "rowLifts": "缆车 / 箱型",
+    "liftsValue": "{total} 部 · {gondola} 部箱型",
+    "rowVertical": "海拔落差",
+    "rowTop": "山顶海拔",
+    "metrics": {
+      "basePrice": "单日券",
+      "seasonPass": "季卡",
+      "vertical": "海拔落差",
+      "topElevation": "山顶海拔",
+      "travel": "东京出发交通",
+      "courses": "雪道数量",
+      "lifts": "缆车 / 箱型",
+      "difficultyBar": "难度占比"
+    }
+  },
+  "resortsPage": {
+    "title": "雪场一览",
+    "subtitle": "按列表查看所有雪场，并打开你感兴趣的详细页面。",
+    "resortCount": "已收录 {count} 座雪场",
+    "priceLabel": "单日券",
+    "viewDetail": "查看雪场详情"
+  },
+  "detail": {
+    "back": "← 返回地图",
+    "addToCompare": "加入雪场对比",
+    "metricBasePrice": "单日券",
+    "metricTravel": "东京出发",
+    "metricTravelSubShinkansen": "新干线",
+    "metricTravelSubCar": "自驾",
+    "metricCourses": "雪道总数",
+    "metricVertical": "海拔落差",
+    "sectionCourses": "雪道结构",
+    "courseBeginner": "初级",
+    "courseIntermediate": "中级",
+    "courseAdvanced": "高级",
+    "courseLongest": "最长雪道",
+    "sectionTravel": "交通与设施",
+    "travelShinkansen": "新干线",
+    "travelCar": "自驾",
+    "travelLifts": "缆车数量",
+    "travelGondola": "箱型缆车",
+    "sectionCommunity": "Community",
+    "communityTitle": "今日现场反馈",
+    "communityBadge": "无需登录即可提交",
+    "communityPlaceholder": "箱型缆车开放状态、实时雪质等社区反馈将显示在这里。（模块开发中）"
+  },
+  "resorts": {
+    "gala-yuzawa": {
+      "name": "GALA汤泽滑雪场",
+      "region": "越后汤泽",
+      "summary": "新干线出站直达，是东京日归最热门的选择之一。可连接至汤泽高原滑雪场和石打丸山滑雪场。",
+      "tags": [
+        "新干线直达",
+        "适合新手",
+        "站内换装"
+      ]
+    },
+    "naeba": {
+      "name": "苗场滑雪场",
+      "region": "越后汤泽",
+      "summary": "距离越后汤泽站较远，但可通过缆车（箱型缆车）连接至神乐雪场的田代区域，适合想多体验几种地形的雪友。",
+      "tags": [
+        "雪道丰富",
+        "可连接神乐",
+        "落差大"
+      ]
+    },
+    "kagura": {
+      "name": "神乐滑雪场",
+      "region": "越后汤泽",
+      "summary": "以粉雪和自然地形著称，田代/神乐/三俣三区相连，雪季长至5月初。是华人雪友圈中最受欢迎的雪场之一。",
+      "tags": [
+        "粉雪出名",
+        "地形丰富",
+        "偏进阶"
+      ]
+    },
+    "kawaba": {
+      "name": "川场滑雪场",
+      "region": "群马・川场村",
+      "summary": "没有直达新干线，但关越高速下道即到，自驾人群评价很高。",
+      "tags": [
+        "开车方便",
+        "初学者友好",
+        "关东圈内"
+      ]
+    },
+    "oze-iwakura": {
+      "name": "尾濑岩鞍滑雪场",
+      "region": "群马・片品村",
+      "summary": "拥有120人大型箱型缆车，山顶视野极佳，家庭游客比例较高。",
+      "tags": [
+        "箱型缆车",
+        "视野开阔",
+        "适合家庭"
+      ]
+    },
+    "karuizawa-prince": {
+      "name": "轻井泽王子滑雪度假村",
+      "region": "长野・轻井泽",
+      "summary": "西武旗下的滑雪场。落差小、坡度缓，配合轻井泽奥特莱斯，是新手和亲子出行的热门首选。",
+      "tags": [
+        "西武旗下",
+        "家庭推荐",
+        "购物联动"
+      ]
+    },
+    "kandatsu": {
+      "name": "神立滑雪场",
+      "region": "越后汤泽",
+      "summary": "夜场营业至凌晨2点，公园丰富，距离汤泽站近，深受年轻人与单板雪友喜爱。",
+      "tags": [
+        "夜场丰富",
+        "单板公园",
+        "年轻活力"
+      ]
+    },
+    "iwappara": {
+      "name": "岩原滑雪场",
+      "region": "越后汤泽",
+      "summary": "拥有极其宽阔的大斜面雪道，视野开阔且坡度平缓，极适合练习推雪与基础滑行。",
+      "tags": [
+        "超宽雪道",
+        "适合新手",
+        "家庭推荐"
+      ]
+    },
+    "yuzawa-park": {
+      "name": "汤泽公园滑雪场",
+      "region": "越后汤泽",
+      "summary": "酒店直连型雪场，地形紧凑且天然避风，适合带小朋友或想要安心练习的雪友。",
+      "tags": [
+        "酒店直连",
+        "避风舒适",
+        "亲子友好"
+      ]
+    },
+    "yuzawa-nakazato": {
+      "name": "汤泽中里滑雪场",
+      "region": "越后汤泽",
+      "summary": "JR中里站直达，设有特色车厢休息室与丰富的儿童雪上乐园，新手与家庭体验极佳。",
+      "tags": [
+        "JR站直达",
+        "儿童乐园",
+        "新手天堂"
+      ]
+    },
+    "yuzawa-kogen": {
+      "name": "汤泽高原滑雪场",
+      "region": "越后汤泽",
+      "summary": "搭乘大型箱型缆车可直达山顶，山脚坡度缓适合初学者。可连接至GALA汤泽滑雪场。",
+      "tags": [
+        "大型缆车",
+        "连通GALA",
+        "视野绝佳"
+      ]
+    },
+    "naspa-ski-garden": {
+      "name": "NASPA滑雪场",
+      "region": "越后汤泽",
+      "summary": "罕见的双板专用雪场（禁止单板），雪道维护极佳，适合想要安静纯粹滑双板的雪友。",
+      "tags": [
+        "双板专用",
+        "品质维护"
+      ]
+    },
+    "ishiuchi-maruyama": {
+      "name": "石打丸山滑雪场",
+      "region": "越后汤泽",
+      "summary": "老牌名门雪场，拥有先进的混合缆车与顶级夜场设施，压雪与粉雪地形兼备。可连接至GALA汤泽滑雪场。",
+      "tags": [
+        "混合缆车",
+        "顶级夜场",
+        "老牌名门"
+      ]
+    },
+    "maiko": {
+      "name": "舞子滑雪场",
+      "region": "越后汤泽",
+      "summary": "关越IC下道即到，分为舞子、长峰、奥舞子三区，最长雪道6公里，综合体验极佳。",
+      "tags": [
+        "IC直达",
+        "6km长雪道",
+        "设施完善"
+      ]
+    },
+    "joetsu-kokusai": {
+      "name": "上越国际滑雪场",
+      "region": "越后汤泽",
+      "summary": "面积巨大的超级雪场，由四大区域组成，城堡风格酒店极具标识度。",
+      "tags": [
+        "面积巨大",
+        "城堡酒店",
+        "雪道众多"
+      ]
+    },
+    "hakkaisan": {
+      "name": "八海山滑雪场",
+      "region": "南鱼沼",
+      "summary": "以垂直落差大、陡坡与未压雪粉雪地形闻名，是进阶与双板/单板高手的天堂。",
+      "tags": [
+        "急陡坡",
+        "粉雪天堂",
+        "高手推荐"
+      ]
+    },
+    "itsukamachi": {
+      "name": "五日町滑雪场",
+      "region": "南鱼沼",
+      "summary": "局部社区型雪场，坡度平缓且人少安静，性价比高。",
+      "tags": [
+        "性价比高",
+        "人少安静",
+        "基础练习"
+      ]
+    },
+    "muika": {
+      "name": "六日町滑雪场",
+      "region": "南鱼沼",
+      "summary": "拥有最大幅宽的初级斜面与无压雪未整雪区，全景俯瞰八海山和南鱼沼盆地。",
+      "tags": [
+        "绝景展望",
+        "未压雪区",
+        "性价比好"
+      ]
+    }
+  }
+}

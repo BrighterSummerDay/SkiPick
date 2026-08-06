@@ -1,0 +1,147 @@
+@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+:root {
+  --bg: #f7fafd;
+  --bg-deep: #eef4fa;
+  --surface-glass: rgba(255, 255, 255, 0.55);
+  --surface-glass-strong: rgba(255, 255, 255, 0.75);
+  --border-glass: rgba(255, 255, 255, 0.6);
+  --ink: #101826;
+  --ink-muted: #57657a;
+  --ink-faint: #8b96a8;
+  --accent-ice: #2e7dd1;
+  --accent-ice-dark: #1e5ba3;
+  --accent-frost: #a9d6f5;
+  --piste-green: #2f9e44;
+  --piste-red: #e0393e;
+  --piste-black: #14141c;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent-ice: var(--accent-ice);
+  --color-accent-frost: var(--accent-frost);
+  --font-display: var(--font-noto-sc);
+  --font-body: var(--font-noto-sc);
+  --font-data: var(--font-space-grotesk);
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background:
+    radial-gradient(ellipse 60% 40% at 15% -10%, rgba(169, 214, 245, 0.35), transparent),
+    radial-gradient(ellipse 50% 35% at 100% 0%, rgba(46, 125, 209, 0.12), transparent),
+    var(--bg);
+  color: var(--ink);
+  font-family: var(--font-noto-sc), "Noto Sans SC", sans-serif;
+  min-width: 1180px;
+}
+
+/* 日语环境切换到 Noto Sans JP，汉字字形更符合日文习惯 */
+html[lang="ja"] body {
+  font-family: var(--font-noto-jp), "Noto Sans JP", sans-serif;
+}
+
+.font-data {
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  font-feature-settings: "tnum" 1;
+}
+
+.glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--border-glass);
+}
+
+.glass-strong {
+  background: var(--surface-glass-strong);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--border-glass);
+}
+
+/* 结晶光泽边框，用于卡片hover，模拟结霜 */
+.frost-ring {
+  position: relative;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.frost-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(169, 214, 245, 0.9), rgba(46, 125, 209, 0.15) 40%, transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.frost-ring:hover {
+  box-shadow: 0 20px 45px -20px rgba(30, 91, 163, 0.35);
+  transform: translateY(-3px);
+}
+
+.frost-ring:hover::before {
+  opacity: 1;
+}
+
+::selection {
+  background: var(--accent-frost);
+  color: var(--ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(46, 125, 209, 0.25);
+  border-radius: 999px;
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 10px;
+}
+
+/* 顶部内容遮罩：0-50px 完全遮挡，50-130px 渐隐，header 高度为 104px */
+:root {
+  --header-offset: 104px; /* 保持和实际 header 一致，用于 main 顶部内边距 */
+  --header-mask-height: 130px; /* 遮罩实际高度：0-50px 全不显示，50-130px 渐隐 */
+}
+
+main::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--header-mask-height);
+  pointer-events: none;
+  z-index: 45; /* 放在内容之上，但低于导航的 z-50 */
+  /* 顶部 0-50px 为页面背景色，完全遮挡下方内容；50-130px 渐隐到透明 */
+  /* 使用浅蓝色（--bg-deep）代替白色，以避免看上去“过白” */
+  background: linear-gradient(180deg,
+    rgba(238,244,250,1) 0px,   /* #eef4fa == --bg-deep */
+    rgba(238,244,250,1) 50px,
+    rgba(238,244,250,0.65) 80px,
+    rgba(238,244,250,0) 130px
+  );
+}

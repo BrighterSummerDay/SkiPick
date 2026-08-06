@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "title": "SkiPick — Compare Japan Ski Resorts",
+    "description": "Browse Tokyo-area ski resorts on a map and compare prices, runs, and travel time side by side."
+  },
+  "nav": {
+    "brand": "SkiPick",
+    "map": "Resort Map",
+    "compare": "Compare",
+    "resorts": "Ski Resorts",
+    "news": "News"
+  },
+  "footer": {
+    "note": "SkiPick · Data maintained by the community and official sources",
+    "edition": "© 2026 xiaotouming"
+  },
+  "difficulty": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "home": {
+    "eyebrow": "Tokyo Day-Trip Edition",
+    "titleLine1": "One map,",
+    "titleLine2": "Every ski resort near Tokyo",
+    "subtitle": "Stop cross-checking five different sites. \nResort areas are outlined right on the map — pick one and compare price, runs, and travel time at a glance.",
+    "ctaCompare": "Start comparing",
+    "ctaMap": "Map",
+    "ctaResorts": "Resorts",
+    "howItWorks": "How it works",
+    "feature1Index": "Area view",
+    "feature1Title": "Resorts, mapped",
+    "feature1Desc": "Resort boundaries are overlaid on a real terrain map, so location, size, and nearby resorts are obvious at a glance — not just a lone pin.",
+    "feature2Index": "Data compare",
+    "feature2Title": "Compare side by side",
+    "feature2Desc": "Pick 2–4 resorts and see price, run mix, lift count, and travel time laid out together — like comparing flights.",
+    "feature3Index": "Community",
+    "feature3Title": "Real-time reports from skiers",
+    "feature3Desc": "Gondola status, today's snow conditions — the details official sites never update, added by whoever's actually on the mountain.",
+    "featured": "Featured",
+    "featuredTitle": "Popular this week",
+    "news": "News",
+    "newsTitle": "Latest updates",
+    "newsIntro": "Website updates, release notes, and feature changes.",
+    "newsViewAll": "View all news",
+    "minutes": "min",
+    "courses": "runs"
+  },
+  "news": {
+    "pageTitle": "News",
+    "pageSubtitle": "Latest updates, website changes, and release notes.",
+    "backHome": "Back to home",
+    "categories": {
+      "announcement": "Announcement",
+      "changelog": "Changelog"
+    },
+    "2026-08-06": {
+      "title": "Version 0.5 is Updated",
+      "excerpt": "SkiPick 0.5 is now live! Currently in testing, it only supports ski resorts near Tokyo.",
+      "content": "This is a one-person project, so please be patient with the limited time available.\nThe current version only supports ski resorts near Tokyo. Data is based on official information for the 25-26 season, and 26-27 season data has not yet been updated.\n\nFuture development plans:\n- Early-bird data for the 26-27 season\n- Support for community feedback features\n- Support for ski resorts nationwide"
+    },
+    "site-refresh-2026-08": {
+      "title": "Website refresh and new home experience",
+      "excerpt": "The homepage has been redesigned with a more visual resort overview and clearer comparison entry points.",
+      "content": "We refreshed the overall visual style of the site, strengthened the map-driven entry experience, and improved the hero section so new visitors can understand the product faster. The featured resort preview and the latest updates are now displayed more clearly on the homepage."
+    },
+    "compare-flow-update": {
+      "title": "Comparison flow improved for quicker decisions",
+      "excerpt": "The compare experience now highlights the most useful metrics first, making side-by-side decisions faster.",
+      "content": "We reorganized the compare screen so travel time, price, and run mix are easier to scan. This makes it simpler to shortlist resorts before you decide which one to visit."
+    },
+    "map-guidance-update": {
+      "title": "Map guidance and resort detail improvements",
+      "excerpt": "A clearer overview and better guidance were added to the resort map and detail pages.",
+      "content": "We refined the map interaction flow and added more direct guidance on how to explore resort details. The result is a smoother experience for users who want to discover specific ski areas quickly."
+    }
+  },
+  "map": {
+    "title": "Resort Map",
+    "subtitle": "Click a shaded area on the map to see resort details. Departure point is fixed to Tokyo Station.",
+    "statBasePrice": "Day pass",
+    "statTravel": "From Tokyo",
+    "statShinkansen": "Shinkansen {min} min",
+    "statCar": "~{min} min by car",
+    "statCourses": "Run mix",
+    "statCoursesValue": "{total} runs · {km}km longest",
+    "statVertical": "Vertical drop",
+    "viewDetail": "View full details",
+    "compareResort": "Compare this resort",
+    "emptyHint": "Click a resort on the map to see details"
+  },
+  "compare": {
+    "title": "Compare",
+    "subtitle": "Select up to {max} resorts to compare side by side. Departure point is fixed to Tokyo Station.",
+    "emptyHint": "Select at least one resort to start comparing.",
+    "emptyMetrics": "Select at least one data point to display.",
+    "metricSectionTitle": "Data to compare",
+    "basePriceLabel": "Day pass",
+    "seasonPassLabel": "Season pass",
+    "rowTravel": "From Tokyo",
+    "shinkansen": "Shinkansen {min} min · ¥{price}",
+    "car": "Car {min} min · {km}km",
+    "rowCourses": "Runs",
+    "coursesValue": "{total} runs · {km}km longest",
+    "rowLifts": "Lifts / gondolas",
+    "liftsValue": "{total} lifts · {gondola} gondolas",
+    "rowVertical": "Vertical drop",
+    "rowTop": "Summit elevation",
+    "metrics": {
+      "basePrice":     "Day pass",
+      "seasonPass":    "Season pass",
+      "vertical":      "Vertical drop",
+      "topElevation":  "Summit elevation",
+      "travel":        "Travel from Tokyo",
+      "courses":       "Runs",
+      "lifts":         "Lifts / gondolas",
+      "difficultyBar": "Difficulty mix"
+    }
+  },
+  "resortsPage": {
+    "title": "Resort Guide",
+    "subtitle": "Browse all resorts in one list and open the detail page for the ones you want.",
+    "resortCount": "{count} resorts listed",
+    "priceLabel": "Day pass",
+    "viewDetail": "View details"
+  },
+  "detail": {
+    "back": "← Back to map",
+    "addToCompare": "Add to compare",
+    "metricBasePrice": "Day pass",
+    "metricTravel": "From Tokyo",
+    "metricTravelSubShinkansen": "Shinkansen",
+    "metricTravelSubCar": "By car",
+    "metricCourses": "Total runs",
+    "metricVertical": "Vertical drop",
+    "sectionCourses": "Run mix",
+    "courseBeginner": "Beginner",
+    "courseIntermediate": "Intermediate",
+    "courseAdvanced": "Advanced",
+    "courseLongest": "Longest run",
+    "sectionTravel": "Access & facilities",
+    "travelShinkansen": "Shinkansen",
+    "travelCar": "By car",
+    "travelLifts": "Lifts",
+    "travelGondola": "Gondolas",
+    "sectionCommunity": "Community",
+    "communityTitle": "Reports from today",
+    "communityBadge": "No login required",
+    "communityPlaceholder": "Gondola status, live snow conditions, and other community reports will show up here. (In development)"
+  },
+  "resorts": {
+    "gala-yuzawa": {
+      "name": "GALA Yuzawa",
+      "region": "Echigo-Yuzawa",
+      "summary": "Connected directly to the shinkansen station, so there's almost no transfer time — the classic Tokyo day-trip pick.",
+      "tags": [
+        "Shinkansen direct",
+        "Beginner friendly",
+        "Change at the station"
+      ]
+    },
+    "naeba": {
+      "name": "Naeba",
+      "region": "Echigo-Yuzawa",
+      "summary": "A large resort linked by gondola to the Kagura area, good for skiers who want a mix of terrain.",
+      "tags": [
+        "Wide run selection",
+        "Linked to Kagura",
+        "Big vertical"
+      ]
+    },
+    "kagura": {
+      "name": "Kagura",
+      "region": "Echigo-Yuzawa",
+      "summary": "Known for its powder and natural terrain, with the Tashiro, Kagura, and Mitsumata areas connected. Long season.",
+      "tags": [
+        "Known for powder",
+        "Varied terrain",
+        "Skews advanced"
+      ]
+    },
+    "kawaba": {
+      "name": "Kawaba",
+      "region": "Gunma, Kawaba",
+      "summary": "No direct shinkansen, but an easy exit off the Kan-etsu Expressway — a favorite among drivers.",
+      "tags": [
+        "Easy by car",
+        "Beginner friendly",
+        "Kanto region"
+      ]
+    },
+    "oze-iwakura": {
+      "name": "Oze Iwakura",
+      "region": "Gunma, Katashina",
+      "summary": "A 120-person gondola and excellent summit views make this a popular pick with families.",
+      "tags": [
+        "Large gondola",
+        "Great views",
+        "Family friendly"
+      ]
+    },
+    "karuizawa-prince": {
+      "name": "Karuizawa Prince",
+      "region": "Nagano, Karuizawa",
+      "summary": "Gentle slopes with a small vertical drop, paired with the outlet mall next door — a top choice for beginners and families.",
+      "tags": [
+        "Shinkansen direct",
+        "Great for beginners",
+        "Outlet shopping nearby"
+      ]
+    },
+    "kandatsu": {
+      "name": "Kandatsu Snow Resort",
+      "region": "Echigo-Yuzawa",
+      "summary": "Famous for all-night skiing and terrain parks, close to Yuzawa station and popular with younger skiers and snowboarders.",
+      "tags": [
+        "Night skiing",
+        "Terrain park",
+        "Youthful vibe"
+      ]
+    },
+    "iwappara": {
+      "name": "Iwappara",
+      "region": "Echigo-Yuzawa",
+      "summary": "Features a famous ultra-wide single-slope run with gentle gradient, ideal for beginners and family practice.",
+      "tags": [
+        "Ultra-wide slope",
+        "Beginner friendly",
+        "Family choice"
+      ]
+    },
+    "yuzawa-park": {
+      "name": "Yuzawa Park",
+      "region": "Echigo-Yuzawa",
+      "summary": "A hotel-ski slopes direct resort. Compact and sheltered from wind, great for kids and relaxed practice.",
+      "tags": [
+        "Hotel ski-in/out",
+        "Wind protected",
+        "Family friendly"
+      ]
+    },
+    "yuzawa-nakazato": {
+      "name": "Yuzawa Nakazato",
+      "region": "Echigo-Yuzawa",
+      "summary": "Directly connected to JR Echigo-Nakazato Station, featuring train carriage rest areas and a fun kids park.",
+      "tags": [
+        "JR Station direct",
+        "Kids park",
+        "Beginner haven"
+      ]
+    },
+    "yuzawa-kogen": {
+      "name": "Yuzawa Kogen",
+      "region": "Echigo-Yuzawa",
+      "summary": "Access the summit via one of the world's largest 166-person ropeways. Summit links to GALA while base offers gentle slopes.",
+      "tags": [
+        "Huge ropeway",
+        "Linked to GALA",
+        "Panoramic view"
+      ]
+    },
+    "naspa-ski-garden": {
+      "name": "NASPA Ski Garden",
+      "region": "Echigo-Yuzawa",
+      "summary": "A rare skiers-only resort (no snowboards allowed) with immaculately groomed runs for peaceful skiing.",
+      "tags": [
+        "Skiers only",
+        "Shuttle available",
+        "Groomed slopes"
+      ]
+    },
+    "ishiuchi-maruyama": {
+      "name": "Ishiuchi Maruyama",
+      "region": "Echigo-Yuzawa",
+      "summary": "A classic historic resort equipped with modern hybrid lifts (Sunrise Express) and outstanding night skiing.",
+      "tags": [
+        "Hybrid lift",
+        "Top night skiing",
+        "Classic resort"
+      ]
+    },
+    "maiko": {
+      "name": "Maiko Snow Resort",
+      "region": "Minamiuonuma, Maiko",
+      "summary": "Just 1 minute off the Shiozawa-Ishiuchi IC. Spans 3 areas with a maximum run length of 6,000 meters.",
+      "tags": [
+        "IC 1 min",
+        "6km long run",
+        "Full facilities"
+      ]
+    },
+    "joetsu-kokusai": {
+      "name": "Joetsu Kokusai",
+      "region": "Minamiuonuma",
+      "summary": "A massive mega-resort with 4 main zones and the iconic Green Plaza Hotel right at the foot of the slopes.",
+      "tags": [
+        "Massive area",
+        "Slope-side hotel",
+        "Varied courses"
+      ]
+    },
+    "hakkaisan": {
+      "name": "Muikamachi Hakkaisan",
+      "region": "Minamiuonuma",
+      "summary": "800m vertical drop, steep inclines, and deep un-groomed powder fields make this a haven for experts.",
+      "tags": [
+        "Steep slopes",
+        "Powder heaven",
+        "Expert recommended"
+      ]
+    },
+    "itsukamachi": {
+      "name": "Itsukamachi",
+      "region": "Minamiuonuma",
+      "summary": "A local, cozy resort with gentle slopes, uncrowded trails, and affordable prices.",
+      "tags": [
+        "Affordable",
+        "Uncrowded",
+        "Basic practice"
+      ]
+    },
+    "muika": {
+      "name": "Muika Snow Resort",
+      "region": "Minamiuonuma",
+      "summary": "Offers a main slope over 200m wide alongside un-groomed powder zones, overlooking the Hakkaisan peaks.",
+      "tags": [
+        "Scenic outlook",
+        "Off-piste zone",
+        "Great value"
+      ]
+    }
+  }
+}
