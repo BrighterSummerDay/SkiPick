@@ -98,8 +98,8 @@
     "basePriceLabel": "Day pass",
     "seasonPassLabel": "Season pass",
     "rowTravel": "From Tokyo",
-    "shinkansen": "Shinkansen {min} min · ¥{price}",
-    "car": "Car {min} min · {km}km",
+    "shinkansen": "Shinkansen {min} min · {price}JPY",
+    "car": "Car {min} min · {km}km · {price}JPY",
     "rowCourses": "Runs",
     "coursesValue": "{total} runs · {km}km longest",
     "rowLifts": "Lifts / gondolas",
@@ -112,6 +112,7 @@
       "vertical":      "Vertical drop",
       "topElevation":  "Summit elevation",
       "travel":        "Travel from Tokyo",
+      "car":           "Car travel",
       "courses":       "Runs",
       "lifts":         "Lifts / gondolas",
       "difficultyBar": "Difficulty mix"

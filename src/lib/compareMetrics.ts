@@ -21,6 +21,7 @@ export type MetricId =
   | "vertical"
   | "topElevation"
   | "travel"
+  | "car"
   | "courses"
   | "lifts"
   | "difficultyBar";
@@ -69,21 +70,29 @@ export const ALL_METRICS: CompareMetric[] = [
         : React.createElement("span", { className: "text-ink-faint italic" }, "—"),
   },
 
-  // ── 交通 ──────────────────────────────────────────
+  // ── 新干线 ──────────────────────────────────────────
   {
     id: "travel",
     labelKey: "metrics.travel",
     renderCell: (r, t) =>
-      r.travel.shinkansenMin
-        ? React.createElement(
-            "span",
-            null,
-            t("shinkansen", {
-              min: r.travel.shinkansenMin,
-              price: r.travel.shinkansenYen.toLocaleString(),
-            })
-          )
-        : React.createElement("span", null, t("car", { min: r.travel.carMin, km: r.travel.carKm })),
+      React.createElement("span",null,
+        t("shinkansen", {
+          min: r.travel.shinkansenMin,
+          price: r.travel.shinkansenYen.toLocaleString(),
+        })
+      )
+  },
+
+  // ── 自驾 ──────────────────────────────────────────
+  {
+    id: "car",
+    labelKey: "metrics.car",
+    renderCell: (r, t) =>
+      React.createElement("span", null, t("car", 
+        { min: r.travel.carMin, 
+          km: r.travel.carKm, 
+          price: r.travel.etcYen.toLocaleString(), 
+        })),
   },
 
   // ── 地形 / 雪道 ───────────────────────────────────

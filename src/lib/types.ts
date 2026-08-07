@@ -31,6 +31,7 @@ export interface Resort {
     shinkansenYen: number;
     carMin: number;
     carKm: number;
+    etcYen: number;
   };
 }
 
