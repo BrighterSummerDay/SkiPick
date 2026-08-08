@@ -6,14 +6,17 @@ export function GlassCard({
   className,
   strong,
   frost = true,
+  id,
 }: {
   children: ReactNode;
   className?: string;
   strong?: boolean;
   frost?: boolean;
+  id?: string;
 }) {
   return (
     <div
+      id={id}
       className={clsx(
         strong ? "glass-strong" : "glass",
         "rounded-2xl",

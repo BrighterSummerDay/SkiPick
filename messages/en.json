@@ -98,28 +98,55 @@
     "compareRegionResorts": "Compare Region Resorts"
   },
   "regions": {
-    "echigo-yuzawa": "Echigo-Yuzawa",
-    "numata-katashina": "Numata/Katashina",
-    "karuizawa": "Karuizawa"
+    "echigo-yuzawa": "Echigo-Yuzawa & Chuetsu",
+    "gunma-tochigi": "Gunma / Tochigi",
+    "joshinetsu": "Joshinetsu Kogen",
+    "hakuba": "Hakuba Valley"
   },
   "regionDetails": {
     "echigo-yuzawa": {
-      "title": "Echigo-Yuzawa",
-      "summary": "Directly connected to Tokyo via Shinkansen. A premier ski hub packed with top destinations like GALA Yuzawa and Naeba, with fantastic hot springs.",
-      "tags": ["Direct Shinkansen", "Onsen Town", "High Density", "Weekend Trip"],
-      "travelInfo": "70-80 min by Shinkansen"
+      "title": "Echigo-Yuzawa & Chuetsu",
+      "summary": "Directly accessible by Shinkansen. Covering the heavy-snow Chuetsu area including Yuzawa, Uonuma, Tokamachi, and Tsunan. Home to top resorts like GALA Yuzawa, Naeba, Kandatsu, and Kagura.",
+      "tags": [
+        "Direct Shinkansen",
+        "Heavy Snow Area",
+        "Onsen Town",
+        "High Density"
+      ],
+      "travelInfo": "70-90 min by Shinkansen"
     },
-    "numata-katashina": {
-      "title": "Numata / Katashina",
-      "summary": "Located in northern Gunma Prefecture, highly accessible by car. Renowned for natural powder snow and terrain variety like Kawaba and Oze Iwakura.",
-      "tags": ["Natural Powder", "Diverse Terrain", "Great by Car", "Family Friendly"],
+    "gunma-tochigi": {
+      "title": "Gunma / Tochigi",
+      "summary": "Located in northern Gunma and Tochigi prefectures, easily reached by car or tour bus. Famous for high-quality natural powder snow and versatile terrains like Kawaba and Oze Iwakura.",
+      "tags": [
+        "Natural Powder",
+        "Diverse Terrain",
+        "Great by Car",
+        "Family Friendly"
+      ],
       "travelInfo": "120-150 min by car"
     },
-    "karuizawa": {
-      "title": "Karuizawa",
-      "summary": "Just 1 hour from Tokyo by Shinkansen with early-season artificial snow setup. Features a massive luxury outlet mall and resort hotels, perfect for beginners and vacationers.",
-      "tags": ["1hr Shinkansen", "Outlet Mall", "Early Season", "Beginner Friendly"],
-      "travelInfo": "60 min by Shinkansen"
+    "joshinetsu": {
+      "title": "Joshinetsu Kogen",
+      "summary": "Spanning Nagano, Gunma, and Niigata prefectures. Highly accessible via Shinkansen with early-season operations (e.g. Karuizawa Prince Resort). Features luxury outlet shopping and top resort hotels.",
+      "tags": [
+        "1hr Shinkansen",
+        "Outlet Mall",
+        "Early Season",
+        "Luxury Resorts"
+      ],
+      "travelInfo": "60-80 min by Shinkansen"
+    },
+    "hakuba": {
+      "title": "Hakuba Valley",
+      "summary": "World-renowned international winter destination in the Japanese Alps. Featuring legendary resorts like Happo-one, Tsugaike, Goryu, and Hakuba47 with world-class powder snow and vast terrain.",
+      "tags": [
+        "World Class Powder",
+        "Japanese Alps",
+        "Connected Resorts",
+        "Global Vibe"
+      ],
+      "travelInfo": "130-150 min by Shinkansen+Bus"
     }
   },
   "compare": {
@@ -153,7 +180,7 @@
   },
   "resortsPage": {
     "title": "Resort Guide",
-    "subtitle": "Browse resorts in one view and open detailed pages.\nCurrent ski resorts: 18",
+    "subtitle": "Browse resorts in one view and open detailed pages.\nCurrent ski resorts: 33",
     "resortCount": "{count} resorts listed",
     "priceLabel": "Day pass",
     "viewDetail": "View details"
@@ -215,7 +242,7 @@
     },
     "kawaba": {
       "name": "Kawaba",
-      "region": "Gunma, Kawaba",
+      "region": "Gunma, Tochigi",
       "summary": "No direct shinkansen, but an easy exit off the Kan-etsu Expressway — a favorite among drivers.",
       "tags": [
         "Easy by car",
@@ -225,7 +252,7 @@
     },
     "oze-iwakura": {
       "name": "Oze Iwakura",
-      "region": "Gunma, Katashina",
+      "region": "Gunma, Tochigi",
       "summary": "A 120-person gondola and excellent summit views make this a popular pick with families.",
       "tags": [
         "Large gondola",
@@ -343,14 +370,14 @@
         "Expert recommended"
       ]
     },
-    "itsukamachi": {
-      "name": "Itsukamachi",
-      "region": "Minamiuonuma",
-      "summary": "A local, cozy resort with gentle slopes, uncrowded trails, and affordable prices.",
+    "hakkaisan-sanroku": {
+      "name": "Hakkaisan Sanroku Ski Resort",
+      "region": "Echigo-Yuzawa",
+      "summary": "A cozy family resort located at the foot of Mt. Hakkai with wide gentle slopes, perfect for children and beginners.",
       "tags": [
-        "Affordable",
-        "Uncrowded",
-        "Basic practice"
+        "Family friendly",
+        "Gentle slopes",
+        "Beginner practice"
       ]
     },
     "muika": {
@@ -361,6 +388,156 @@
         "Scenic outlook",
         "Off-piste zone",
         "Great value"
+      ]
+    },
+    "chateau-shiozawa": {
+      "name": "Chateau Shiozawa Ski Resort",
+      "region": "Echigo-Yuzawa",
+      "summary": "Adjacent to Maiko and Joetsu Kokusai. Features wide, gentle slopes and uncrowded atmosphere, perfect for beginners and family practice.",
+      "tags": [
+        "Beginner practice",
+        "Uncrowded",
+        "Family choice"
+      ]
+    },
+    "nakazato-snow-wood": {
+      "name": "Nakazato Snow Wood Ski Resort",
+      "region": "Echigo-Yuzawa",
+      "summary": "Directly connected to Hotel Angel Grandia Echigo Nakazato. Gentle slopes and child-friendly design make it ideal for families with young children.",
+      "tags": [
+        "Hotel direct",
+        "Kids friendly",
+        "Safe for beginners"
+      ]
+    },
+    "suhara": {
+      "name": "Suhara Ski Resort",
+      "region": "Echigo-Yuzawa",
+      "summary": "A traditional local resort in Uonuma city known for deep snow and great summit panoramas.",
+      "tags": [
+        "Heavy snow",
+        "Scenic views",
+        "Cozy vibe"
+      ]
+    },
+    "yakushi": {
+      "name": "Yakushi Ski Resort",
+      "region": "Echigo-Yuzawa",
+      "summary": "A compact resort next to an Onsen town, featuring gentle slopes ideal for basic practice.",
+      "tags": [
+        "Onsen nearby",
+        "Basic practice",
+        "Uncrowded"
+      ]
+    },
+    "koide": {
+      "name": "Koide Ski Resort",
+      "region": "Echigo-Yuzawa",
+      "summary": "Located close to the city center and train station, convenient for quick practice sessions.",
+      "tags": [
+        "Convenient access",
+        "Near city",
+        "Quick practice"
+      ]
+    },
+    "okutadami-maruyama": {
+      "name": "Okutadami Maruyama Ski Resort",
+      "region": "Echigo-Yuzawa",
+      "summary": "A legendary spring skiing haven tucked in a deep snow sanctuary, operating well into May.",
+      "tags": [
+        "Spring ski haven",
+        "Deep snow",
+        "Open until May"
+      ]
+    },
+    "new-green-pia-tsunan": {
+      "name": "New Green Pia Tsunan Ski Resort",
+      "region": "Echigo-Yuzawa & Chuetsu",
+      "summary": "A comprehensive hotel resort featuring diverse snow activities alongside enjoyable slopes.",
+      "tags": [
+        "Resort hotel",
+        "Snow activities",
+        "Family favorite"
+      ]
+    },
+    "kashimayari": {
+      "name": "Kashimayari Ski Resort",
+      "region": "Hakuba Valley",
+      "summary": "Located at the southern end of Hakuba Valley overlooking Lake Nakatsuna with great family amenities.",
+      "tags": [
+        "Family friendly",
+        "Lake view",
+        "Varied terrain"
+      ]
+    },
+    "jiigatake": {
+      "name": "Jiigatake Ski Resort",
+      "region": "Hakuba Valley",
+      "summary": "Extremely safe and gentle beginner slopes with a fun kids snow park, perfect for young families.",
+      "tags": [
+        "Gentle slopes",
+        "Kids park",
+        "Beginner pick"
+      ]
+    },
+    "tsugaike-kogen": {
+      "name": "Tsugaike Kogen Ski Resort",
+      "region": "Hakuba Valley",
+      "summary": "Famous for the 1km wide gentle Kan-no-kane slope, plus heli-skiing and backcountry powder riding.",
+      "tags": [
+        "1km wide slope",
+        "Heli skiing",
+        "Powder riding"
+      ]
+    },
+    "hakuba-iwatake": {
+      "name": "Hakuba Iwatake Snow Field",
+      "region": "Hakuba Valley",
+      "summary": "Offers a 360-degree panoramic view of the Northern Alps, featuring the iconic Mountain Harbor deck.",
+      "tags": [
+        "360 Scenic view",
+        "Mountain Harbor",
+        "Varied terrain"
+      ]
+    },
+    "hakuba-goryu-47": {
+      "name": "Hakuba Goryu & Hakuba47 Ski Resort",
+      "region": "Hakuba Valley",
+      "summary": "A combined giant resort connected at the summit under one shared lift pass, featuring night skiing, powder snow, and Hakuba's top terrain park.",
+      "tags": [
+        "Combined pass",
+        "Night skiing",
+        "Premier terrain park"
+      ]
+    },
+    "hakuba-cortina": {
+      "name": "Hakuba Norikura Onsen & Hakuba Cortina",
+      "region": "Hakuba Valley",
+      "summary": "Interconnected ski area combining Hakuba Norikura Onsen and Hakuba Cortina under a shared lift pass, famous for deep powder snow and tree runs.",
+      "tags": [
+        "Shared lift pass",
+        "Powder haven",
+        "Tree run"
+      ]
+    },
+    "hakuba-sanosaka": {
+      "name": "Hakuba Sanosaka Ski Resort",
+      "region": "Hakuba Valley",
+      "summary": "Picturesque setting overlooking Lake Aoki, peaceful slopes, mogul courses, and terrain park.",
+      "tags": [
+        "Lake Aoki view",
+        "Uncrowded",
+        "Moguls & park"
+      ]
+    },
+    "hakuba-happo-one": {
+      "name": "Hakuba Happo-one Snow Resort",
+      "region": "Hakuba Valley",
+      "summary": "Host of the 1998 Winter Olympics, boasting over 1,000m vertical drop, steep pitches, and long runs.",
+      "tags": [
+        "Olympic venue",
+        "1000m Vertical",
+        "Long steep runs"
       ]
     }
   }

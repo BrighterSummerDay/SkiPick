@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ResortMap } from "@/components/ResortMap";
@@ -21,6 +21,42 @@ export default function MapPage() {
   const compareResortsQuery = activeResort ? activeResort.slug : "";
   const names = Object.fromEntries(resorts.map((r) => [r.slug, r.name]));
   const regionNames = Object.fromEntries(REGIONS.map((r) => [r.id, tr(r.id)]));
+
+  // 当选中的雪场或大区域发生改变时，自动展开对应折叠层并平滑滚动聚焦到左侧列表对应项
+  useEffect(() => {
+    const targetRegion = selected
+      ? resorts.find((res) => res.slug === selected)?.regionId
+      : selectedRegion;
+
+    if (targetRegion) {
+      setCollapsedRegions((prev) => {
+        if (prev[targetRegion]) {
+          return { ...prev, [targetRegion]: false };
+        }
+        return prev;
+      });
+    }
+
+    if (selected) {
+      const timer = setTimeout(() => {
+        const panel = document.getElementById("left-resort-panel");
+        const el = document.getElementById(`resort-item-${selected}`);
+        if (panel && el) {
+          scrollToItem(panel, el);
+        }
+      }, 60);
+      return () => clearTimeout(timer);
+    } else if (selectedRegion) {
+      const timer = setTimeout(() => {
+        const panel = document.getElementById("left-resort-panel");
+        const el = document.getElementById(`region-group-${selectedRegion}`);
+        if (panel && el) {
+          scrollToItem(panel, el);
+        }
+      }, 60);
+      return () => clearTimeout(timer);
+    }
+  }, [selected, selectedRegion, resorts]);
 
   // 按大区域分组，顺序跟着 REGIONS 配置走
   const grouped = useMemo(
@@ -66,11 +102,11 @@ export default function MapPage() {
     >
       <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_260px] xl:grid-cols-[260px_1fr_300px] gap-3.5 sm:gap-4 h-full min-h-0">
         {/* 雪场列表，按大区域分组 */}
-        <GlassCard className="overflow-y-auto p-2.5 sm:p-3 h-full min-h-0" frost={false}>
+        <GlassCard id="left-resort-panel" className="overflow-y-auto p-2.5 sm:p-3 h-full min-h-0" frost={false}>
           {grouped.map(({ region, items }) => {
             const isExpanded = !collapsedRegions[region.id];
             return (
-              <div key={region.id} className="mb-3">
+              <div key={region.id} id={`region-group-${region.id}`} className="mb-3">
                 <div className="sticky top-0 z-10">
                   {/* 顶部遮罩：滑动时完全挡住上方溢出的文字，形状与 GlassCard 顶部的圆角保持一致 */}
                   <div className="absolute -top-2.5 sm:-top-3 -left-2.5 -right-2.5 sm:-left-3 sm:-right-3 bottom-0 bg-white/95 backdrop-blur-md rounded-t-2xl -z-10 pointer-events-none" />
@@ -78,10 +114,11 @@ export default function MapPage() {
                   <div className="absolute -left-2.5 -right-2.5 sm:-left-3 sm:-right-3 top-full h-3.5 bg-gradient-to-b from-white/95 via-white/40 to-transparent pointer-events-none -z-10" />
                   <button
                     onClick={() => toggleRegion(region.id)}
-                    className={`w-full text-left px-3 py-2 text-[11px] font-bold tracking-wide uppercase flex items-center justify-between rounded-xl backdrop-blur-md transition-all shadow-xs ${selectedRegion === region.id
-                      ? "text-accent-ice bg-white border border-accent-ice/30 shadow-sm"
-                      : "text-ink-muted bg-white/90 hover:text-ink hover:bg-white"
-                      }`}
+                    className={`w-full text-left px-3 py-2 text-[11px] font-bold tracking-wide uppercase flex items-center justify-between rounded-xl backdrop-blur-md transition-all shadow-xs ${
+                      selectedRegion === region.id
+                        ? "text-accent-ice bg-white border border-accent-ice/30 shadow-sm"
+                        : "text-ink-muted bg-white/90 hover:text-ink hover:bg-white"
+                    }`}
                   >
                     <span className="flex items-center gap-1.5">
                       <svg
@@ -93,8 +130,9 @@ export default function MapPage() {
                         strokeWidth="2.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className={`transition-transform duration-200 ${isExpanded ? "rotate-90" : "rotate-0"
-                          }`}
+                        className={`transition-transform duration-200 ${
+                          isExpanded ? "rotate-90" : "rotate-0"
+                        }`}
                       >
                         <polyline points="9 18 15 12 9 6" />
                       </svg>
@@ -110,12 +148,16 @@ export default function MapPage() {
                     {items.map((r) => (
                       <button
                         key={r.slug}
+                        id={`resort-item-${r.slug}`}
                         onClick={() => {
                           setSelected(r.slug);
                           setSelectedRegion(r.regionId);
                         }}
-                        className={`w-full text-left px-4 py-3 rounded-xl mb-1 transition-colors ${selected === r.slug ? "bg-white/80 font-semibold shadow-sm" : "hover:bg-white/40"
-                          }`}
+                        className={`w-full text-left px-4 py-3 rounded-xl mb-1 transition-all ${
+                          selected === r.slug
+                            ? "bg-white/90 font-semibold shadow-sm text-accent-ice border border-accent-ice/30 ring-1 ring-accent-ice/20"
+                            : "hover:bg-white/40 text-ink"
+                        }`}
                       >
                         <div className="flex items-center justify-between">
                           <span className="text-sm">{r.name}</span>
@@ -256,4 +298,27 @@ function Stat({ label, value }: { label: string; value: string }) {
       <span className="font-data text-sm font-medium">{value}</span>
     </div>
   );
+}
+
+function scrollToItem(container: HTMLElement | null, item: HTMLElement | null) {
+  if (!container || !item) return;
+  const containerRect = container.getBoundingClientRect();
+  const itemRect = item.getBoundingClientRect();
+  // 顶部 sticky header 高度 + 遮罩层偏移量 (约 52px)，避免滚动后顶部被粘性标题挡住
+  const headerOffset = 52;
+
+  const relativeTop = itemRect.top - containerRect.top;
+  const relativeBottom = itemRect.bottom - containerRect.bottom;
+
+  if (relativeTop < headerOffset) {
+    container.scrollTo({
+      top: container.scrollTop + relativeTop - headerOffset,
+      behavior: "smooth",
+    });
+  } else if (relativeBottom > 0) {
+    container.scrollTo({
+      top: container.scrollTop + relativeBottom + 12,
+      behavior: "smooth",
+    });
+  }
 }
