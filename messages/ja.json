@@ -77,7 +77,7 @@
   },
   "map": {
     "title": "スキー場マップ",
-    "subtitle": "地図上の色付きエリアをクリックすると詳細が表示されます。出発地は東京駅固定です。",
+    "subtitle": "地図上のエリアをクリックすると詳細が表示されます。",
     "statBasePrice": "1日券",
     "statTravel": "東京から",
     "statShinkansen": "新幹線 {min} 分",
@@ -87,7 +87,40 @@
     "statVertical": "標高差",
     "viewDetail": "詳細を見る",
     "compareResort": "このスキー場を比較する",
-    "emptyHint": "地図上のスキー場をクリックすると詳細が表示されます"
+    "emptyHint": "クリックして詳細を確認",
+    "backToOverview": "全体マップに戻る",
+    "backToRegion": "エリア表示に戻る",
+    "regionBadge": "エリア概要",
+    "resortCountLabel": "掲載スキー場",
+    "travelLabel": "東京アクセス",
+    "priceRangeLabel": "リフト券価格帯",
+    "resortsInRegionTitle": "エリア内のスキー場一覧",
+    "compareRegionResorts": "このエリアのスキー場を比較"
+  },
+  "regions": {
+    "echigo-yuzawa": "越後湯沢",
+    "numata-katashina": "沼田・片品",
+    "karuizawa": "軽井沢"
+  },
+  "regionDetails": {
+    "echigo-yuzawa": {
+      "title": "越後湯沢",
+      "summary": "東京から新幹線で直行できる最高クラスのアクセス。GALA湯沢や苗場をはじめとする有名スキー場が集結し、アフタースキーの温泉も充実しています。",
+      "tags": ["新幹線直結", "温泉街", "スキー場多数", "日帰り・週末"],
+      "travelInfo": "新幹線で70〜80分"
+    },
+    "numata-katashina": {
+      "title": "沼田・片品",
+      "summary": "群馬県北部に位置し、車やバスでのアクセスが良好。川場や尾瀬岩鞍など、良質な天然パウダースノーと多彩なコース構成が人気です。",
+      "tags": ["天然パウダー", "多彩なコース", "ドライブ快適", "ファミリー向け"],
+      "travelInfo": "車で約120〜150分"
+    },
+    "karuizawa": {
+      "title": "軽井沢",
+      "summary": "東京から新幹線で約1時間。人工造雪によりシーズン早期から営業開始。巨大なアウトレットや高級リゾートホテルが併設され、初心者やアフタースキーに最適。",
+      "tags": ["新幹線1時間", "アウトレット併設", "早期オープン", "初心者歓迎"],
+      "travelInfo": "新幹線で約60分"
+    }
   },
   "compare": {
     "title": "横並び比較",
@@ -107,20 +140,20 @@
     "rowVertical": "標高差",
     "rowTop": "山頂標高",
     "metrics": {
-      "basePrice":     "1日券",
-      "seasonPass":    "シーズン券",
-      "vertical":      "標高差",
-      "topElevation":  "山頂標高",
-      "travel":        "東京から新幹線で",
-      "car":           "東京から車で",
-      "courses":       "コース数",
-      "lifts":         "リフト / ゴンドラ",
+      "basePrice": "1日券",
+      "seasonPass": "シーズン券",
+      "vertical": "標高差",
+      "topElevation": "山頂標高",
+      "travel": "東京から新幹線で",
+      "car": "東京から車で",
+      "courses": "コース数",
+      "lifts": "リフト / ゴンドラ",
       "difficultyBar": "難易度構成"
     }
   },
   "resortsPage": {
     "title": "スキー場一覧",
-    "subtitle": "すべてのスキー場をリストで確認し、詳細ページを開けます。",
+    "subtitle": "スキー場を一覧で確認し、詳細ページを開けます。\n掲載中のスキー場：18件",
     "resortCount": "{count} 件のスキー場を掲載",
     "priceLabel": "1日券",
     "viewDetail": "詳細を見る"

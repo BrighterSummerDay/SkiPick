@@ -77,7 +77,7 @@
   },
   "map": {
     "title": "雪场地图",
-    "subtitle": "点击地图上的色块区域查看该雪场详情，出发地默认为东京站。",
+    "subtitle": "点击地图上的区域查看雪场详情。",
     "statBasePrice": "单日券",
     "statTravel": "东京出发",
     "statShinkansen": "新干线 {min} 分",
@@ -87,7 +87,40 @@
     "statVertical": "海拔落差",
     "viewDetail": "查看雪场详情",
     "compareResort": "进入雪场对比",
-    "emptyHint": "点击地图上的雪场查看详情"
+    "emptyHint": "点击地图区域查看详情",
+    "backToOverview": "返回全览",
+    "backToRegion": "返回当前区域",
+    "regionBadge": "大区域概览",
+    "resortCountLabel": "收录雪场",
+    "travelLabel": "东京出发",
+    "priceRangeLabel": "单日券价格区间",
+    "resortsInRegionTitle": "区域内雪场列表",
+    "compareRegionResorts": "对比本区域所有雪场"
+  },
+  "regions": {
+    "echigo-yuzawa": "越后汤泽",
+    "numata-katashina": "沼田・片品",
+    "karuizawa": "轻井泽"
+  },
+  "regionDetails": {
+    "echigo-yuzawa": {
+      "title": "越后汤泽",
+      "summary": "新干线直达，交通极其便捷，是日本最著名的滑雪度假胜地之一。聚集了 GALA汤沢、苗场、神立等多座高人气雪场，滑雪与温泉体验俱佳。",
+      "tags": ["新干线直达", "温泉小镇", "雪场密集", "短途首选"],
+      "travelInfo": "新干线 70-80 分钟"
+    },
+    "numata-katashina": {
+      "title": "沼田・片品",
+      "summary": "位于群马县北部，适合自驾与巴士出行。拥有优质的天然粉雪与丰富地形，如川场、尾濑岩鞍等，深受粉雪爱好者与家庭游客喜爱。",
+      "tags": ["优质粉雪", "地形丰富", "适合自驾", "家庭友善"],
+      "travelInfo": "自驾约 120-150 分钟"
+    },
+    "karuizawa": {
+      "title": "轻井泽",
+      "summary": "东京出发仅需约 1 小时新干线，人工造雪设施完善，开业时间早。紧邻大型 Outlet 购物中心与高档度假酒店，非常适合新手与度假购物。",
+      "tags": ["新干线1小时", "Outlet购物", "早鸟开门", "新手友好"],
+      "travelInfo": "新干线约 60 分钟"
+    }
   },
   "compare": {
     "title": "雪场横向对比",
@@ -120,7 +153,7 @@
   },
   "resortsPage": {
     "title": "雪场一览",
-    "subtitle": "按列表查看所有雪场，并打开你感兴趣的详细页面。",
+    "subtitle": "查看雪场卡片，并点击进入详情页面。\n目前已收录 18 座雪场",
     "resortCount": "已收录 {count} 座雪场",
     "priceLabel": "单日券",
     "viewDetail": "查看雪场详情"

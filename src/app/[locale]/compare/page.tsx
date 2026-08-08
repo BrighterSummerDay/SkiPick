@@ -69,20 +69,13 @@ function ComparePageContent() {
   const tAsMetricFn = t as unknown as TFunction;
 
   return (
-    <div className="mx-8 mb-12">
-      {/* ── 标题区 ────────────────────────────────── */}
-      <div className="mb-6 flex items-end justify-between">
-        <div>
-          <h1 className="text-2xl font-black tracking-tight">{t("title")}</h1>
-          <p className="mt-1.5 text-sm text-ink-muted">
-            {t("subtitle", { max: MAX_SELECT })}
-          </p>
-        </div>
-      </div>
-
+    <div
+      id="compare-page-container"
+      className="mx-4 sm:mx-8 h-[calc(100vh-var(--header-offset)-44px)] pb-1 flex flex-col overflow-hidden"
+    >
       {/* ── 雪场选择器（横向） ─────────────────────── */}
-      <GlassCard className="p-4 mb-4" frost={false}>
-        <div className="flex flex-wrap gap-2">
+      <GlassCard className="p-3 sm:p-3.5 mb-2 sm:mb-2.5 shrink-0" frost={false}>
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {resorts.map((r) => {
             const active = selectedResorts.includes(r.slug);
             const disabled = !active && selectedResorts.length >= MAX_SELECT;
@@ -92,7 +85,7 @@ function ComparePageContent() {
                 onClick={() => toggleResort(r.slug)}
                 disabled={disabled}
                 className={clsx(
-                  "px-4 py-2 rounded-full text-sm transition-colors border",
+                  "px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm transition-colors border",
                   active
                     ? "bg-accent-ice text-white border-accent-ice"
                     : "bg-white/40 text-ink-muted border-transparent hover:bg-white/70",
@@ -107,11 +100,11 @@ function ComparePageContent() {
       </GlassCard>
 
       {/* ── 对比项选择器（纵向） ───────────────────── */}
-      <GlassCard className="p-4 mb-8" frost={false}>
-        <p className="text-xs font-semibold text-ink-muted mb-3 tracking-wide uppercase">
+      <GlassCard className="p-3.5 sm:p-4 mb-5 sm:mb-6" frost={false}>
+        <p className="text-xs font-semibold text-ink-muted mb-2.5 tracking-wide uppercase">
           {t("metricSectionTitle")}
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {ALL_METRICS.map((metric) => {
             const active = selectedMetrics.includes(metric.id);
             return (
@@ -119,7 +112,7 @@ function ComparePageContent() {
                 key={metric.id}
                 onClick={() => toggleMetric(metric.id)}
                 className={clsx(
-                  "px-3 py-1.5 rounded-full text-xs font-medium transition-all border",
+                  "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-medium transition-all border",
                   active
                     ? "bg-accent-ice/15 text-accent-ice border-accent-ice/40 shadow-sm"
                     : "bg-white/30 text-ink-muted border-transparent hover:bg-white/60"
@@ -139,69 +132,71 @@ function ComparePageContent() {
       ) : activeMetrics.length === 0 ? (
         <p className="text-sm text-ink-muted">{t("emptyMetrics")}</p>
       ) : (
-        <div
-          className="grid gap-5 justify-center"
-          style={{
-            gridTemplateColumns: `repeat(${activeResorts.length}, minmax(260px, 440px))`,
-          }}
-        >
-          {activeResorts.map((r) => (
-            <GlassCard key={r.slug} className="p-6 flex flex-col">
-              {/* ── 雪场名称 ── */}
-              <span className="text-xs text-ink-faint">{r.region}</span>
-              <h3 className="mt-1 text-lg font-black">{r.name}</h3>
+        <div className="overflow-x-auto pb-4 sm:pr-1">
+          <div
+            className="grid gap-3.5 sm:gap-5 justify-center min-w-[640px] sm:min-w-0 sm:pr-2"
+            style={{
+              gridTemplateColumns: `repeat(${activeResorts.length}, minmax(210px, 1fr))`,
+            }}
+          >
+            {activeResorts.map((r) => (
+              <GlassCard key={r.slug} className="p-4 sm:p-6 flex flex-col">
+                {/* ── 雪场名称 ── */}
+                <span className="text-xs text-ink-faint">{r.region}</span>
+                <h3 className="mt-1 text-lg font-black">{r.name}</h3>
 
-              {/* ── 动态渲染选中的对比项 ── */}
-              <div className="mt-4 flex flex-col">
-                {activeMetrics.map((metric) =>
-                  metric.isBlock ? (
-                    /* 难度条等大块项：不走标准行包裹 */
-                    <div key={metric.id} className="py-2.5 border-t border-white/60">
-                      <div className="flex flex-col gap-3">
-                        <div className="flex items-center justify-between gap-3">
-                          <span className="text-xs text-ink-muted block">
-                            {t(metric.labelKey as Parameters<typeof t>[0])}
-                          </span>
-                          {metric.id === "difficultyBar" ? (
-                            <div className="flex items-center gap-2 text-[10px] text-ink-muted">
-                              <DifficultyLegend
-                                labels={{
-                                  beginner: td("beginner"),
-                                  intermediate: td("intermediate"),
-                                  advanced: td("advanced"),
-                                }}
-                              />
-                            </div>
-                          ) : null}
+                {/* ── 动态渲染选中的对比项 ── */}
+                <div className="mt-4 flex flex-col">
+                  {activeMetrics.map((metric) =>
+                    metric.isBlock ? (
+                      /* 难度条等大块项：不走标准行包裹 */
+                      <div key={metric.id} className="py-2.5 border-t border-white/60">
+                        <div className="flex flex-col gap-3">
+                          <div className="flex items-center justify-between gap-3">
+                            <span className="text-xs text-ink-muted block">
+                              {t(metric.labelKey as Parameters<typeof t>[0])}
+                            </span>
+                            {metric.id === "difficultyBar" ? (
+                              <div className="flex items-center gap-2 text-[10px] text-ink-muted">
+                                <DifficultyLegend
+                                  labels={{
+                                    beginner: td("beginner"),
+                                    intermediate: td("intermediate"),
+                                    advanced: td("advanced"),
+                                  }}
+                                />
+                              </div>
+                            ) : null}
+                          </div>
+                          {metric.renderCell(r, tAsMetricFn)}
                         </div>
-                        {metric.renderCell(r, tAsMetricFn)}
                       </div>
-                    </div>
-                  ) : (
-                    /* 普通行 */
-                    <Row
-                      key={metric.id}
-                      label={t(metric.labelKey as Parameters<typeof t>[0])}
-                    >
-                      {metric.renderCell(r, tAsMetricFn)}
-                    </Row>
-                  )
-                )}
-              </div>
+                    ) : (
+                      /* 普通行 */
+                      <Row
+                        key={metric.id}
+                        label={t(metric.labelKey as Parameters<typeof t>[0])}
+                      >
+                        {metric.renderCell(r, tAsMetricFn)}
+                      </Row>
+                    )
+                  )}
+                </div>
 
-              {/* ── Tags ── */}
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {r.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-0.5 rounded-full bg-white/60 text-[10.5px] text-ink-muted"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </GlassCard>
-          ))}
+                {/* ── Tags ── */}
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {r.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 rounded-full bg-white/60 text-[10.5px] text-ink-muted"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </GlassCard>
+            ))}
+          </div>
         </div>
       )}
     </div>

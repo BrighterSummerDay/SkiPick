@@ -26,21 +26,21 @@ export default async function ResortDetailPage({
   if (!resort) notFound();
 
   return (
-    <div className="mx-auto mb-12 max-w-[1100px] px-8">
-      <div className="mx-auto flex max-w-[760px] flex-col gap-2 text-center">
+    <div className="mx-auto mb-8 sm:mb-12 max-w-[1100px] px-4 sm:px-8">
+      <div className="mx-auto flex max-w-[760px] flex-col gap-1.5 sm:gap-2 text-center">
         <span className="text-xs text-ink-faint">{resort.region}</span>
-        <h1 className="text-3xl font-black tracking-tight">{resort.name}</h1>
-        <p className="text-sm text-ink-faint">{resort.nameJa}</p>
+        <h1 className="text-2xl sm:text-3xl font-black tracking-tight">{resort.name}</h1>
+        <p className="text-xs sm:text-sm text-ink-faint">{resort.nameJa}</p>
       </div>
 
-      <div className="mx-auto mt-8 max-w-[760px] text-center">
-        <p className="text-[15px] leading-relaxed text-ink-muted">
+      <div className="mx-auto mt-4 sm:mt-6 max-w-[760px] text-center">
+        <p className="text-xs sm:text-[15px] leading-relaxed text-ink-muted">
           {resort.summary}
         </p>
       </div>
 
       {/* 小标签 */}
-      <div className="mt-10 flex flex-wrap gap-2 justify-center">
+      <div className="mt-6 sm:mt-8 flex flex-wrap gap-1.5 sm:gap-2 justify-center">
         {resort.tags.map((tag) => (
           <span key={tag} className="px-3 py-1 rounded-full bg-accent-ice/10 text-[11px] text-accent-ice">
             {tag}
@@ -49,20 +49,20 @@ export default async function ResortDetailPage({
       </div>
 
       {/* 加入雪场对比 */}
-      <div className="mt-10 flex justify-center">
+      <div className="mt-6 sm:mt-8 flex justify-center">
         <Link
           href="/compare"
-          className="inline-flex items-center justify-center rounded-full border border-accent-ice/20 bg-white/10 px-6 py-3 text-sm font-medium text-accent-ice hover:bg-accent-ice hover:text-white transition-colors"
+          className="inline-flex items-center justify-center rounded-full border border-accent-ice/20 bg-white/10 px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium text-accent-ice hover:bg-accent-ice hover:text-white transition-colors"
         >
           {t("addToCompare")}
         </Link>
       </div>
 
-      <br/>
+      <div className="my-6">
+        <SnowDivider label="Overview" />
+      </div>
 
-      <SnowDivider label="Overview" />
-
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-4 lg:gap-5 mt-8">
+      <div className="grid grid-cols-2 gap-3.5 sm:gap-5 lg:grid-cols-4 mt-6">
         <MetricCard label={t("metricBasePrice")} value={`¥${resort.basePrice.toLocaleString()}`} />
         <MetricCard
           label={t("metricTravel")}

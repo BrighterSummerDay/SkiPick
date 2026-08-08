@@ -1,14 +1,48 @@
-import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 
-export async function Navbar() {
-  const t = await getTranslations("nav");
+export function Navbar() {
+  const tNav = useTranslations("nav");
+  const tMap = useTranslations("map");
+  const tCompare = useTranslations("compare");
+  const tResorts = useTranslations("resortsPage");
+  const tNews = useTranslations("news");
+  const pathname = usePathname();
+
+  const navItems = [
+    {
+      href: "/map",
+      label: tNav("map"),
+      subtitle: tMap("subtitle"),
+      isActive: pathname.startsWith("/map"),
+    },
+    {
+      href: "/compare",
+      label: tNav("compare"),
+      subtitle: tCompare("subtitle", { max: 4 }),
+      isActive: pathname.startsWith("/compare"),
+    },
+    {
+      href: "/resorts",
+      label: tNav("resorts"),
+      subtitle: tResorts("subtitle"),
+      isActive: pathname.startsWith("/resorts"),
+    },
+    {
+      href: "/news",
+      label: tNav("news"),
+      subtitle: tNews("pageSubtitle"),
+      isActive: pathname.startsWith("/news"),
+    },
+  ];
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      <div className="mx-auto max-w-[1040px] px-8 pt-5">
-        <div className="glass-strong rounded-2xl px-6 h-16 flex items-center justify-between shadow-[0_10px_40px_-20px_rgba(30,91,163,0.35)]">
+      <div className="mx-auto max-w-[1040px] px-4 sm:px-6 pt-3">
+        <div className="glass-strong rounded-2xl px-4 sm:px-6 h-14 flex items-center justify-between shadow-[0_10px_40px_-20px_rgba(30,91,163,0.35)]">
 
           {/* ── Logo ──────────────────────────────── */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
@@ -21,7 +55,7 @@ export async function Navbar() {
               </g>
             </svg>
             <span className="text-[17px] font-bold tracking-tight">
-              {t("brand")}
+              {tNav("brand")}
             </span>
           </Link>
 
@@ -29,49 +63,49 @@ export async function Navbar() {
           <div className="w-px h-5 bg-white/30 mx-4 shrink-0" />
 
           {/* ── 导航项（靠左） ───────────────────── */}
-          <nav className="flex items-center gap-0.5 flex-1">
-            <Link
-              href="/map"
-              className="group relative px-4 py-2 rounded-full text-sm font-medium text-ink-muted transition-all duration-200 hover:text-ink"
-            >
-              {/* hover 背景填充 */}
-              <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/60 transition-all duration-200" />
-              {/* hover 底部线条 */}
-              <span className="absolute bottom-1 left-4 right-4 h-[1.5px] rounded-full bg-accent-ice scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
-              <span className="relative">{t("map")}</span>
-            </Link>
+          <nav className="flex items-center gap-1 sm:gap-1.5 flex-1">
+            {navItems.map((item) => (
+              <div key={item.href} className="group relative">
+                <Link
+                  href={item.href}
+                  className={`relative flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+                    item.isActive
+                      ? "text-accent-ice font-bold bg-white/80 shadow-sm"
+                      : "text-ink-muted hover:text-ink"
+                  }`}
+                >
+                  {/* hover / active 背景填充 */}
+                  <span
+                    className={`absolute inset-0 rounded-full transition-all duration-200 ${
+                      item.isActive
+                        ? "bg-white/80"
+                        : "bg-white/0 group-hover:bg-white/60"
+                    }`}
+                  />
+                  {/* hover / active 底部线条 */}
+                  <span
+                    className={`absolute bottom-1 left-3.5 right-3.5 sm:left-4 sm:right-4 h-[2px] rounded-full bg-accent-ice transition-transform duration-200 origin-left ${
+                      item.isActive
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100"
+                    }`}
+                  />
+                  <span className="relative z-10 flex items-center gap-1">
+                    {item.isActive && (
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent-ice animate-pulse" />
+                    )}
+                    {item.label}
+                  </span>
+                </Link>
 
-            <Link
-              href="/compare"
-              className="group relative px-4 py-2 rounded-full text-sm font-medium text-ink-muted transition-all duration-200 hover:text-ink"
-            >
-              <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/60 transition-all duration-200" />
-              <span className="absolute bottom-1 left-4 right-4 h-[1.5px] rounded-full bg-accent-ice scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
-              <span className="relative">{t("compare")}</span>
-            </Link>
-
-            <Link
-              href="/resorts"
-              className="group relative px-4 py-2 rounded-full text-sm font-medium text-ink-muted transition-all duration-200 hover:text-ink"
-            >
-              <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/60 transition-all duration-200" />
-              <span className="absolute bottom-1 left-4 right-4 h-[1.5px] rounded-full bg-accent-ice scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
-              <span className="relative">{t("resorts")}</span>
-            </Link>
-
-            <Link
-              href="/news"
-              className="group relative px-4 py-2 rounded-full text-sm font-medium text-ink-muted transition-all duration-200 hover:text-ink"
-            >
-              <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/60 transition-all duration-200" />
-              <span className="absolute bottom-1 left-4 right-4 h-[1.5px] rounded-full bg-accent-ice scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
-              <span className="relative">{t("news")}</span>
-            </Link>
-
-            {/* 更多功能 — 不可点击 */}
-            {/* <span className="group relative flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium text-ink-faint cursor-not-allowed select-none">
-              <span className="relative">{t("comingSoon")}</span>
-            </span> */}
+                {/* ── Hover 悬停说明 Popover Tooltip ─────────────────── */}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2.5 z-50 pointer-events-none opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200 w-max max-w-[260px] sm:max-w-[320px]">
+                  <div className="glass-strong rounded-xl px-3.5 py-2 text-xs leading-relaxed text-ink-muted shadow-xl border border-white/70 text-center whitespace-pre-line">
+                    {item.subtitle}
+                  </div>
+                </div>
+              </div>
+            ))}
           </nav>
 
           {/* ── 语言切换（靠右） ─────────────────── */}

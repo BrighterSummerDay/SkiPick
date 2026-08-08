@@ -77,7 +77,7 @@
   },
   "map": {
     "title": "Resort Map",
-    "subtitle": "Click a shaded area on the map to see resort details. Departure point is fixed to Tokyo Station.",
+    "subtitle": "Click a shaded area on the map to see resort details.",
     "statBasePrice": "Day pass",
     "statTravel": "From Tokyo",
     "statShinkansen": "Shinkansen {min} min",
@@ -87,7 +87,40 @@
     "statVertical": "Vertical drop",
     "viewDetail": "View full details",
     "compareResort": "Compare this resort",
-    "emptyHint": "Click a resort on the map to see details"
+    "emptyHint": "Click to see details",
+    "backToOverview": "Back to overview",
+    "backToRegion": "Back to region",
+    "regionBadge": "Region Overview",
+    "resortCountLabel": "Resort Count",
+    "travelLabel": "From Tokyo",
+    "priceRangeLabel": "Day Pass Range",
+    "resortsInRegionTitle": "Resorts in Region",
+    "compareRegionResorts": "Compare Region Resorts"
+  },
+  "regions": {
+    "echigo-yuzawa": "Echigo-Yuzawa",
+    "numata-katashina": "Numata/Katashina",
+    "karuizawa": "Karuizawa"
+  },
+  "regionDetails": {
+    "echigo-yuzawa": {
+      "title": "Echigo-Yuzawa",
+      "summary": "Directly connected to Tokyo via Shinkansen. A premier ski hub packed with top destinations like GALA Yuzawa and Naeba, with fantastic hot springs.",
+      "tags": ["Direct Shinkansen", "Onsen Town", "High Density", "Weekend Trip"],
+      "travelInfo": "70-80 min by Shinkansen"
+    },
+    "numata-katashina": {
+      "title": "Numata / Katashina",
+      "summary": "Located in northern Gunma Prefecture, highly accessible by car. Renowned for natural powder snow and terrain variety like Kawaba and Oze Iwakura.",
+      "tags": ["Natural Powder", "Diverse Terrain", "Great by Car", "Family Friendly"],
+      "travelInfo": "120-150 min by car"
+    },
+    "karuizawa": {
+      "title": "Karuizawa",
+      "summary": "Just 1 hour from Tokyo by Shinkansen with early-season artificial snow setup. Features a massive luxury outlet mall and resort hotels, perfect for beginners and vacationers.",
+      "tags": ["1hr Shinkansen", "Outlet Mall", "Early Season", "Beginner Friendly"],
+      "travelInfo": "60 min by Shinkansen"
+    }
   },
   "compare": {
     "title": "Compare",
@@ -107,20 +140,20 @@
     "rowVertical": "Vertical drop",
     "rowTop": "Summit elevation",
     "metrics": {
-      "basePrice":     "Day pass",
-      "seasonPass":    "Season pass",
-      "vertical":      "Vertical drop",
-      "topElevation":  "Summit elevation",
-      "travel":        "Travel from Tokyo",
-      "car":           "Car travel",
-      "courses":       "Runs",
-      "lifts":         "Lifts / gondolas",
+      "basePrice": "Day pass",
+      "seasonPass": "Season pass",
+      "vertical": "Vertical drop",
+      "topElevation": "Summit elevation",
+      "travel": "Travel from Tokyo",
+      "car": "Car travel",
+      "courses": "Runs",
+      "lifts": "Lifts / gondolas",
       "difficultyBar": "Difficulty mix"
     }
   },
   "resortsPage": {
     "title": "Resort Guide",
-    "subtitle": "Browse all resorts in one list and open the detail page for the ones you want.",
+    "subtitle": "Browse resorts in one view and open detailed pages.\nCurrent ski resorts: 18",
     "resortCount": "{count} resorts listed",
     "priceLabel": "Day pass",
     "viewDetail": "View details"

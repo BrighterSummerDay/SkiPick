@@ -10,19 +10,10 @@ export default async function ResortsPage() {
   ]);
 
   return (
-    <div className="mx-8 mb-12">
-      <div className="mb-6">
-        <h1 className="text-2xl font-black tracking-tight">{t("title")}</h1>
-        <p className="mt-1.5 text-sm text-ink-muted">{t("subtitle")}</p>
-      </div>
-
-      <p className="mb-6 text-sm text-ink-muted">
-        {t("resortCount", { count: resorts.length })}
-      </p>
-
-      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3 items-stretch">
+    <div className="mx-4 sm:mx-8 mb-8 sm:mb-12">
+      <div className="grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {resorts.map((resort) => (
-          <GlassCard key={resort.slug} className="p-6 flex h-full flex-col">
+          <GlassCard key={resort.slug} className="p-5 sm:p-6 flex h-full flex-col">
             <div className="flex-1">
               <div className="flex items-start justify-between gap-4">
                 <div>

@@ -4,6 +4,8 @@ export interface Resort {
   slug: string;
   /** 雪场的日文原名，作为固定参考信息，不随界面语言切换 */
   nameJa: string;
+  /** 所属的地图大区域 id，对应 regions.ts 里的 REGIONS */
+  regionId: string;
   lat: number;
   lng: number;
   /** 粗略区域轮廓，占位数据。后续应替换为实地描绘的真实雪场边界 GeoJSON。 */

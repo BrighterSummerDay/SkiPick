@@ -1,11 +1,8 @@
 /**
- * 地图底图样式来源
+ * 地图底图样式
  *
-* 默认优先使用 MapTiler 的 Terrain Winter 样式，适合雪场地图展示。
- * 前往 https://cloud.maptiler.com/ 注册免费账号获取 key 后，写入 .env.local:
- *   NEXT_PUBLIC_MAPTILER_KEY=你的key
- *
- * 未配置 key 时，自动回退到 OpenFreeMap 的 Positron 样式（免费可用）。
+* 默认优先使用 MapTiler Winter 样式，适合雪场地图展示
+ * 未配置 Api key 时，自动回退到 OpenFreeMap 的 Positron 样式（免费可用）
  */
  export function getMapStyleUrl(): string {
    const key = process.env.NEXT_PUBLIC_MAPTILER_KEY;

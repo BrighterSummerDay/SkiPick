@@ -64,7 +64,7 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col antialiased">
         <NextIntlClientProvider>
           <Navbar />
-          <main className="flex-1" style={{ paddingTop: "var(--header-offset)" }}>{children}</main>
+          <main className="flex-1 flex flex-col min-h-0" style={{ paddingTop: "var(--header-offset)" }}>{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

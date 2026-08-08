@@ -2,11 +2,11 @@
 @import "maplibre-gl/dist/maplibre-gl.css";
 
 :root {
-  --bg: #f7fafd;
-  --bg-deep: #eef4fa;
-  --surface-glass: rgba(255, 255, 255, 0.55);
-  --surface-glass-strong: rgba(255, 255, 255, 0.75);
-  --border-glass: rgba(255, 255, 255, 0.6);
+  --bg: #e4effa;
+  --bg-deep: #d6e6f5;
+  --surface-glass: rgba(255, 255, 255, 0.72);
+  --surface-glass-strong: rgba(255, 255, 255, 0.88);
+  --border-glass: rgba(255, 255, 255, 0.85);
   --ink: #101826;
   --ink-muted: #57657a;
   --ink-faint: #8b96a8;
@@ -36,12 +36,12 @@ html {
 
 body {
   background:
-    radial-gradient(ellipse 60% 40% at 15% -10%, rgba(169, 214, 245, 0.35), transparent),
-    radial-gradient(ellipse 50% 35% at 100% 0%, rgba(46, 125, 209, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 15% -10%, rgba(169, 214, 245, 0.45), transparent),
+    radial-gradient(ellipse 50% 35% at 100% 0%, rgba(46, 125, 209, 0.18), transparent),
     var(--bg);
   color: var(--ink);
   font-family: var(--font-noto-sc), "Noto Sans SC", sans-serif;
-  min-width: 1180px;
+  min-width: 320px;
 }
 
 /* 日语环境切换到 Noto Sans JP，汉字字形更符合日文习惯 */
@@ -59,6 +59,7 @@ html[lang="ja"] body {
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border: 1px solid var(--border-glass);
+  box-shadow: 0 4px 20px -5px rgba(30, 91, 163, 0.08);
 }
 
 .glass-strong {
@@ -66,6 +67,7 @@ html[lang="ja"] body {
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 30px -10px rgba(30, 91, 163, 0.12);
 }
 
 /* 结晶光泽边框，用于卡片hover，模拟结霜 */
@@ -103,6 +105,12 @@ html[lang="ja"] body {
   color: var(--ink);
 }
 
+/* 精致内嵌型浮动滚动条 Design System */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(46, 125, 209, 0.35) transparent;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -110,21 +118,36 @@ html[lang="ja"] body {
 
 ::-webkit-scrollbar-track {
   background: transparent;
+  margin-block: 8px;
+  margin-inline: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(46, 125, 209, 0.25);
-  border-radius: 999px;
+  background-color: rgba(46, 125, 209, 0.35);
+  border-radius: 9999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(46, 125, 209, 0.65);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .maplibregl-ctrl-attrib {
   font-size: 10px;
 }
 
-/* 顶部内容遮罩：0-50px 完全遮挡，50-130px 渐隐，header 高度为 104px */
+/* 顶部内容遮罩：0-40px 完全遮挡，40-100px 渐隐，header 高度为 78px */
 :root {
-  --header-offset: 104px; /* 保持和实际 header 一致，用于 main 顶部内边距 */
-  --header-mask-height: 130px; /* 遮罩实际高度：0-50px 全不显示，50-130px 渐隐 */
+  --header-offset: 78px;
+  /* 保持和实际 header 一致，用于 main 顶部内边距 */
+  --header-mask-height: 100px;
+  /* 遮罩实际高度：0-40px 全不显示，40-100px 渐隐 */
 }
 
 main::before {
@@ -135,13 +158,25 @@ main::before {
   top: 0;
   height: var(--header-mask-height);
   pointer-events: none;
-  z-index: 45; /* 放在内容之上，但低于导航的 z-50 */
-  /* 顶部 0-50px 为页面背景色，完全遮挡下方内容；50-130px 渐隐到透明 */
-  /* 使用浅蓝色（--bg-deep）代替白色，以避免看上去“过白” */
+  z-index: 45;
+  /* 放在内容之上，但低于导航的 z-50 */
+  /* 顶部 0-40px 为页面背景色，完全遮挡下方内容；40-100px 渐隐到透明 */
   background: linear-gradient(180deg,
-    rgba(238,244,250,1) 0px,   /* #eef4fa == --bg-deep */
-    rgba(238,244,250,1) 50px,
-    rgba(238,244,250,0.65) 80px,
-    rgba(238,244,250,0) 130px
-  );
+      rgba(214, 230, 245, 1) 0px,
+      /* #d6e6f5 == --bg-deep */
+      rgba(214, 230, 245, 1) 40px,
+      rgba(214, 230, 245, 0.65) 70px,
+      rgba(214, 230, 245, 0) 100px);
+}
+
+/* 工具页面（地图探索页 #map-page-container、雪场对比页 #compare-page-container）专属：
+   锁定 100vh 弹性视口，保留精致 Footer，消除整体页面滚动条 */
+@media (min-height: 520px) {
+  body:has(#map-page-container),
+  body:has(#compare-page-container) {
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 }

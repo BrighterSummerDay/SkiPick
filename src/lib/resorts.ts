@@ -4,6 +4,7 @@ export const resorts: Resort[] = [
   {
     slug: "gala-yuzawa",
     nameJa: "ガーラ湯沢スキー場",
+    regionId: "echigo-yuzawa",
     lat: 36.9308,
     lng: 138.8058,
     areaPolygon: [
@@ -19,6 +20,7 @@ export const resorts: Resort[] = [
   {
     slug: "naeba",
     nameJa: "苗場スキー場",
+    regionId: "echigo-yuzawa",
     lat: 36.8283,
     lng: 138.7761,
     areaPolygon: [
@@ -34,6 +36,7 @@ export const resorts: Resort[] = [
   {
     slug: "kagura",
     nameJa: "かぐらスキー場",
+    regionId: "echigo-yuzawa",
     lat: 36.8494,
     lng: 138.7503,
     areaPolygon: [
@@ -49,6 +52,7 @@ export const resorts: Resort[] = [
   {
     slug: "kawaba",
     nameJa: "川場スキー場",
+    regionId: "numata-katashina",
     lat: 36.7981,
     lng: 139.1044,
     areaPolygon: [
@@ -64,6 +68,7 @@ export const resorts: Resort[] = [
   {
     slug: "oze-iwakura",
     nameJa: "尾瀬岩鞍スキー場",
+    regionId: "numata-katashina",
     lat: 36.8156,
     lng: 139.1719,
     areaPolygon: [
@@ -79,6 +84,7 @@ export const resorts: Resort[] = [
   {
     slug: "karuizawa-prince",
     nameJa: "軽井沢プリンスホテルスキー場",
+    regionId: "karuizawa",
     lat: 36.3489,
     lng: 138.6103,
     areaPolygon: [
@@ -94,6 +100,7 @@ export const resorts: Resort[] = [
   {
     slug: "kandatsu",
     nameJa: "神立スノーリゾート",
+    regionId: "echigo-yuzawa",
     lat: 36.9152,
     lng: 138.8358,
     areaPolygon: [
@@ -109,6 +116,7 @@ export const resorts: Resort[] = [
   {
     slug: "iwappara",
     nameJa: "岩原スキー場",
+    regionId: "echigo-yuzawa",
     lat: 36.9388,
     lng: 138.8265,
     areaPolygon: [
@@ -124,6 +132,7 @@ export const resorts: Resort[] = [
   {
     slug: "yuzawa-park",
     nameJa: "湯沢パークスキー場",
+    regionId: "echigo-yuzawa",
     lat: 36.9242,
     lng: 138.8435,
     areaPolygon: [
@@ -139,6 +148,7 @@ export const resorts: Resort[] = [
   {
     slug: "yuzawa-nakazato",
     nameJa: "湯沢中里スノーリゾート",
+    regionId: "echigo-yuzawa",
     lat: 36.9175,
     lng: 138.8505,
     areaPolygon: [
@@ -154,6 +164,7 @@ export const resorts: Resort[] = [
   {
     slug: "yuzawa-kogen",
     nameJa: "湯沢高原スキー場",
+    regionId: "echigo-yuzawa",
     lat: 36.9385,
     lng: 138.8025,
     areaPolygon: [
@@ -169,6 +180,7 @@ export const resorts: Resort[] = [
   {
     slug: "naspa-ski-garden",
     nameJa: "NASPAスキーガーデン",
+    regionId: "echigo-yuzawa",
     lat: 36.9332,
     lng: 138.8128,
     areaPolygon: [
@@ -184,6 +196,7 @@ export const resorts: Resort[] = [
   {
     slug: "ishiuchi-maruyama",
     nameJa: "石打丸山スキー場",
+    regionId: "echigo-yuzawa",
     lat: 36.9602,
     lng: 138.8028,
     areaPolygon: [
@@ -199,6 +212,7 @@ export const resorts: Resort[] = [
   {
     slug: "maiko",
     nameJa: "舞子スノーリゾート",
+    regionId: "echigo-yuzawa",
     lat: 36.9855,
     lng: 138.8185,
     areaPolygon: [
@@ -214,6 +228,7 @@ export const resorts: Resort[] = [
   {
     slug: "joetsu-kokusai",
     nameJa: "上越国際スキー場",
+    regionId: "echigo-yuzawa",
     lat: 37.0185,
     lng: 138.8258,
     areaPolygon: [
@@ -229,6 +244,7 @@ export const resorts: Resort[] = [
   {
     slug: "hakkaisan",
     nameJa: "六日町八海山スキー場",
+    regionId: "echigo-yuzawa",
     lat: 37.1125,
     lng: 138.9385,
     areaPolygon: [
@@ -244,6 +260,7 @@ export const resorts: Resort[] = [
   {
     slug: "itsukamachi",
     nameJa: "五日町スキー場",
+    regionId: "echigo-yuzawa",
     lat: 37.1265,
     lng: 138.9055,
     areaPolygon: [
@@ -259,6 +276,7 @@ export const resorts: Resort[] = [
   {
     slug: "muika",
     nameJa: "ムイカスノーリゾート",
+    regionId: "echigo-yuzawa",
     lat: 37.0685,
     lng: 138.8885,
     areaPolygon: [

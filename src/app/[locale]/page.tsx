@@ -1,67 +1,21 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { ResortMap } from "@/components/ResortMap";
+import { HomeHero } from "@/components/HomeHero";
 import { GlassCard } from "@/components/GlassCard";
 import { SnowDivider } from "@/components/SnowDivider";
-import { getLocalizedResorts } from "@/lib/getLocalizedResorts";
 import { getLocalizedNews } from "@/lib/getLocalizedNews";
 
 export default async function Home() {
-  const [t, resorts, news] = await Promise.all([
+  const [t, news] = await Promise.all([
     getTranslations("home"),
-    getLocalizedResorts(),
     getLocalizedNews(),
   ]);
-  const featured = resorts.slice(0, 3);
   const latestNews = news.slice(0, 3);
-  const names = Object.fromEntries(resorts.map((r) => [r.slug, r.name]));
 
   return (
-    <div className="px-8">
-      {/* Hero */}
-      <section className="relative h-[640px] rounded-[32px] overflow-hidden">
-        <ResortMap names={names} />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[var(--bg)]/70 via-transparent to-transparent" />
-
-        <div className="absolute left-10 top-10 max-w-[520px] pointer-events-auto">
-          <GlassCard strong className="p-8" frost={false}>
-            <span className="font-data text-xs tracking-[0.25em] uppercase text-accent-ice">
-              {t("eyebrow")}
-            </span>
-            <h1 className="mt-3 text-[34px] leading-[1.25] font-black tracking-tight">
-              {t("titleLine1")}
-              <br />
-              {t("titleLine2")}
-            </h1>
-            <p className="mt-4 text-[15px] leading-relaxed text-ink-muted whitespace-pre-wrap">
-              {t("subtitle")}
-            </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <Link
-                href="/compare"
-                className="px-5 py-2.5 rounded-full text-sm font-medium text-accent-ice border border-accent-ice/20 bg-white/10 hover:bg-accent-ice hover:text-white transition-colors"
-              >
-                {t("ctaCompare")}
-              </Link>
-              <Link
-                href="/map"
-                className="px-5 py-2.5 rounded-full text-sm font-medium text-accent-ice border border-accent-ice/20 bg-white/10 hover:bg-accent-ice hover:text-white transition-colors"
-              >
-                {t("ctaMap")}
-              </Link>
-              <Link
-                href="/resorts"
-                className="px-5 py-2.5 rounded-full text-sm font-medium text-accent-ice border border-accent-ice/20 bg-white/10 hover:bg-accent-ice hover:text-white transition-colors"
-              >
-                {t("ctaResorts")}
-              </Link>
-            </div>
-          </GlassCard>
-        </div>
-
-
-      </section>
+    <div className="px-4 sm:px-8">
+      {/* Hero 模块：带交互地图、右上角避让按钮以及右侧雪场详情抽屉 */}
+      <HomeHero />
 
       {/* 最新消息 */}
       <section className="mx-auto max-w-[1040px] px-8 mb-12">
@@ -95,9 +49,9 @@ export default async function Home() {
       </section>
 
       {/* 功能三件套 */}
-      <section className="mt-20">
+      <section className="mt-12 sm:mt-16">
         <SnowDivider label={t("howItWorks")} />
-        <div className="mt-10 grid grid-cols-3 gap-6">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           <FeatureCard
             index={t("feature1Index")}
             title={t("feature1Title")}
