@@ -346,6 +346,29 @@ export function ResortMap({
         const slug = f?.properties?.slug as string | undefined;
         if (slug && onSelect) onSelect(slug);
       });
+
+      // 初始化地图状态（若挂载时已有 selectedSlug 或 activeRegion）
+      const initialRegion = selectedSlug
+        ? resorts.find((r) => r.slug === selectedSlug)?.regionId ?? activeRegion
+        : activeRegion;
+      if (initialRegion) {
+        applyRegionFilter(map, initialRegion);
+        setRegionLayersVisible(map, false);
+      }
+      if (selectedSlug) {
+        const resort = resorts.find((r) => r.slug === selectedSlug);
+        if (resort) {
+          const center = getAreaCentroid(resort.areaPolygon);
+          const region = getRegionById(resort.regionId);
+          const targetZoom = region ? Math.max(region.zoom + 1.8, 12.5) : 12.5;
+          map.jumpTo({ center, zoom: targetZoom });
+        }
+      } else if (activeRegion) {
+        const region = getRegionById(activeRegion);
+        if (region) {
+          map.jumpTo({ center: region.center, zoom: region.zoom });
+        }
+      }
     });
 
     const resizeObserver = new ResizeObserver(() => {
@@ -432,15 +455,17 @@ export function ResortMap({
         if (resort.regionId !== activeRegion) {
           setInternalActiveRegion(resort.regionId);
           onRegionSelect?.(resort.regionId);
-          applyRegionFilter(map, resort.regionId);
-          setRegionLayersVisible(map, false);
         }
+        applyRegionFilter(map, resort.regionId);
+        setRegionLayersVisible(map, false);
         const center = getAreaCentroid(resort.areaPolygon);
         const region = getRegionById(resort.regionId);
         const targetZoom = region ? Math.max(region.zoom + 1.8, 12.5) : 12.5;
         map.flyTo({ center, zoom: targetZoom, duration: 1200 });
       }
     } else if (activeRegionProp) {
+      applyRegionFilter(map, activeRegionProp);
+      setRegionLayersVisible(map, false);
       const region = getRegionById(activeRegionProp);
       if (region) {
         map.flyTo({ center: region.center, zoom: region.zoom, duration: 1200 });
@@ -464,8 +489,8 @@ export function ResortMap({
         <button
           onClick={handleBackClick}
           className={`absolute z-10 flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full glass-strong text-xs sm:text-sm font-medium text-ink hover:bg-white/80 transition-colors shadow-[0_10px_30px_-16px_rgba(30,91,163,0.45)] ${backButtonPosition === "hero-right"
-              ? "top-4 left-[396px] sm:top-6 sm:left-[476px] lg:top-8 lg:left-[504px]"
-              : "top-4 left-4"
+            ? "top-4 left-[396px] sm:top-6 sm:left-[476px] lg:top-8 lg:left-[504px]"
+            : "top-4 left-4"
             }`}
         >
           ← {selectedSlug ? backToRegionLabel : backLabel}
