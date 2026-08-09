@@ -79,16 +79,16 @@ export function HomeHero() {
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:gap-3">
             <Link
-              href="/compare"
-              className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-accent-ice border border-accent-ice/20 bg-white/10 hover:bg-accent-ice hover:text-white transition-colors"
-            >
-              {t("ctaCompare")}
-            </Link>
-            <Link
               href="/map"
               className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-accent-ice border border-accent-ice/20 bg-white/10 hover:bg-accent-ice hover:text-white transition-colors"
             >
               {t("ctaMap")}
+            </Link>
+            <Link
+              href="/compare"
+              className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-accent-ice border border-accent-ice/20 bg-white/10 hover:bg-accent-ice hover:text-white transition-colors"
+            >
+              {t("ctaCompare")}
             </Link>
             <Link
               href="/resorts"
