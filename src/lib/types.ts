@@ -8,8 +8,8 @@ export interface Resort {
   regionId: string;
   lat: number;
   lng: number;
-  /** 粗略区域轮廓，占位数据。后续应替换为实地描绘的真实雪场边界 GeoJSON。 */
-  areaPolygon: [number, number][];
+  /** 雪场轮廓（支持单多边形或 MultiPolygon 数组） */
+  areaPolygon: [number, number][] | [number, number][][];
   basePrice: number; // 单日券，日元
   seasonPassPrice: number; // season pass，日元
   courses: {

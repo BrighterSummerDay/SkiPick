@@ -101,6 +101,7 @@
     "echigo-yuzawa": "Echigo-Yuzawa & Chuetsu",
     "gunma-tochigi": "Gunma / Tochigi",
     "joshinetsu": "Joshinetsu Kogen",
+    "shiga-nozawa": "Shiga & Nozawa",
     "hakuba": "Hakuba Valley"
   },
   "regionDetails": {
@@ -136,6 +137,17 @@
         "Luxury Resorts"
       ],
       "travelInfo": "60-80 min by Shinkansen"
+    },
+    "shiga-nozawa": {
+      "title": "Shiga & Nozawa",
+      "summary": "Home to Japan's largest unified ski resort Shiga Kogen, historic Nozawa Onsen, tree-run powder haven Madarao, and Ryuo SORA Terrace — the pinnacle of Nagano powder & hot springs.",
+      "tags": [
+        "Japan's largest area",
+        "Nozawa Onsen village",
+        "Tree run haven",
+        "SORA Cloud Terrace"
+      ],
+      "travelInfo": "Shinkansen ~90-110 min"
     },
     "hakuba": {
       "title": "Hakuba Valley",
@@ -190,7 +202,7 @@
   },
   "resortsPage": {
     "title": "Resort Guide",
-    "subtitle": "Browse resorts in one view and open detailed pages.\nCurrent ski resorts: 33",
+    "subtitle": "Browse resorts in one view.\nCurrent ski resorts: {count}",
     "resortCount": "{count} resorts listed",
     "priceLabel": "Day pass",
     "viewDetail": "View details"
@@ -548,6 +560,206 @@
         "Olympic venue",
         "1000m Vertical",
         "Long steep runs"
+      ]
+    },
+    "sugadaira-kogen": {
+      "name": "Sugadaira Kogen Snow Resort",
+      "region": "Joshinetsu Kogen",
+      "summary": "Located in one of Honshu's coldest plateaus, famous for diamond dust and fast, perfectly groomed hard-pack snow. Offers 60 courses across three peaks.",
+      "tags": [
+        "Huge resort",
+        "Ultra cold snow",
+        "Groomer paradise"
+      ]
+    },
+    "palcall-tsumagoi": {
+      "name": "Palcall Tsumagoi Resort",
+      "region": "Joshinetsu Kogen",
+      "summary": "Home to Kanto's longest gondola (3,193m) with a summit elevation of 2,050m. Famous for 6:00 AM Sunrise Skiing on pristine morning groomers.",
+      "tags": [
+        "Longest Gondola",
+        "Sunrise Skiing",
+        "High Altitude 2000m+"
+      ]
+    },
+    "manza-onsen": {
+      "name": "Manza Onsen Ski Resort",
+      "region": "Joshinetsu Kogen",
+      "summary": "Operated by Prince Hotels. Situated at over 1,800m elevation, offering exquisite powder snow paired with famous rich milky-white sulfur hot springs.",
+      "tags": [
+        "High Altitude Powder",
+        "Famous Sulfur Onsen",
+        "Prince Hotels"
+      ]
+    },
+    "kusatsu-onsen": {
+      "name": "Kusatsu Onsen Ski Resort",
+      "region": "Joshinetsu Kogen",
+      "summary": "Located right next to Kusatsu Onsen town. Features modern Pulse Gondola and Tenguyama slopes, combining skiing with famous hot spring walks.",
+      "tags": [
+        "Kusatsu Onsen direct",
+        "Pulse Gondola",
+        "Hot Spring Village"
+      ]
+    },
+    "kazawa-snow-area": {
+      "name": "Kazawa Snow Area",
+      "region": "Joshinetsu Kogen",
+      "summary": "Renowned for its early season opening in late November and firm, high-quality groomed snow ideal for race training and early-season skiing.",
+      "tags": [
+        "Early Season Open",
+        "Race Training Grounds",
+        "High Sunny Rate"
+      ]
+    },
+    "minenohara-kogen": {
+      "name": "Minenohara Kogen Ski Resort (Ninja Snow Highland)",
+      "region": "Joshinetsu Kogen",
+      "summary": "Cozy resort at 1,500m elevation offering breathtaking North Alps panoramas (renaming back to Minenohara Kogen). Family friendly with great kids park.",
+      "tags": [
+        "North Alps Panorama",
+        "Kids & Family Park",
+        "High Altitude Snow"
+      ]
+    },
+    "yunomaru": {
+      "name": "Yunomaru Ski Area",
+      "region": "Joshinetsu Kogen",
+      "summary": "Known as the closest powder snow resort to the Tokyo metro area, sitting at 1,700m elevation with high sunny rates and crisp dry powder.",
+      "tags": [
+        "Closest Tokyo Powder",
+        "1700m Elevation",
+        "High Sunny Days"
+      ]
+    },
+    "saku-parada": {
+      "name": "Saku Ski Garden Parada",
+      "region": "Joshinetsu Kogen",
+      "summary": "Japan's only expressway PA-connected ski resort, accessible via escalator directly from Sakudaira PA without driving on local roads.",
+      "tags": [
+        "Expressway PA direct",
+        "Zero local road driving",
+        "Family Heaven"
+      ]
+    },
+    "karuizawa-snow-park": {
+      "name": "Karuizawa Snow Park",
+      "region": "Joshinetsu Kogen",
+      "summary": "A dedicated family and kids snow park in North Karuizawa featuring large scale snow play areas, gentle beginner slopes, and dog parks.",
+      "tags": [
+        "North Karuizawa Family",
+        "Kids Snow Park",
+        "Pet Friendly"
+      ]
+    },
+    "takamine-mountain-park": {
+      "name": "Takamine Mountain Park",
+      "region": "Joshinetsu Kogen",
+      "summary": "Formerly Asama 2000 Park. Base elevation of 1,880m and peak at 2,050m. Famous among carving enthusiasts for hard-pack groomed racing quality snow.",
+      "tags": [
+        "2000m High Altitude",
+        "Carving Heaven",
+        "Former Asama 2000"
+      ]
+    },
+    "yamaboku-wild-snow-park": {
+      "name": "YAMABOKU Wild Snow Park",
+      "region": "Joshinetsu Kogen",
+      "summary": "Over 70% of the resort is non-groomed natural powder terrain. Offers snowcat (CAT) skiing tours, making it a true wild powder sanctuary.",
+      "tags": [
+        "70% Ungroomed Terrain",
+        "Snowcat Tours",
+        "Wild Powder Sanctuary"
+      ]
+    },
+    "hijiri-kogen": {
+      "name": "Hijiri Kogen Ski Resort",
+      "region": "Joshinetsu Kogen",
+      "summary": "A relaxed village-run ski resort at the base of Mt. Hijiri. Free from crowds, offering budget-friendly lift tickets and safe slopes for practice.",
+      "tags": [
+        "Cozy Secret Spot",
+        "Budget Friendly",
+        "Uncrowded Slopes"
+      ]
+    },
+    "nozawa-onsen": {
+      "name": "Nozawa Onsen Snow Resort",
+      "region": "Shiga & Nozawa",
+      "summary": "Iconic Japanese ski village combining Mt. Kenashi's deep powder, a 10km long run, 2 gondolas, and historic free public hot springs (Sotoyu).",
+      "tags": [
+        "10km Long Run",
+        "Hot Spring Village",
+        "Deep Powder"
+      ]
+    },
+    "togari-onsen": {
+      "name": "Togari Onsen Ski Resort",
+      "region": "Shiga & Nozawa",
+      "summary": "Located across the Chikuma River from Nozawa Onsen. Offers great natural powder, Japan's pioneer snow bike park, and cozy hot spring baths.",
+      "tags": [
+        "Snow Bike Park",
+        "Onsen Village",
+        "Cozy Atmosphere"
+      ]
+    },
+    "romance-no-kamisama": {
+      "name": "Snow Resort Romance no Kamisama",
+      "region": "Shiga & Nozawa",
+      "summary": "Formerly Kijimadaira, named after Kohmi Hirose's hit song. Home to Japan's steepest 46-degree slope (Pioneer Course) and wide beginner runs.",
+      "tags": [
+        "Steepest 46° In Japan",
+        "Former Kijimadaira",
+        "Wide Beginner Slopes"
+      ]
+    },
+    "sakae-club": {
+      "name": "Sakae Club Ski Area",
+      "region": "Shiga & Nozawa",
+      "summary": "Tucked away in Sakae Village, one of Japan's snowiest areas. Famous for massive natural snowfall, uncrowded slopes, and authentic local food.",
+      "tags": [
+        "Deep Snow Secret",
+        "Heavy Snowfall",
+        "Local Cuisine"
+      ]
+    },
+    "shiga-kogen": {
+      "name": "Shiga Kogen Ski Resort",
+      "region": "Shiga & Nozawa",
+      "summary": "Japan's largest ski area with 18 interconnected resorts under one pass. Features Japan's highest resort summit (Mt. Yokote at 2,307m) and Olympic courses.",
+      "tags": [
+        "Japan's Largest Area",
+        "Highest Elevation 2307m",
+        "18 Resorts Unified"
+      ]
+    },
+    "ryuo-ski-park": {
+      "name": "Ryuo Ski Park",
+      "region": "Shiga & Nozawa",
+      "summary": "Famous for the SORA terrace cloud-sea lounge accessed by a 166-passenger ropeway. Home to the steep 'Kiotoshi' powder course.",
+      "tags": [
+        "SORA Cloud Terrace",
+        "166-pax Ropeway",
+        "Kiotoshi Powder Wall"
+      ]
+    },
+    "x-jam-takaifuji-yomase": {
+      "name": "X-JAM Takaifuji & Yomase Onsen",
+      "region": "Shiga & Nozawa",
+      "summary": "Fully interconnected ski resort combining X-JAM Takaifuji's premier terrain park (kickers, jibs, halfpipe) with Yomase Onsen's wide carving slopes and famous Tomi-no-yu outdoor hot spring.",
+      "tags": [
+        "Premier Terrain Park",
+        "Wide Carving Slopes",
+        "Tomi-no-yu Onsen"
+      ]
+    },
+    "komaruyama": {
+      "name": "Komaruyama Ski Resort",
+      "region": "Shiga & Nozawa",
+      "summary": "Friendly, compact ski resort in Kitashiga with gentle, open slopes ideal for beginners, student groups, and families practicing basic technique.",
+      "tags": [
+        "Beginner Friendly",
+        "Compact & Friendly",
+        "Great Value"
       ]
     }
   }

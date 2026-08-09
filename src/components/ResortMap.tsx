@@ -17,21 +17,37 @@ if (typeof window !== "undefined") {
 
 const HIDDEN_REGION = "__none__";
 
+function isMultiPolygon(poly: [number, number][] | [number, number][][]): poly is [number, number][][] {
+  return Array.isArray(poly[0]) && Array.isArray(poly[0][0]);
+}
+
 function toFeatureCollection(names: Record<string, string>) {
   return {
     type: "FeatureCollection" as const,
-    features: resorts.map((r) => ({
-      type: "Feature" as const,
-      properties: { slug: r.slug, name: names[r.slug] ?? r.slug, regionId: r.regionId },
-      geometry: {
-        type: "Polygon" as const,
-        coordinates: [r.areaPolygon],
-      },
-    })),
+    features: resorts.map((r) => {
+      if (isMultiPolygon(r.areaPolygon)) {
+        return {
+          type: "Feature" as const,
+          properties: { slug: r.slug, name: names[r.slug] ?? r.slug, regionId: r.regionId },
+          geometry: {
+            type: "MultiPolygon" as const,
+            coordinates: r.areaPolygon.map((poly) => [poly]),
+          },
+        };
+      }
+      return {
+        type: "Feature" as const,
+        properties: { slug: r.slug, name: names[r.slug] ?? r.slug, regionId: r.regionId },
+        geometry: {
+          type: "Polygon" as const,
+          coordinates: [r.areaPolygon],
+        },
+      };
+    }),
   };
 }
 
-function getAreaCentroid(polygon: [number, number][]): [number, number] {
+function getSingleCentroid(polygon: [number, number][]): [number, number] {
   const pts =
     polygon.length > 1 &&
       polygon[0][0] === polygon[polygon.length - 1][0] &&
@@ -61,6 +77,45 @@ function getAreaCentroid(polygon: [number, number][]): [number, number] {
     return [lngSum / unique.length, latSum / unique.length];
   }
   return [cx / (6 * area), cy / (6 * area)];
+}
+
+function getAreaCentroid(polygon: [number, number][] | [number, number][][]): [number, number] {
+  if (isMultiPolygon(polygon)) {
+    const centers = polygon.map(getSingleCentroid);
+    const [lngSum, latSum] = centers.reduce(
+      (acc, [lng, lat]) => [acc[0] + lng, acc[1] + lat],
+      [0, 0]
+    );
+    return [lngSum / centers.length, latSum / centers.length];
+  }
+  return getSingleCentroid(polygon);
+}
+
+function getResortBounds(
+  polygon: [number, number][] | [number, number][][]
+): [[number, number], [number, number]] {
+  let minLng = Infinity;
+  let minLat = Infinity;
+  let maxLng = -Infinity;
+  let maxLat = -Infinity;
+
+  const processPoint = ([lng, lat]: [number, number]) => {
+    if (lng < minLng) minLng = lng;
+    if (lng > maxLng) maxLng = lng;
+    if (lat < minLat) minLat = lat;
+    if (lat > maxLat) maxLat = lat;
+  };
+
+  if (isMultiPolygon(polygon)) {
+    polygon.forEach((subPoly) => subPoly.forEach(processPoint));
+  } else {
+    polygon.forEach(processPoint);
+  }
+
+  return [
+    [minLng, minLat],
+    [maxLng, maxLat],
+  ];
 }
 
 function toPointCollection(names: Record<string, string>) {
@@ -358,10 +413,8 @@ export function ResortMap({
       if (selectedSlug) {
         const resort = resorts.find((r) => r.slug === selectedSlug);
         if (resort) {
-          const center = getAreaCentroid(resort.areaPolygon);
-          const region = getRegionById(resort.regionId);
-          const targetZoom = region ? Math.max(region.zoom + 1.8, 12.5) : 12.5;
-          map.jumpTo({ center, zoom: targetZoom });
+          const bounds = getResortBounds(resort.areaPolygon);
+          map.fitBounds(bounds, { padding: 60, maxZoom: 13.8, animate: false });
         }
       } else if (activeRegion) {
         const region = getRegionById(activeRegion);
@@ -458,10 +511,8 @@ export function ResortMap({
         }
         applyRegionFilter(map, resort.regionId);
         setRegionLayersVisible(map, false);
-        const center = getAreaCentroid(resort.areaPolygon);
-        const region = getRegionById(resort.regionId);
-        const targetZoom = region ? Math.max(region.zoom + 1.8, 12.5) : 12.5;
-        map.flyTo({ center, zoom: targetZoom, duration: 1200 });
+        const bounds = getResortBounds(resort.areaPolygon);
+        map.fitBounds(bounds, { padding: 60, maxZoom: 13.8, duration: 1200 });
       }
     } else if (activeRegionProp) {
       applyRegionFilter(map, activeRegionProp);

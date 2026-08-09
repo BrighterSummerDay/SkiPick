@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { resorts } from "@/lib/resorts";
 
 export function Navbar() {
   const tNav = useTranslations("nav");
@@ -28,7 +29,7 @@ export function Navbar() {
     {
       href: "/resorts",
       label: tNav("resorts"),
-      subtitle: tResorts("subtitle"),
+      subtitle: tResorts("subtitle", { count: resorts.length }),
       isActive: pathname.startsWith("/resorts"),
     },
     {
@@ -68,27 +69,24 @@ export function Navbar() {
               <div key={item.href} className="group relative">
                 <Link
                   href={item.href}
-                  className={`relative flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
-                    item.isActive
-                      ? "text-accent-ice font-bold bg-white/80 shadow-sm"
-                      : "text-ink-muted hover:text-ink"
-                  }`}
+                  className={`relative flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${item.isActive
+                    ? "text-accent-ice font-bold bg-white/80 shadow-sm"
+                    : "text-ink-muted hover:text-ink"
+                    }`}
                 >
                   {/* hover / active 背景填充 */}
                   <span
-                    className={`absolute inset-0 rounded-full transition-all duration-200 ${
-                      item.isActive
-                        ? "bg-white/80"
-                        : "bg-white/0 group-hover:bg-white/60"
-                    }`}
+                    className={`absolute inset-0 rounded-full transition-all duration-200 ${item.isActive
+                      ? "bg-white/80"
+                      : "bg-white/0 group-hover:bg-white/60"
+                      }`}
                   />
                   {/* hover / active 底部线条 */}
                   <span
-                    className={`absolute bottom-1 left-3.5 right-3.5 sm:left-4 sm:right-4 h-[2px] rounded-full bg-accent-ice transition-transform duration-200 origin-left ${
-                      item.isActive
-                        ? "scale-x-100"
-                        : "scale-x-0 group-hover:scale-x-100"
-                    }`}
+                    className={`absolute bottom-1 left-3.5 right-3.5 sm:left-4 sm:right-4 h-[2px] rounded-full bg-accent-ice transition-transform duration-200 origin-left ${item.isActive
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                      }`}
                   />
                   <span className="relative z-10 flex items-center gap-1">
                     {item.isActive && (
