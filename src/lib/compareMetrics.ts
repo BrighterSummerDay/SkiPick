@@ -10,6 +10,7 @@
 
 import React from "react";
 import type { LocalizedResort } from "./getLocalizedResorts";
+import { formatCarMin, formatShinkansenMin } from "./utils";
 
 // ────────────────────────────────────────────────────
 // 类型定义
@@ -36,8 +37,9 @@ export interface CompareMetric {
   /**
    * 渲染单个雪场在该指标下的内容。
    * 返回 React.ReactNode（文字、数字、JSX 均可）。
+   * locale: 可选，用于格式化时间（如 'zh' | 'ja' | 'en'）
    */
-  renderCell: (resort: LocalizedResort, t: TFunction) => React.ReactNode;
+  renderCell: (resort: LocalizedResort, t: TFunction, locale?: string) => React.ReactNode;
   /**
    * 可选：是否为"大块"行（如难度条），
    * 设为 true 时不走标准 Row 包裹，页面自行处理布局。
@@ -74,12 +76,11 @@ export const ALL_METRICS: CompareMetric[] = [
   {
     id: "travel",
     labelKey: "metrics.travel",
-    renderCell: (r, t) =>
-      React.createElement("span",null,
-        t("shinkansen", {
-          min: r.travel.shinkansenMin,
-          price: r.travel.shinkansenYen.toLocaleString(),
-        })
+    renderCell: (r, t, locale = "zh") =>
+      React.createElement("span", null,
+        r.travel.shinkansenMin > 0
+          ? `${formatShinkansenMin(r.travel.shinkansenMin, locale)} · ¥${r.travel.shinkansenYen.toLocaleString()}`
+          : "—"
       )
   },
 
@@ -87,12 +88,10 @@ export const ALL_METRICS: CompareMetric[] = [
   {
     id: "car",
     labelKey: "metrics.car",
-    renderCell: (r, t) =>
-      React.createElement("span", null, t("car", 
-        { min: r.travel.carMin, 
-          km: r.travel.carKm, 
-          price: r.travel.etcYen.toLocaleString(), 
-        })),
+    renderCell: (r, _t, locale = "zh") =>
+      React.createElement("span", null,
+        `${formatCarMin(r.travel.carMin, locale)} · ${r.travel.carKm}km · ¥${r.travel.etcYen.toLocaleString()}`
+      ),
   },
 
   // ── 地形 / 雪道 ───────────────────────────────────

@@ -2,7 +2,7 @@
 
 import { Suspense, useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { GlassCard } from "@/components/GlassCard";
 import { DifficultyLegend } from "@/components/DifficultyMark";
 import { useLocalizedResorts } from "@/lib/useLocalizedResorts";
@@ -35,6 +35,7 @@ function ComparePageContent() {
   const t = useTranslations("compare");
   const td = useTranslations("difficulty");
   const tr = useTranslations("regions");
+  const locale = useLocale();
   const resorts = useLocalizedResorts();
   const searchParams = useSearchParams();
 
@@ -327,7 +328,7 @@ function ComparePageContent() {
                               </div>
                             ) : null}
                           </div>
-                          {metric.renderCell(r, tAsMetricFn)}
+                          {metric.renderCell(r, tAsMetricFn, locale)}
                         </div>
                       </div>
                     ) : (
@@ -336,7 +337,7 @@ function ComparePageContent() {
                         key={metric.id}
                         label={t(metric.labelKey as Parameters<typeof t>[0])}
                       >
-                        {metric.renderCell(r, tAsMetricFn)}
+                        {metric.renderCell(r, tAsMetricFn, locale)}
                       </Row>
                     )
                   )}

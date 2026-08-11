@@ -850,6 +850,306 @@ export const resortContent: ContentMap = {
       tags: ["Beginner Friendly", "Compact & Friendly", "Great Value"],
     },
   },
+  "marunuma-kogen": {
+    zh: {
+      name: "丸沼高原滑雪场",
+      region: "群马・片品",
+      summary: "拥有海拔 2,000 米的高海拔优质天然粉雪与长达 4 公里的滑降雪道。搭载日光白根山空中索道可直达山顶。",
+      tags: ["箱型缆车索道", "高海拔优质粉雪", "4km长雪道"],
+    },
+    ja: {
+      name: "丸沼高原スキー場",
+      region: "群馬・片品",
+      summary: "標高2,000mの極上パウダーと最長4kmのロングコースが魅力。日光白根山ロープウェイで一気に山頂へ。",
+      tags: ["ロープウェイ", "極上パウダー", "ロングコース"],
+    },
+    en: {
+      name: "Marunuma Kogen Ski Resort",
+      region: "Gunma / Katashina",
+      summary: "Features high-altitude powder snow at 2,000m and a long 4km run. Take the Nikko Shirane Ropeway directly to the summit.",
+      tags: ["Summit Ropeway", "High-altitude Powder", "4km Long Run"],
+    },
+  },
+  "minakami-hodaigi": {
+    zh: {
+      name: "群马水上宝台树滑雪场",
+      region: "群马・水上",
+      summary: "积雪量极为丰富，包含 16 条地形丰富的雪道。涵盖陡坡非压雪粉雪与初级平缓打理道，水上区域最大级雪场。",
+      tags: ["水上地区最大", "雪道种类丰富", "深雪非压雪"],
+    },
+    ja: {
+      name: "群馬みなかみほうだいぎスキー場",
+      region: "群馬・みなかみ",
+      summary: "豊富な積雪量と多彩な全16コース。急斜面から初心者向け緩斜面まで揃う水上エリア最大級のゲレンデ。",
+      tags: ["水上最大級", "コース豊富", "非圧雪エリア"],
+    },
+    en: {
+      name: "Gunma Minakami Hodaigi Ski Resort",
+      region: "Gunma / Minakami",
+      summary: "Abundant snowfall and 16 diverse courses ranging from steep unpaved powder runs to gentle beginner slopes in the Minakami area.",
+      tags: ["Largest in Minakami", "Varied Courses", "Deep Powder Zones"],
+    },
+  },
+  "ogna-hotaka": {
+    zh: {
+      name: "尾格纳武尊滑雪场",
+      region: "群马・片品",
+      summary: "海拔 1,820 米开阔视野与纯天然粉雪，13 条雪道兼具天然地形变化，适合从新手到高阶雪友的畅爽滑行。",
+      tags: ["纯天然粉雪", "绝佳视野", "丰富地形"],
+    },
+    ja: {
+      name: "オグナほたかスキー場",
+      region: "群馬・片品",
+      summary: "標高1,820mからの絶景と天然パウダースノー。全13コースで初級者から上級者まで爽快ライディング。",
+      tags: ["天然パウダー", "絶景ゲレンデ", "自然地形"],
+    },
+    en: {
+      name: "Ogna Hotaka Ski Resort",
+      region: "Gunma / Katashina",
+      summary: "Spectacular views from 1,820m elevation and natural powder snow across 13 courses with natural terrain for all skill levels.",
+      tags: ["Natural Powder", "Scenic Summit", "Natural Terrain"],
+    },
+  },
+  "hunter-mountain-shiobara": {
+    zh: {
+      name: "猎人山盐原滑雪场",
+      region: "栃木・盐原",
+      summary: "首都圈最大级别的滑雪度假村，拥有 12 条不同难度的雪道及箱型缆车，公园设施完备，家庭与高阶均宜。",
+      tags: ["首都圈最大级", "箱型缆车直达", "地形公园完备"],
+    },
+    ja: {
+      name: "ハンターマウンテン塩原",
+      region: "栃木・塩原",
+      summary: "首都圏最大級のビッグゲレンデ。全12コースとゴンドラを完備し、ファミリーから本格派まで大満足。",
+      tags: ["首都圏最大級", "ゴンドラ完備", "スノーパーク"],
+    },
+    en: {
+      name: "Hunter Mountain Shiobara",
+      region: "Tochigi / Shiobara",
+      summary: "One of the largest resorts near Tokyo, featuring 12 varied courses, a gondola, and a full terrain park for families and experts alike.",
+      tags: ["Major Kanto Resort", "Gondola Access", "Terrain Park"],
+    },
+  },
+  "katashina-kogen": {
+    zh: {
+      name: "片品高原滑雪场",
+      region: "群马・片品",
+      summary: "关东地区唯一仅限双板 Ski 玩家进入的专用雪场。与米菲兔合作，注重安全保障与家庭亲子体验。",
+      tags: ["双板Ski专用", "亲子安全保障", "米菲联名"],
+    },
+    ja: {
+      name: "かたしな高原スキー場",
+      region: "群馬・片品",
+      summary: "関東唯一のスキーヤー専用スキー場。ミッフィーとコラボした安全・安心なファミリーリゾート。",
+      tags: ["スキーヤー限定", "ファミリー安心", "ミッフィー"],
+    },
+    en: {
+      name: "Katashina Kogen Ski Resort",
+      region: "Gunma / Katashina",
+      summary: "The only skiers-only resort in Kanto. A safe, family-oriented resort collaborating with Miffy for a peaceful experience.",
+      tags: ["Skiers Only", "Family Safe", "Miffy Theme"],
+    },
+  },
+  "edelweiss-ski-resort": {
+    zh: {
+      name: "雪绒花滑雪度假村",
+      region: "栃木・日光",
+      summary: "坐落于日光鬼怒川温泉区附近，拥有宽阔平缓的练习雪道、儿童乐园与宠物乐园，适合全家度假。",
+      tags: ["亲子友好", "儿童雪上乐园", "宠物友好"],
+    },
+    ja: {
+      name: "エーデルワイススキーリゾート",
+      region: "栃木・日光",
+      summary: "日光・鬼怒川エリアに位置し、初心者やファミリーが安心して楽しめるのびのびゲレンデ＆ドッグラン完備。",
+      tags: ["ファミリー向け", "キッズパーク", "ドッグラン"],
+    },
+    en: {
+      name: "Edelweiss Ski Resort",
+      region: "Tochigi / Nikko",
+      summary: "Located near Nikko Kinugawa Onsen, offering gentle open slopes, a kids' snow park, and a dog run for a relaxed holiday.",
+      tags: ["Family Friendly", "Kids Snow Park", "Dog Run"],
+    },
+  },
+  "snow-park-oze-tokura": {
+    zh: {
+      name: "尾濑户仓雪上公园滑雪场",
+      region: "群马・片品",
+      summary: "主打高水准单板地形公园、树林粉雪区与赛事级雪道，是自由式玩家与竞技选手的训练圣地。",
+      tags: ["专业地形公园", "赛事级雪道", "树林粉雪区"],
+    },
+    ja: {
+      name: "スノーパーク尾瀬戸倉",
+      region: "群馬・片品",
+      summary: "本格スノーパークと質の高いツリーラン・大会コースが自慢。フリースタイル＆レーサーが集う聖地。",
+      tags: ["本格パーク", "大会コース", "ツリーラン"],
+    },
+    en: {
+      name: "Snow Park Oze Tokura",
+      region: "Gunma / Katashina",
+      summary: "Renowned for its high-caliber terrain park, tree runs, and competition-grade courses. A hub for freestylers and racers.",
+      tags: ["Pro Terrain Park", "Competition Course", "Tree Run Powder"],
+    },
+  },
+  "tambara-ski-park": {
+    zh: {
+      name: "玉原滑雪公园",
+      region: "群马・沼田",
+      summary: "初级与中级雪道占比高达 80%，优质细粉雪与自驾便捷交通，非常适合初学者与家庭安心练习。",
+      tags: ["初中级80%", "优质细粉雪", "自驾交通极佳"],
+    },
+    ja: {
+      name: "たんばらスキーパーク",
+      region: "群馬・沼田",
+      summary: "初・中級者向けコースが約80%を占める安心ゲレンデ。上質なサラサラ粉雪とアクセスやすさが人気。",
+      tags: ["初中級者安心", "サラサラ粉雪", "ドライブ快適"],
+    },
+    en: {
+      name: "Tambara Ski Park",
+      region: "Gunma / Numata",
+      summary: "Over 80% beginner and intermediate courses with high-quality silky powder snow and easy car accessibility.",
+      tags: ["80% Easy/Intermed.", "Silky Powder Snow", "Easy Driving Access"],
+    },
+  },
+  "okutone-snow-park": {
+    zh: {
+      name: "奥利根滑雪公园",
+      region: "群马・水上",
+      summary: "距离关越道水上 IC 仅 10 公里。拥有最长 2.5 公里的夜场滑行，小学生以下缆车免费，性价比极高。",
+      tags: ["长雪道夜场", "小学生缆车免费", "高速出口即达"],
+    },
+    ja: {
+      name: "奥利根スノーパーク",
+      region: "群馬・みなかみ",
+      summary: "水上ICから10kmの好アクセス。最长2.5kmのナイター営業や小学生以下リフト無料などサービス満点。",
+      tags: ["ナイター充実", "小学生無料", "ICから近い"],
+    },
+    en: {
+      name: "Okutone Snow Park",
+      region: "Gunma / Minakami",
+      summary: "Just 10km from Minakami IC. Features night skiing up to 2.5km long and free lift passes for elementary kids.",
+      tags: ["Long Night Skiing", "Kids Free Lifts", "Close to IC"],
+    },
+  },
+  "norn-minakami": {
+    zh: {
+      name: "诺恩水上滑雪场",
+      region: "群马・水上",
+      summary: "距离水上 IC 仅 3 公里，是东京首都圈出发最快可达的雪场之一。周五周六夜场开放至深夜 22 点。",
+      tags: ["首都圈最速到达", "高速出口3km", "超长深夜夜场"],
+    },
+    ja: {
+      name: "ノルン水上スキー場",
+      region: "群馬・みなかみ",
+      summary: "関越道水上ICからわずか3km、首都圏から最速アクセス。金・土曜は22時までのロングナイター。",
+      tags: ["首都圏最速", "水上IC3km", "ロングナイター"],
+    },
+    en: {
+      name: "Norn Minakami Ski Resort",
+      region: "Gunma / Minakami",
+      summary: "Only 3km from Minakami IC — the fastest resort accessible from Tokyo. Late night skiing available until 10pm on Fridays and Saturdays.",
+      tags: ["Fastest from Tokyo", "3km from Highway IC", "Late Night Skiing"],
+    },
+  },
+  "minakami-kogen-resort": {
+    zh: {
+      name: "水上高原滑雪度假村",
+      region: "群马・水上",
+      summary: "水上高原 200 酒店直连，配备 2 大儿童玩雪公园与狗拉雪橇等丰富体验项目，亲子度假首选。",
+      tags: ["滑雪酒店直连", "儿童玩雪乐园", "雪上游乐项目"],
+    },
+    ja: {
+      name: "水上高原スキーリゾート",
+      region: "群馬・みなかみ",
+      summary: "水上高原ホテル200直結。2つのキッズパークや犬ぞり体験など雪遊び＆ファミリーアクティビティが充実。",
+      tags: ["ホテル直結", "キッズアトラクション", "スノーアクティビティ"],
+    },
+    en: {
+      name: "Minakami Kogen Ski Resort",
+      region: "Gunma / Minakami",
+      summary: "Directly connected to Minakami Kogen Hotel 200. Packed with family activities like 2 kids' snow parks and dog sledding.",
+      tags: ["Ski-in/Ski-out Hotel", "Kids Snow Parks", "Dog Sledding"],
+    },
+  },
+  "minakami-fujiwara": {
+    zh: {
+      name: "水上高原藤原滑雪场",
+      region: "群马・水上",
+      summary: "Sunbird 酒店直连，坡度平缓适合滑雪首秀与雪上玩耍，滑完雪后可直接享受露天天然温泉。",
+      tags: ["直连温泉酒店", "新手首秀推荐", "雪橇玩乐区"],
+    },
+    ja: {
+      name: "水上高原藤原スキー場",
+      region: "群馬・みなかみ",
+      summary: "ホテルサンバード併設。緩斜面中心でスキー＆雪遊びデビューに最適。滑った後は露天風呂温泉を満喫。",
+      tags: ["温泉併設", "デビューに最適", "ソリ遊び"],
+    },
+    en: {
+      name: "Minakami Kogen Fujiwara Ski Resort",
+      region: "Gunma / Minakami",
+      summary: "Adjacent to Hotel Sunbird with gentle slopes ideal for beginners and sledding, plus hot spring baths after skiing.",
+      tags: ["Onsen Hotel Attached", "Beginner Friendly", "Sledding Park"],
+    },
+  },
+  "white-valley-minakami": {
+    zh: {
+      name: "白谷水上滑雪场",
+      region: "群马・水上",
+      summary: "以“Premium Powder Day”（90%雪道不压雪）闻名，温馨宝藏型的小众粉雪天堂。",
+      tags: ["90%非压雪粉雪", "小众宝藏雪场", "家庭温馨"],
+    },
+    ja: {
+      name: "ホワイトバレーみなかみ",
+      region: "群馬・みなかみ",
+      summary: "ゲレンデ上の90%が非圧雪となる「プレミアムパウダーデー」が名物。アットホームで穴場のパウダー天国。",
+      tags: ["非圧雪パウダー", "穴場ゲレンデ", "アットホーム"],
+    },
+    en: {
+      name: "White Valley Minakami",
+      region: "Gunma / Minakami",
+      summary: "Famous for its 'Premium Powder Days' where 90% of the slopes are left unpaved for fresh powder lovers.",
+      tags: ["90% Unpaved Powder", "Hidden Gem", "Cozy Atmosphere"],
+    },
+  },
+  "nikko-yumoto-onsen": {
+    zh: {
+      name: "日光汤元温泉滑雪场",
+      region: "栃木・日光",
+      summary: "毗邻日光国立公园温泉街。雪道开阔平缓，适合练习与感受宁静的雪山温泉度假时光。",
+      tags: ["温泉街毗邻", "初学者亲子", "宁静雪山温泉"],
+    },
+    ja: {
+      name: "日光湯元温泉スキー場",
+      region: "栃木・日光",
+      summary: "日光国立公園内の温泉街に隣接。ワイドで平坦な緩斜面が多く、静かな雪山と温泉を楽しめるリゾート。",
+      tags: ["温泉街隣接", "初心者・ファミリー", "静かな雪山"],
+    },
+    en: {
+      name: "Nikko Yumoto Onsen Ski Resort",
+      region: "Tochigi / Nikko",
+      summary: "Adjacent to the hot spring village in Nikko National Park. Features wide, gentle slopes for beginners, families, and relaxing onsen trips.",
+      tags: ["Onsen Village", "Beginner & Family", "Quiet Mountain"],
+    },
+  },
+  "mt-t-hoshino": {
+    zh: {
+      name: "Mt.T by 星野集团",
+      region: "群马・水上",
+      summary: "原谷川岳天神平滑雪场由星野集团重塑全新的“Mt.T”。拥有令人惊叹的超大降雪量与天然粉雪陡坡，搭载谷川岳空中索道直达山顶，是高阶粉雪玩家与树林滑雪的极佳之地。",
+      tags: ["星野集团", "谷川岳缆车", "极致深雪粉雪"],
+    },
+    ja: {
+      name: "Mt.T by 星野リゾート",
+      region: "群馬・みなかみ",
+      summary: "谷川岳天神平が星野リゾートプロデュースの「Mt.T」として生まれ変わったゲレンデ。圧倒的な積雪量と標高差が生む極上の天然粉雪とツリーランが魅力。",
+      tags: ["星野リゾート", "谷川岳ロープウェイ", "極上パウダー"],
+    },
+    en: {
+      name: "Mt.T by Hoshino Resorts",
+      region: "Gunma / Minakami",
+      summary: "Formerly Tanigawadake Tenjindaira, rebranded as 'Mt.T' by Hoshino Resorts. Famous for its massive snowfall, steep powder bowls, tree runs, and ropeway access to Mt. Tanigawa.",
+      tags: ["Hoshino Resorts", "Tanigawadake Ropeway", "Deep Powder Bowls"],
+    },
+  },
 };
 
 export function getResortContent(slug: string, locale: Locale): ResortContent {

@@ -6,6 +6,7 @@ import { SnowDivider } from "@/components/SnowDivider";
 import { getLocalizedResort } from "@/lib/getLocalizedResorts";
 import { resorts } from "@/lib/resorts";
 import { routing } from "@/i18n/routing";
+import { formatCarMin, formatShinkansenMin } from "@/lib/utils";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -16,9 +17,9 @@ export function generateStaticParams() {
 export default async function ResortDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const [resort, t] = await Promise.all([
     getLocalizedResort(slug),
     getTranslations("detail"),
@@ -68,8 +69,8 @@ export default async function ResortDetailPage({
           label={t("metricTravel")}
           value={
             resort.travel.shinkansenMin
-              ? `${resort.travel.shinkansenMin} 分`
-              : `${resort.travel.carMin} 分`
+              ? formatShinkansenMin(resort.travel.shinkansenMin, locale)
+              : formatCarMin(resort.travel.carMin, locale)
           }
           sub={resort.travel.shinkansenMin ? t("metricTravelSubShinkansen") : t("metricTravelSubCar")}
         />
@@ -98,10 +99,10 @@ export default async function ResortDetailPage({
             {resort.travel.shinkansenMin > 0 && (
               <DetailRow
                 label={t("travelShinkansen")}
-                value={`${resort.travel.shinkansenMin} 分 · ¥${resort.travel.shinkansenYen.toLocaleString()}`}
+                value={`${formatShinkansenMin(resort.travel.shinkansenMin, locale)} · ¥${resort.travel.shinkansenYen.toLocaleString()}`}
               />
             )}
-            <DetailRow label={t("travelCar")} value={`${resort.travel.carMin} 分 · ${resort.travel.carKm}km`} />
+            <DetailRow label={t("travelCar")} value={`${formatCarMin(resort.travel.carMin, locale)} · ${resort.travel.carKm}km · ¥${resort.travel.etcYen.toLocaleString()}`} />
             <DetailRow label={t("travelLifts")} value={`${resort.lifts.total}`} />
             <DetailRow label={t("travelGondola")} value={`${resort.lifts.gondola}`} />
           </ul>

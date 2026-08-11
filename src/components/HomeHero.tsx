@@ -1,18 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ResortMap } from "@/components/ResortMap";
 import { GlassCard } from "@/components/GlassCard";
 import { REGIONS } from "@/lib/regions";
 import { useLocalizedResorts } from "@/lib/useLocalizedResorts";
+import { formatCarMin, formatShinkansenMin } from "@/lib/utils";
 
 export function HomeHero() {
   const t = useTranslations("home");
   const tr = useTranslations("regions");
   const tm = useTranslations("map");
   const trd = useTranslations("regionDetails");
+  const locale = useLocale();
   const resorts = useLocalizedResorts();
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
@@ -122,8 +124,8 @@ export function HomeHero() {
                 <span className="text-ink-muted">{tm("statTravel")}</span>
                 <span className="font-data font-semibold text-ink">
                   {activeResort.travel.shinkansenMin
-                    ? tm("statShinkansen", { min: activeResort.travel.shinkansenMin })
-                    : tm("statCar", { min: activeResort.travel.carMin })}
+                    ? formatShinkansenMin(activeResort.travel.shinkansenMin, locale)
+                    : formatCarMin(activeResort.travel.carMin, locale)}
                 </span>
               </div>
               <div className="flex items-center justify-between">

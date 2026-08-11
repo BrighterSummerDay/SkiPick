@@ -316,13 +316,17 @@ export function ResortMap({
         },
       });
 
-      // ── 雪场色块（默认隐藏，进入对应大区域后才按 regionId 过滤显示）──
+      // ── 雪场色块 + 名称标注（默认隐藏，进入对应大区域后才按 regionId 过滤显示）──
       map.addSource("resort-areas", {
         type: "geojson",
         data: toFeatureCollection(names),
         generateId: true,
       });
-      map.addSource("resort-points", { type: "geojson", data: toPointCollection(names) });
+      map.addSource("resort-points", {
+        type: "geojson",
+        data: toPointCollection(names),
+        generateId: true,
+      });
 
       map.addLayer({
         id: "resort-fill",
@@ -347,6 +351,7 @@ export function ResortMap({
         },
       });
 
+      // 雪场名称文本标注
       map.addLayer({
         id: "resort-label",
         type: "symbol",
@@ -386,21 +391,23 @@ export function ResortMap({
         });
       }
 
-      // 雪场：色块 hover / click
-      map.on("mousemove", "resort-fill", (e) => {
-        map.getCanvas().style.cursor = "pointer";
-        const f = e.features?.[0] as MapGeoJSONFeature | undefined;
-        if (f) setHovered(f.properties?.slug as string);
-      });
-      map.on("mouseleave", "resort-fill", () => {
-        map.getCanvas().style.cursor = "";
-        setHovered(null);
-      });
-      map.on("click", "resort-fill", (e) => {
-        const f = e.features?.[0] as MapGeoJSONFeature | undefined;
-        const slug = f?.properties?.slug as string | undefined;
-        if (slug && onSelect) onSelect(slug);
-      });
+      // 雪场：色块与名称文字均可 hover & click
+      for (const layerId of ["resort-fill", "resort-label"]) {
+        map.on("mousemove", layerId, (e) => {
+          map.getCanvas().style.cursor = "pointer";
+          const f = e.features?.[0] as MapGeoJSONFeature | undefined;
+          if (f) setHovered(f.properties?.slug as string);
+        });
+        map.on("mouseleave", layerId, () => {
+          map.getCanvas().style.cursor = "";
+          setHovered(null);
+        });
+        map.on("click", layerId, (e) => {
+          const f = e.features?.[0] as MapGeoJSONFeature | undefined;
+          const slug = f?.properties?.slug as string | undefined;
+          if (slug && onSelect) onSelect(slug);
+        });
+      }
 
       // 初始化地图状态（若挂载时已有 selectedSlug 或 activeRegion）
       const initialRegion = selectedSlug
@@ -441,7 +448,7 @@ export function ResortMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // 高亮当前选中/hover的雪场色块
+  // 高亮当前选中/hover的雪场色块与地图定位点
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -450,6 +457,7 @@ export function ResortMap({
         const active = r.slug === selectedSlug || r.slug === hovered;
         try {
           map.setFeatureState({ source: "resort-areas", id: idx }, { active });
+          map.setFeatureState({ source: "resort-points", id: idx }, { active });
         } catch {
           /* style not ready yet */
         }

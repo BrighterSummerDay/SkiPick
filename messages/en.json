@@ -95,7 +95,9 @@
     "travelLabel": "From Tokyo",
     "priceRangeLabel": "Day Pass Range",
     "resortsInRegionTitle": "Resorts in Region",
-    "compareRegionResorts": "Compare Region Resorts"
+    "compareRegionResorts": "Compare Region Resorts",
+    "searchPlaceholder": "Search ski resort...",
+    "noSearchResult": "No matching ski resorts"
   },
   "regions": {
     "echigo-yuzawa": "Echigo-Yuzawa & Chuetsu",
@@ -760,6 +762,156 @@
         "Beginner Friendly",
         "Compact & Friendly",
         "Great Value"
+      ]
+    },
+    "marunuma-kogen": {
+      "name": "Marunuma Kogen Ski Resort",
+      "region": "Gunma / Katashina",
+      "summary": "Features high-altitude powder snow at 2,000m and a long 4km run. Take the Nikko Shirane Ropeway directly to the summit.",
+      "tags": [
+        "Summit Ropeway",
+        "High-altitude Powder",
+        "4km Long Run"
+      ]
+    },
+    "minakami-hodaigi": {
+      "name": "Gunma Minakami Hodaigi Ski Resort",
+      "region": "Gunma / Minakami",
+      "summary": "Abundant snowfall and 16 diverse courses ranging from steep unpaved powder runs to gentle beginner slopes in the Minakami area.",
+      "tags": [
+        "Largest in Minakami",
+        "Varied Courses",
+        "Deep Powder Zones"
+      ]
+    },
+    "ogna-hotaka": {
+      "name": "Ogna Hotaka Ski Resort",
+      "region": "Gunma / Katashina",
+      "summary": "Spectacular views from 1,820m elevation and natural powder snow across 13 courses with natural terrain for all skill levels.",
+      "tags": [
+        "Natural Powder",
+        "Scenic Summit",
+        "Natural Terrain"
+      ]
+    },
+    "hunter-mountain-shiobara": {
+      "name": "Hunter Mountain Shiobara",
+      "region": "Tochigi / Shiobara",
+      "summary": "One of the largest resorts near Tokyo, featuring 12 varied courses, a gondola, and a full terrain park for families and experts alike.",
+      "tags": [
+        "Major Kanto Resort",
+        "Gondola Access",
+        "Terrain Park"
+      ]
+    },
+    "katashina-kogen": {
+      "name": "Katashina Kogen Ski Resort",
+      "region": "Gunma / Katashina",
+      "summary": "The only skiers-only resort in Kanto. A safe, family-oriented resort collaborating with Miffy for a peaceful experience.",
+      "tags": [
+        "Skiers Only",
+        "Family Safe",
+        "Miffy Theme"
+      ]
+    },
+    "edelweiss-ski-resort": {
+      "name": "Edelweiss Ski Resort",
+      "region": "Tochigi / Nikko",
+      "summary": "Located near Nikko Kinugawa Onsen, offering gentle open slopes, a kids' snow park, and a dog run for a relaxed holiday.",
+      "tags": [
+        "Family Friendly",
+        "Kids Snow Park",
+        "Dog Run"
+      ]
+    },
+    "snow-park-oze-tokura": {
+      "name": "Snow Park Oze Tokura",
+      "region": "Gunma / Katashina",
+      "summary": "Renowned for its high-caliber terrain park, tree runs, and competition-grade courses. A hub for freestylers and racers.",
+      "tags": [
+        "Pro Terrain Park",
+        "Competition Course",
+        "Tree Run Powder"
+      ]
+    },
+    "tambara-ski-park": {
+      "name": "Tambara Ski Park",
+      "region": "Gunma / Numata",
+      "summary": "Over 80% beginner and intermediate courses with high-quality silky powder snow and easy car accessibility.",
+      "tags": [
+        "80% Easy/Intermed.",
+        "Silky Powder Snow",
+        "Easy Driving Access"
+      ]
+    },
+    "okutone-snow-park": {
+      "name": "Okutone Snow Park",
+      "region": "Gunma / Minakami",
+      "summary": "Just 10km from Minakami IC. Features night skiing up to 2.5km long and free lift passes for elementary kids.",
+      "tags": [
+        "Long Night Skiing",
+        "Kids Free Lifts",
+        "Close to IC"
+      ]
+    },
+    "norn-minakami": {
+      "name": "Norn Minakami Ski Resort",
+      "region": "Gunma / Minakami",
+      "summary": "Only 3km from Minakami IC — the fastest resort accessible from Tokyo. Late night skiing available until 10pm on Fridays and Saturdays.",
+      "tags": [
+        "Fastest from Tokyo",
+        "3km from Highway IC",
+        "Late Night Skiing"
+      ]
+    },
+    "minakami-kogen-resort": {
+      "name": "Minakami Kogen Ski Resort",
+      "region": "Gunma / Minakami",
+      "summary": "Directly connected to Minakami Kogen Hotel 200. Packed with family activities like 2 kids' snow parks and dog sledding.",
+      "tags": [
+        "Ski-in/Ski-out Hotel",
+        "Kids Snow Parks",
+        "Dog Sledding"
+      ]
+    },
+    "minakami-fujiwara": {
+      "name": "Minakami Kogen Fujiwara Ski Resort",
+      "region": "Gunma / Minakami",
+      "summary": "Adjacent to Hotel Sunbird with gentle slopes ideal for beginners and sledding, plus hot spring baths after skiing.",
+      "tags": [
+        "Onsen Hotel Attached",
+        "Beginner Friendly",
+        "Sledding Park"
+      ]
+    },
+    "white-valley-minakami": {
+      "name": "White Valley Minakami",
+      "region": "Gunma / Minakami",
+      "summary": "Famous for its 'Premium Powder Days' where 90% of the slopes are left unpaved for fresh powder lovers.",
+      "tags": [
+        "90% Unpaved Powder",
+        "Hidden Gem",
+        "Cozy Atmosphere"
+      ]
+    },
+    "nikko-yumoto-onsen": {
+      "name": "Nikko Yumoto Onsen Ski Resort",
+      "region": "Tochigi / Nikko",
+      "summary": "Adjacent to the hot spring village in Nikko National Park. Features wide, gentle slopes for beginners, families, and relaxing onsen trips.",
+      "tags": [
+        "Onsen Village",
+        "Beginner & Family",
+        "Quiet Mountain"
+      ]
+    },
+    "mt-t-hoshino": {
+      "name": "Mt.T by Hoshino Resorts",
+      "region": "Gunma / Minakami",
+      "summary": "Formerly Tanigawadake Tenjindaira, rebranded as 'Mt.T' by Hoshino Resorts. Famous for its massive snowfall, steep powder bowls, tree runs, and ropeway access to Mt. Tanigawa.",
+      "tags": [
+        "Hoshino Resorts",
+        "Tanigawadake Ropeway",
+        "Deep Powder Bowls"
       ]
     }
   }
