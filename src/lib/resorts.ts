@@ -15,7 +15,7 @@ export const resorts: Resort[] = [
     courses: { total: 17, beginner: 6, intermediate: 7, advanced: 4, longestKm: 2.5 },
     lifts: { total: 11, gondola: 1 },
     elevation: { baseM: 750, topM: 1181, verticalM: 431 },
-    travel: { shinkansenMin: 77, shinkansenYen: 7100, carMin: 115, carKm: 185, etcYen: 4420 },
+    travel: { shinkansenMin: 77, shinkansenYen: 7100, carMin: 150, carKm: 196, etcYen: 4410 },
   },
   {
     slug: "naeba",
@@ -31,7 +31,7 @@ export const resorts: Resort[] = [
     courses: { total: 21, beginner: 5, intermediate: 10, advanced: 6, longestKm: 4.0 },
     lifts: { total: 15, gondola: 1 },
     elevation: { baseM: 900, topM: 1789, verticalM: 889 },
-    travel: { shinkansenMin: 76, shinkansenYen: 7100, carMin: 135, carKm: 200, etcYen: 4420 },
+    travel: { shinkansenMin: 76, shinkansenYen: 7100, carMin: 170, carKm: 202, etcYen: 4410 },
   },
   {
     slug: "kagura",
@@ -47,7 +47,7 @@ export const resorts: Resort[] = [
     courses: { total: 24, beginner: 4, intermediate: 9, advanced: 11, longestKm: 6.0 },
     lifts: { total: 10, gondola: 1 },
     elevation: { baseM: 764, topM: 1845, verticalM: 1081 },
-    travel: { shinkansenMin: 76, shinkansenYen: 7100, carMin: 125, carKm: 188, etcYen: 4420 },
+    travel: { shinkansenMin: 76, shinkansenYen: 7100, carMin: 167, carKm: 195, etcYen: 4410 },
   },
   {
     slug: "kawaba",
@@ -63,7 +63,7 @@ export const resorts: Resort[] = [
     courses: { total: 14, beginner: 6, intermediate: 5, advanced: 3, longestKm: 3.5 },
     lifts: { total: 9, gondola: 1 },
     elevation: { baseM: 900, topM: 1470, verticalM: 570 },
-    travel: { shinkansenMin: 74, shinkansenYen: 5600, carMin: 110, carKm: 143, etcYen: 3600 },
+    travel: { shinkansenMin: 74, shinkansenYen: 5600, carMin: 135, carKm: 165, etcYen: 3710 },
   },
   {
     slug: "oze-iwakura",
@@ -79,7 +79,7 @@ export const resorts: Resort[] = [
     courses: { total: 15, beginner: 5, intermediate: 6, advanced: 4, longestKm: 3.0 },
     lifts: { total: 12, gondola: 1 },
     elevation: { baseM: 850, topM: 1654, verticalM: 804 },
-    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 120, carKm: 163, etcYen: 3600 },
+    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 150, carKm: 180, etcYen: 3710 },
   },
   {
     slug: "karuizawa-prince",
@@ -95,7 +95,7 @@ export const resorts: Resort[] = [
     courses: { total: 13, beginner: 7, intermediate: 4, advanced: 2, longestKm: 1.5 },
     lifts: { total: 8, gondola: 0 },
     elevation: { baseM: 998, topM: 1155, verticalM: 157 },
-    travel: { shinkansenMin: 68, shinkansenYen: 5490, carMin: 120, carKm: 148, etcYen: 4010 },
+    travel: { shinkansenMin: 68, shinkansenYen: 5490, carMin: 125, carKm: 160, etcYen: 3800 },
   },
   {
     slug: "kandatsu",
@@ -111,7 +111,7 @@ export const resorts: Resort[] = [
     courses: { total: 16, beginner: 4, intermediate: 7, advanced: 5, longestKm: 3.5 },
     lifts: { total: 6, gondola: 0 },
     elevation: { baseM: 460, topM: 1000, verticalM: 540 },
-    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 115, carKm: 182, etcYen: 4420 },
+    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 145, carKm: 193, etcYen: 4410 },
   },
   {
     slug: "iwappara",
@@ -127,7 +127,7 @@ export const resorts: Resort[] = [
     courses: { total: 20, beginner: 8, intermediate: 8, advanced: 4, longestKm: 4.0 },
     lifts: { total: 9, gondola: 0 },
     elevation: { baseM: 400, topM: 985, verticalM: 585 },
-    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 115, carKm: 183, etcYen: 4420 },
+    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 145, carKm: 194, etcYen: 4410 },
   },
   {
     slug: "yuzawa-park",
@@ -143,7 +143,7 @@ export const resorts: Resort[] = [
     courses: { total: 11, beginner: 5, intermediate: 4, advanced: 2, longestKm: 2.0 },
     lifts: { total: 5, gondola: 0 },
     elevation: { baseM: 450, topM: 740, verticalM: 290 },
-    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 135, carKm: 185, etcYen: 6740 },
+    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 145, carKm: 193, etcYen: 4410 },
   },
   {
     slug: "yuzawa-nakazato",
@@ -159,7 +159,7 @@ export const resorts: Resort[] = [
     courses: { total: 16, beginner: 7, intermediate: 5, advanced: 4, longestKm: 2.0 },
     lifts: { total: 7, gondola: 0 },
     elevation: { baseM: 458, topM: 702, verticalM: 244 },
-    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 135, carKm: 186, etcYen: 6740 },
+    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 142, carKm: 192, etcYen: 4410 },
   },
   {
     slug: "yuzawa-kogen",
@@ -175,7 +175,7 @@ export const resorts: Resort[] = [
     courses: { total: 8, beginner: 4, intermediate: 3, advanced: 1, longestKm: 5.0 },
     lifts: { total: 5, gondola: 1 },
     elevation: { baseM: 340, topM: 1170, verticalM: 830 },
-    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 115, carKm: 183, etcYen: 4420 },
+    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 148, carKm: 195, etcYen: 4410 },
   },
   {
     slug: "naspa-ski-garden",
@@ -191,7 +191,7 @@ export const resorts: Resort[] = [
     courses: { total: 8, beginner: 3, intermediate: 3, advanced: 2, longestKm: 2.2 },
     lifts: { total: 5, gondola: 0 },
     elevation: { baseM: 430, topM: 690, verticalM: 260 },
-    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 140, carKm: 187, etcYen: 6740 },
+    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 145, carKm: 195, etcYen: 4410 },
   },
   {
     slug: "ishiuchi-maruyama",
@@ -207,7 +207,7 @@ export const resorts: Resort[] = [
     courses: { total: 23, beginner: 7, intermediate: 10, advanced: 6, longestKm: 4.0 },
     lifts: { total: 13, gondola: 1 },
     elevation: { baseM: 256, topM: 920, verticalM: 664 },
-    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 115, carKm: 183, etcYen: 4420 },
+    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 150, carKm: 198, etcYen: 4560 },
   },
   {
     slug: "maiko",
@@ -223,7 +223,7 @@ export const resorts: Resort[] = [
     courses: { total: 26, beginner: 10, intermediate: 11, advanced: 5, longestKm: 6.0 },
     lifts: { total: 11, gondola: 1 },
     elevation: { baseM: 260, topM: 920, verticalM: 660 },
-    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 130, carKm: 185, etcYen: 6740 },
+    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 145, carKm: 200, etcYen: 4560 },
   },
   {
     slug: "joetsu-kokusai",
@@ -239,7 +239,7 @@ export const resorts: Resort[] = [
     courses: { total: 22, beginner: 6, intermediate: 11, advanced: 5, longestKm: 6.0 },
     lifts: { total: 19, gondola: 0 },
     elevation: { baseM: 210, topM: 1017, verticalM: 807 },
-    travel: { shinkansenMin: 85, shinkansenYen: 7200, carMin: 125, carKm: 188, etcYen: 4420 },
+    travel: { shinkansenMin: 85, shinkansenYen: 7200, carMin: 155, carKm: 204, etcYen: 4560 },
   },
   {
     slug: "hakkaisan",
@@ -255,7 +255,7 @@ export const resorts: Resort[] = [
     courses: { total: 11, beginner: 3, intermediate: 4, advanced: 4, longestKm: 5.5 },
     lifts: { total: 4, gondola: 1 },
     elevation: { baseM: 353, topM: 1147, verticalM: 794 },
-    travel: { shinkansenMin: 95, shinkansenYen: 7500, carMin: 155, carKm: 210, etcYen: 6740 },
+    travel: { shinkansenMin: 95, shinkansenYen: 7500, carMin: 170, carKm: 220, etcYen: 4760 },
   },
   {
     slug: "hakkaisan-sanroku",
@@ -271,7 +271,7 @@ export const resorts: Resort[] = [
     courses: { total: 5, beginner: 3, intermediate: 2, advanced: 0, longestKm: 1.2 },
     lifts: { total: 3, gondola: 0 },
     elevation: { baseM: 200, topM: 400, verticalM: 200 },
-    travel: { shinkansenMin: 90, shinkansenYen: 7200, carMin: 145, carKm: 200, etcYen: 6740 },
+    travel: { shinkansenMin: 90, shinkansenYen: 7200, carMin: 165, carKm: 216, etcYen: 4760 },
   },
   {
     slug: "muika",
@@ -287,7 +287,7 @@ export const resorts: Resort[] = [
     courses: { total: 12, beginner: 5, intermediate: 5, advanced: 2, longestKm: 2.8 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 330, topM: 700, verticalM: 370 },
-    travel: { shinkansenMin: 90, shinkansenYen: 7200, carMin: 120, carKm: 185, etcYen: 4420 },
+    travel: { shinkansenMin: 90, shinkansenYen: 7200, carMin: 155, carKm: 210, etcYen: 4760 },
   },
   {
     slug: "chateau-shiozawa",
@@ -303,7 +303,7 @@ export const resorts: Resort[] = [
     courses: { total: 5, beginner: 3, intermediate: 2, advanced: 0, longestKm: 1.5 },
     lifts: { total: 3, gondola: 0 },
     elevation: { baseM: 200, topM: 450, verticalM: 250 },
-    travel: { shinkansenMin: 80, shinkansenYen: 6900, carMin: 135, carKm: 185, etcYen: 6740 },
+    travel: { shinkansenMin: 80, shinkansenYen: 6900, carMin: 152, carKm: 202, etcYen: 4560 },
   },
   {
     slug: "nakazato-snow-wood",
@@ -319,7 +319,7 @@ export const resorts: Resort[] = [
     courses: { total: 3, beginner: 2, intermediate: 1, advanced: 0, longestKm: 0.8 },
     lifts: { total: 2, gondola: 0 },
     elevation: { baseM: 400, topM: 520, verticalM: 120 },
-    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 135, carKm: 186, etcYen: 6740 },
+    travel: { shinkansenMin: 77, shinkansenYen: 6900, carMin: 142, carKm: 192, etcYen: 4410 },
   },
   {
     slug: "suhara",
@@ -335,7 +335,7 @@ export const resorts: Resort[] = [
     courses: { total: 11, beginner: 4, intermediate: 4, advanced: 3, longestKm: 2.2 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 180, topM: 550, verticalM: 370 },
-    travel: { shinkansenMin: 105, shinkansenYen: 7800, carMin: 165, carKm: 220, etcYen: 6740 },
+    travel: { shinkansenMin: 105, shinkansenYen: 7800, carMin: 180, carKm: 225, etcYen: 5100 },
   },
   {
     slug: "yakushi",
@@ -351,7 +351,7 @@ export const resorts: Resort[] = [
     courses: { total: 3, beginner: 2, intermediate: 1, advanced: 0, longestKm: 0.8 },
     lifts: { total: 2, gondola: 0 },
     elevation: { baseM: 130, topM: 250, verticalM: 120 },
-    travel: { shinkansenMin: 100, shinkansenYen: 7500, carMin: 160, carKm: 215, etcYen: 6740 },
+    travel: { shinkansenMin: 100, shinkansenYen: 7500, carMin: 170, carKm: 220, etcYen: 5100 },
   },
   {
     slug: "koide",
@@ -367,7 +367,7 @@ export const resorts: Resort[] = [
     courses: { total: 4, beginner: 2, intermediate: 2, advanced: 0, longestKm: 1.0 },
     lifts: { total: 2, gondola: 0 },
     elevation: { baseM: 100, topM: 280, verticalM: 180 },
-    travel: { shinkansenMin: 98, shinkansenYen: 7500, carMin: 155, carKm: 210, etcYen: 6740 },
+    travel: { shinkansenMin: 98, shinkansenYen: 7500, carMin: 168, carKm: 218, etcYen: 5100 },
   },
   {
     slug: "okutadami-maruyama",
@@ -383,7 +383,7 @@ export const resorts: Resort[] = [
     courses: { total: 10, beginner: 3, intermediate: 4, advanced: 3, longestKm: 3.0 },
     lifts: { total: 5, gondola: 0 },
     elevation: { baseM: 750, topM: 1240, verticalM: 490 },
-    travel: { shinkansenMin: 120, shinkansenYen: 7500, carMin: 190, carKm: 240, etcYen: 6740 },
+    travel: { shinkansenMin: 120, shinkansenYen: 7500, carMin: 225, carKm: 250, etcYen: 5100 },
   },
   {
     slug: "new-green-pia-tsunan",
@@ -399,7 +399,7 @@ export const resorts: Resort[] = [
     courses: { total: 5, beginner: 2, intermediate: 2, advanced: 1, longestKm: 1.5 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 480, topM: 720, verticalM: 240 },
-    travel: { shinkansenMin: 110, shinkansenYen: 7100, carMin: 170, carKm: 215, etcYen: 6740 },
+    travel: { shinkansenMin: 110, shinkansenYen: 7100, carMin: 180, carKm: 225, etcYen: 4560 },
   },
   {
     slug: "kashimayari",
@@ -415,7 +415,7 @@ export const resorts: Resort[] = [
     courses: { total: 16, beginner: 6, intermediate: 6, advanced: 4, longestKm: 5.0 },
     lifts: { total: 6, gondola: 0 },
     elevation: { baseM: 830, topM: 1550, verticalM: 720 },
-    travel: { shinkansenMin: 120, shinkansenYen: 8500, carMin: 210, carKm: 260, etcYen: 7500 },
+    travel: { shinkansenMin: 120, shinkansenYen: 8500, carMin: 210, carKm: 260, etcYen: 4740 },
   },
   {
     slug: "jiigatake",
@@ -431,7 +431,7 @@ export const resorts: Resort[] = [
     courses: { total: 7, beginner: 5, intermediate: 2, advanced: 0, longestKm: 1.5 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 940, topM: 1200, verticalM: 260 },
-    travel: { shinkansenMin: 120, shinkansenYen: 8500, carMin: 205, carKm: 255, etcYen: 7500 },
+    travel: { shinkansenMin: 120, shinkansenYen: 8500, carMin: 205, carKm: 255, etcYen: 4740 },
   },
   {
     slug: "tsugaike-kogen",
@@ -447,7 +447,7 @@ export const resorts: Resort[] = [
     courses: { total: 14, beginner: 7, intermediate: 5, advanced: 2, longestKm: 4.9 },
     lifts: { total: 14, gondola: 1 },
     elevation: { baseM: 800, topM: 1704, verticalM: 904 },
-    travel: { shinkansenMin: 140, shinkansenYen: 9500, carMin: 240, carKm: 285, etcYen: 7800 },
+    travel: { shinkansenMin: 140, shinkansenYen: 9500, carMin: 235, carKm: 283, etcYen: 4740 },
   },
   {
     slug: "hakuba-iwatake",
@@ -463,7 +463,7 @@ export const resorts: Resort[] = [
     courses: { total: 26, beginner: 8, intermediate: 12, advanced: 6, longestKm: 3.8 },
     lifts: { total: 12, gondola: 1 },
     elevation: { baseM: 750, topM: 1289, verticalM: 539 },
-    travel: { shinkansenMin: 135, shinkansenYen: 9200, carMin: 260, carKm: 285, etcYen: 4410 },
+    travel: { shinkansenMin: 135, shinkansenYen: 9200, carMin: 230, carKm: 278, etcYen: 4740 },
   },
   {
     slug: "hakuba-goryu-47",
@@ -479,7 +479,7 @@ export const resorts: Resort[] = [
     courses: { total: 24, beginner: 9, intermediate: 9, advanced: 6, longestKm: 6.4 },
     lifts: { total: 18, gondola: 2 },
     elevation: { baseM: 750, topM: 1676, verticalM: 926 },
-    travel: { shinkansenMin: 130, shinkansenYen: 9000, carMin: 230, carKm: 275, etcYen: 7800 },
+    travel: { shinkansenMin: 130, shinkansenYen: 9000, carMin: 220, carKm: 270, etcYen: 4740 },
   },
   {
     slug: "hakuba-cortina",
@@ -495,7 +495,7 @@ export const resorts: Resort[] = [
     courses: { total: 16, beginner: 6, intermediate: 6, advanced: 4, longestKm: 3.5 },
     lifts: { total: 6, gondola: 0 },
     elevation: { baseM: 870, topM: 1400, verticalM: 530 },
-    travel: { shinkansenMin: 145, shinkansenYen: 9800, carMin: 250, carKm: 290, etcYen: 7800 },
+    travel: { shinkansenMin: 145, shinkansenYen: 9800, carMin: 245, carKm: 290, etcYen: 4740 },
   },
   {
     slug: "hakuba-sanosaka",
@@ -511,7 +511,7 @@ export const resorts: Resort[] = [
     courses: { total: 10, beginner: 5, intermediate: 4, advanced: 1, longestKm: 2.1 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 740, topM: 1200, verticalM: 460 },
-    travel: { shinkansenMin: 125, shinkansenYen: 8800, carMin: 220, carKm: 270, etcYen: 7800 },
+    travel: { shinkansenMin: 125, shinkansenYen: 8800, carMin: 215, carKm: 265, etcYen: 4740 },
   },
   {
     slug: "hakuba-happo-one",
@@ -527,7 +527,7 @@ export const resorts: Resort[] = [
     courses: { total: 16, beginner: 5, intermediate: 8, advanced: 3, longestKm: 8.0 },
     lifts: { total: 22, gondola: 1 },
     elevation: { baseM: 760, topM: 1831, verticalM: 1071 },
-    travel: { shinkansenMin: 130, shinkansenYen: 9000, carMin: 230, carKm: 275, etcYen: 7800 },
+    travel: { shinkansenMin: 130, shinkansenYen: 9000, carMin: 225, carKm: 275, etcYen: 4740 },
   },
   {
     slug: "sugadaira-kogen",
@@ -543,7 +543,7 @@ export const resorts: Resort[] = [
     courses: { total: 60, beginner: 12, intermediate: 28, advanced: 20, longestKm: 4.0 },
     lifts: { total: 18, gondola: 0 },
     elevation: { baseM: 1250, topM: 1650, verticalM: 400 },
-    travel: { shinkansenMin: 145, shinkansenYen: 6700, carMin: 165, carKm: 190, etcYen: 6500 },
+    travel: { shinkansenMin: 145, shinkansenYen: 6700, carMin: 170, carKm: 200, etcYen: 4540 },
   },
   {
     slug: "palcall-tsumagoi",
@@ -559,7 +559,7 @@ export const resorts: Resort[] = [
     courses: { total: 24, beginner: 10, intermediate: 10, advanced: 4, longestKm: 4.5 },
     lifts: { total: 5, gondola: 1 },
     elevation: { baseM: 1370, topM: 2050, verticalM: 680 },
-    travel: { shinkansenMin: 100, shinkansenYen: 6500, carMin: 160, carKm: 185, etcYen: 6200 },
+    travel: { shinkansenMin: 100, shinkansenYen: 6500, carMin: 175, carKm: 195, etcYen: 3800 },
   },
   {
     slug: "manza-onsen",
@@ -575,7 +575,7 @@ export const resorts: Resort[] = [
     courses: { total: 9, beginner: 4, intermediate: 3, advanced: 2, longestKm: 2.0 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 1646, topM: 1994, verticalM: 348 },
-    travel: { shinkansenMin: 165, shinkansenYen: 7800, carMin: 180, carKm: 200, etcYen: 6500 },
+    travel: { shinkansenMin: 165, shinkansenYen: 7800, carMin: 190, carKm: 205, etcYen: 3800 },
   },
   {
     slug: "kusatsu-onsen",
@@ -591,7 +591,7 @@ export const resorts: Resort[] = [
     courses: { total: 10, beginner: 4, intermediate: 4, advanced: 2, longestKm: 8.0 },
     lifts: { total: 5, gondola: 1 },
     elevation: { baseM: 1245, topM: 2171, verticalM: 926 },
-    travel: { shinkansenMin: 150, shinkansenYen: 7500, carMin: 165, carKm: 190, etcYen: 6300 },
+    travel: { shinkansenMin: 150, shinkansenYen: 7500, carMin: 165, carKm: 190, etcYen: 2900 },
   },
   {
     slug: "kazawa-snow-area",
@@ -607,7 +607,7 @@ export const resorts: Resort[] = [
     courses: { total: 14, beginner: 4, intermediate: 6, advanced: 4, longestKm: 2.5 },
     lifts: { total: 5, gondola: 0 },
     elevation: { baseM: 1300, topM: 1850, verticalM: 550 },
-    travel: { shinkansenMin: 90, shinkansenYen: 6200, carMin: 150, carKm: 175, etcYen: 6000 },
+    travel: { shinkansenMin: 90, shinkansenYen: 6200, carMin: 160, carKm: 185, etcYen: 3800 },
   },
   {
     slug: "minenohara-kogen",
@@ -623,7 +623,7 @@ export const resorts: Resort[] = [
     courses: { total: 10, beginner: 4, intermediate: 4, advanced: 2, longestKm: 2.0 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 1500, topM: 1750, verticalM: 250 },
-    travel: { shinkansenMin: 150, shinkansenYen: 6800, carMin: 165, carKm: 190, etcYen: 6500 },
+    travel: { shinkansenMin: 150, shinkansenYen: 6800, carMin: 172, carKm: 202, etcYen: 4540 },
   },
   {
     slug: "yunomaru",
@@ -639,7 +639,7 @@ export const resorts: Resort[] = [
     courses: { total: 9, beginner: 4, intermediate: 3, advanced: 2, longestKm: 2.2 },
     lifts: { total: 6, gondola: 0 },
     elevation: { baseM: 1700, topM: 1965, verticalM: 265 },
-    travel: { shinkansenMin: 120, shinkansenYen: 6500, carMin: 140, carKm: 170, etcYen: 5800 },
+    travel: { shinkansenMin: 120, shinkansenYen: 6500, carMin: 155, carKm: 182, etcYen: 4150 },
   },
   {
     slug: "saku-parada",
@@ -655,7 +655,7 @@ export const resorts: Resort[] = [
     courses: { total: 8, beginner: 5, intermediate: 2, advanced: 1, longestKm: 1.2 },
     lifts: { total: 6, gondola: 0 },
     elevation: { baseM: 780, topM: 1050, verticalM: 270 },
-    travel: { shinkansenMin: 80, shinkansenYen: 6000, carMin: 110, carKm: 150, etcYen: 5500 },
+    travel: { shinkansenMin: 80, shinkansenYen: 6000, carMin: 125, carKm: 162, etcYen: 4060 },
   },
   {
     slug: "karuizawa-snow-park",
@@ -671,7 +671,7 @@ export const resorts: Resort[] = [
     courses: { total: 6, beginner: 4, intermediate: 1, advanced: 1, longestKm: 1.0 },
     lifts: { total: 3, gondola: 0 },
     elevation: { baseM: 1280, topM: 1420, verticalM: 140 },
-    travel: { shinkansenMin: 105, shinkansenYen: 6300, carMin: 135, carKm: 155, etcYen: 6000 },
+    travel: { shinkansenMin: 105, shinkansenYen: 6300, carMin: 150, carKm: 175, etcYen: 3800 },
   },
   {
     slug: "takamine-mountain-park",
@@ -687,7 +687,7 @@ export const resorts: Resort[] = [
     courses: { total: 5, beginner: 1, intermediate: 3, advanced: 1, longestKm: 1.0 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 1880, topM: 2050, verticalM: 170 },
-    travel: { shinkansenMin: 120, shinkansenYen: 6500, carMin: 140, carKm: 165, etcYen: 5800 },
+    travel: { shinkansenMin: 120, shinkansenYen: 6500, carMin: 160, carKm: 185, etcYen: 4150 },
   },
   {
     slug: "yamaboku-wild-snow-park",
@@ -703,7 +703,7 @@ export const resorts: Resort[] = [
     courses: { total: 16, beginner: 4, intermediate: 6, advanced: 6, longestKm: 3.1 },
     lifts: { total: 3, gondola: 0 },
     elevation: { baseM: 1500, topM: 1770, verticalM: 270 },
-    travel: { shinkansenMin: 160, shinkansenYen: 7800, carMin: 170, carKm: 200, etcYen: 6600 },
+    travel: { shinkansenMin: 160, shinkansenYen: 7800, carMin: 210, carKm: 255, etcYen: 5410 },
   },
   {
     slug: "hijiri-kogen",
@@ -719,7 +719,7 @@ export const resorts: Resort[] = [
     courses: { total: 6, beginner: 3, intermediate: 2, advanced: 1, longestKm: 1.2 },
     lifts: { total: 3, gondola: 0 },
     elevation: { baseM: 960, topM: 1180, verticalM: 220 },
-    travel: { shinkansenMin: 110, shinkansenYen: 6500, carMin: 140, carKm: 175, etcYen: 5900 },
+    travel: { shinkansenMin: 110, shinkansenYen: 6500, carMin: 160, carKm: 210, etcYen: 4700 },
   },
   {
     slug: "nozawa-onsen",
@@ -735,7 +735,7 @@ export const resorts: Resort[] = [
     courses: { total: 44, beginner: 18, intermediate: 13, advanced: 13, longestKm: 10.0 },
     lifts: { total: 20, gondola: 2 },
     elevation: { baseM: 565, topM: 1650, verticalM: 1085 },
-    travel: { shinkansenMin: 125, shinkansenYen: 8500, carMin: 200, carKm: 240, etcYen: 4320 },
+    travel: { shinkansenMin: 125, shinkansenYen: 8500, carMin: 200, carKm: 255, etcYen: 5620 },
   },
   {
     slug: "togari-onsen",
@@ -751,7 +751,7 @@ export const resorts: Resort[] = [
     courses: { total: 18, beginner: 7, intermediate: 7, advanced: 4, longestKm: 2.5 },
     lifts: { total: 6, gondola: 0 },
     elevation: { baseM: 400, topM: 1030, verticalM: 630 },
-    travel: { shinkansenMin: 115, shinkansenYen: 8200, carMin: 205, carKm: 245, etcYen: 7300 },
+    travel: { shinkansenMin: 115, shinkansenYen: 8200, carMin: 205, carKm: 260, etcYen: 5620 },
   },
   {
     slug: "romance-no-kamisama",
@@ -767,7 +767,7 @@ export const resorts: Resort[] = [
     courses: { total: 11, beginner: 5, intermediate: 4, advanced: 2, longestKm: 2.5 },
     lifts: { total: 5, gondola: 0 },
     elevation: { baseM: 500, topM: 1410, verticalM: 910 },
-    travel: { shinkansenMin: 120, shinkansenYen: 8200, carMin: 200, carKm: 240, etcYen: 7200 },
+    travel: { shinkansenMin: 120, shinkansenYen: 8200, carMin: 195, carKm: 250, etcYen: 5620 },
   },
   {
     slug: "sakae-club",
@@ -783,7 +783,7 @@ export const resorts: Resort[] = [
     courses: { total: 8, beginner: 3, intermediate: 3, advanced: 2, longestKm: 2.0 },
     lifts: { total: 3, gondola: 0 },
     elevation: { baseM: 450, topM: 950, verticalM: 500 },
-    travel: { shinkansenMin: 150, shinkansenYen: 8800, carMin: 220, carKm: 265, etcYen: 7800 },
+    travel: { shinkansenMin: 150, shinkansenYen: 8800, carMin: 220, carKm: 280, etcYen: 5620 },
   },
   {
     slug: "shiga-kogen",
@@ -804,7 +804,7 @@ export const resorts: Resort[] = [
     courses: { total: 84, beginner: 38, intermediate: 32, advanced: 14, longestKm: 6.0 },
     lifts: { total: 48, gondola: 5 },
     elevation: { baseM: 1340, topM: 2307, verticalM: 967 },
-    travel: { shinkansenMin: 150, shinkansenYen: 8600, carMin: 210, carKm: 230, etcYen: 5900 },
+    travel: { shinkansenMin: 150, shinkansenYen: 8600, carMin: 200, carKm: 250, etcYen: 5410 },
   },
   {
     slug: "ryuo-ski-park",
@@ -820,7 +820,7 @@ export const resorts: Resort[] = [
     courses: { total: 14, beginner: 5, intermediate: 5, advanced: 4, longestKm: 6.0 },
     lifts: { total: 8, gondola: 1 },
     elevation: { baseM: 850, topM: 1930, verticalM: 1080 },
-    travel: { shinkansenMin: 135, shinkansenYen: 8200, carMin: 180, carKm: 225, etcYen: 6800 },
+    travel: { shinkansenMin: 135, shinkansenYen: 8200, carMin: 190, carKm: 245, etcYen: 5410 },
   },
   {
     slug: "x-jam-takaifuji-yomase",
@@ -836,7 +836,7 @@ export const resorts: Resort[] = [
     courses: { total: 26, beginner: 9, intermediate: 11, advanced: 6, longestKm: 2.0 },
     lifts: { total: 9, gondola: 0 },
     elevation: { baseM: 840, topM: 1370, verticalM: 530 },
-    travel: { shinkansenMin: 130, shinkansenYen: 8200, carMin: 180, carKm: 225, etcYen: 6800 },
+    travel: { shinkansenMin: 130, shinkansenYen: 8200, carMin: 185, carKm: 245, etcYen: 5410 },
   },
   {
     slug: "komaruyama",
@@ -852,7 +852,7 @@ export const resorts: Resort[] = [
     courses: { total: 5, beginner: 3, intermediate: 1, advanced: 1, longestKm: 1.5 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 800, topM: 1200, verticalM: 400 },
-    travel: { shinkansenMin: 130, shinkansenYen: 8200, carMin: 175, carKm: 220, etcYen: 6700 },
+    travel: { shinkansenMin: 130, shinkansenYen: 8200, carMin: 185, carKm: 242, etcYen: 5410 },
   },
   {
     slug: "marunuma-kogen",
@@ -868,7 +868,7 @@ export const resorts: Resort[] = [
     courses: { total: 13, beginner: 4, intermediate: 5, advanced: 4, longestKm: 4.0 },
     lifts: { total: 8, gondola: 1 },
     elevation: { baseM: 1400, topM: 2000, verticalM: 600 },
-    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 120, carKm: 148, etcYen: 3600 },
+    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 165, carKm: 195, etcYen: 3710 },
   },
   {
     slug: "minakami-hodaigi",
@@ -884,7 +884,7 @@ export const resorts: Resort[] = [
     courses: { total: 16, beginner: 5, intermediate: 6, advanced: 5, longestKm: 2.6 },
     lifts: { total: 7, gondola: 0 },
     elevation: { baseM: 840, topM: 1400, verticalM: 560 },
-    travel: { shinkansenMin: 70, shinkansenYen: 6000, carMin: 135, carKm: 165, etcYen: 4200 },
+    travel: { shinkansenMin: 70, shinkansenYen: 6000, carMin: 150, carKm: 165, etcYen: 3920 },
   },
   {
     slug: "ogna-hotaka",
@@ -900,7 +900,7 @@ export const resorts: Resort[] = [
     courses: { total: 13, beginner: 4, intermediate: 5, advanced: 4, longestKm: 3.5 },
     lifts: { total: 6, gondola: 0 },
     elevation: { baseM: 1400, topM: 1820, verticalM: 420 },
-    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 135, carKm: 155, etcYen: 4000 },
+    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 145, carKm: 175, etcYen: 3710 },
   },
   {
     slug: "hunter-mountain-shiobara",
@@ -916,7 +916,7 @@ export const resorts: Resort[] = [
     courses: { total: 12, beginner: 4, intermediate: 5, advanced: 3, longestKm: 3.0 },
     lifts: { total: 7, gondola: 1 },
     elevation: { baseM: 1138, topM: 1638, verticalM: 500 },
-    travel: { shinkansenMin: 70, shinkansenYen: 5900, carMin: 150, carKm: 170, etcYen: 4800 },
+    travel: { shinkansenMin: 70, shinkansenYen: 5900, carMin: 155, carKm: 180, etcYen: 3940 },
   },
   {
     slug: "katashina-kogen",
@@ -932,7 +932,7 @@ export const resorts: Resort[] = [
     courses: { total: 11, beginner: 5, intermediate: 4, advanced: 2, longestKm: 2.5 },
     lifts: { total: 5, gondola: 0 },
     elevation: { baseM: 960, topM: 1240, verticalM: 280 },
-    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 120, carKm: 148, etcYen: 3600 },
+    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 148, carKm: 178, etcYen: 3710 },
   },
   {
     slug: "edelweiss-ski-resort",
@@ -948,7 +948,7 @@ export const resorts: Resort[] = [
     courses: { total: 11, beginner: 5, intermediate: 4, advanced: 2, longestKm: 2.0 },
     lifts: { total: 5, gondola: 0 },
     elevation: { baseM: 1100, topM: 1400, verticalM: 300 },
-    travel: { shinkansenMin: 70, shinkansenYen: 5900, carMin: 150, carKm: 170, etcYen: 4800 },
+    travel: { shinkansenMin: 70, shinkansenYen: 5900, carMin: 150, carKm: 178, etcYen: 3940 },
   },
   {
     slug: "snow-park-oze-tokura",
@@ -964,7 +964,7 @@ export const resorts: Resort[] = [
     courses: { total: 9, beginner: 3, intermediate: 4, advanced: 2, longestKm: 2.2 },
     lifts: { total: 5, gondola: 0 },
     elevation: { baseM: 980, topM: 1400, verticalM: 420 },
-    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 140, carKm: 165, etcYen: 4000 },
+    travel: { shinkansenMin: 0, shinkansenYen: 0, carMin: 155, carKm: 183, etcYen: 3710 },
   },
   {
     slug: "tambara-ski-park",
@@ -980,7 +980,7 @@ export const resorts: Resort[] = [
     courses: { total: 8, beginner: 4, intermediate: 3, advanced: 1, longestKm: 2.55 },
     lifts: { total: 6, gondola: 0 },
     elevation: { baseM: 1250, topM: 1550, verticalM: 300 },
-    travel: { shinkansenMin: 65, shinkansenYen: 5600, carMin: 120, carKm: 145, etcYen: 3800 },
+    travel: { shinkansenMin: 65, shinkansenYen: 5600, carMin: 145, carKm: 160, etcYen: 3710 },
   },
   {
     slug: "okutone-snow-park",
@@ -996,7 +996,7 @@ export const resorts: Resort[] = [
     courses: { total: 10, beginner: 3, intermediate: 4, advanced: 3, longestKm: 2.5 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 600, topM: 1180, verticalM: 580 },
-    travel: { shinkansenMin: 60, shinkansenYen: 5600, carMin: 125, carKm: 150, etcYen: 3900 },
+    travel: { shinkansenMin: 60, shinkansenYen: 5600, carMin: 130, carKm: 155, etcYen: 3920 },
   },
   {
     slug: "norn-minakami",
@@ -1012,7 +1012,7 @@ export const resorts: Resort[] = [
     courses: { total: 5, beginner: 1, intermediate: 2, advanced: 2, longestKm: 2.0 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 870, topM: 1220, verticalM: 350 },
-    travel: { shinkansenMin: 66, shinkansenYen: 5600, carMin: 100, carKm: 132, etcYen: 3900 },
+    travel: { shinkansenMin: 66, shinkansenYen: 5600, carMin: 125, carKm: 150, etcYen: 3920 },
   },
   {
     slug: "minakami-kogen-resort",
@@ -1028,7 +1028,7 @@ export const resorts: Resort[] = [
     courses: { total: 11, beginner: 6, intermediate: 4, advanced: 1, longestKm: 3.1 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 960, topM: 1240, verticalM: 280 },
-    travel: { shinkansenMin: 75, shinkansenYen: 6000, carMin: 135, carKm: 165, etcYen: 4200 },
+    travel: { shinkansenMin: 75, shinkansenYen: 6000, carMin: 155, carKm: 170, etcYen: 3920 },
   },
   {
     slug: "minakami-fujiwara",
@@ -1044,7 +1044,7 @@ export const resorts: Resort[] = [
     courses: { total: 10, beginner: 5, intermediate: 4, advanced: 1, longestKm: 1.6 },
     lifts: { total: 3, gondola: 0 },
     elevation: { baseM: 700, topM: 920, verticalM: 220 },
-    travel: { shinkansenMin: 70, shinkansenYen: 6000, carMin: 130, carKm: 160, etcYen: 4000 },
+    travel: { shinkansenMin: 70, shinkansenYen: 6000, carMin: 155, carKm: 170, etcYen: 3920 },
   },
   {
     slug: "white-valley-minakami",
@@ -1060,7 +1060,7 @@ export const resorts: Resort[] = [
     courses: { total: 5, beginner: 2, intermediate: 2, advanced: 1, longestKm: 2.0 },
     lifts: { total: 2, gondola: 0 },
     elevation: { baseM: 700, topM: 1030, verticalM: 330 },
-    travel: { shinkansenMin: 65, shinkansenYen: 5600, carMin: 110, carKm: 138, etcYen: 3900 },
+    travel: { shinkansenMin: 65, shinkansenYen: 5600, carMin: 135, carKm: 155, etcYen: 3920 },
   },
   {
     slug: "nikko-yumoto-onsen",
@@ -1076,7 +1076,7 @@ export const resorts: Resort[] = [
     courses: { total: 4, beginner: 2, intermediate: 2, advanced: 0, longestKm: 1.3 },
     lifts: { total: 4, gondola: 0 },
     elevation: { baseM: 1480, topM: 1680, verticalM: 200 },
-    travel: { shinkansenMin: 110, shinkansenYen: 5500, carMin: 150, carKm: 170, etcYen: 4500 },
+    travel: { shinkansenMin: 110, shinkansenYen: 5500, carMin: 165, carKm: 170, etcYen: 4190 },
   },
   {
     slug: "mt-t-hoshino",
@@ -1092,7 +1092,7 @@ export const resorts: Resort[] = [
     courses: { total: 9, beginner: 3, intermediate: 4, advanced: 2, longestKm: 4.0 },
     lifts: { total: 4, gondola: 1 },
     elevation: { baseM: 750, topM: 1500, verticalM: 750 },
-    travel: { shinkansenMin: 75, shinkansenYen: 6000, carMin: 115, carKm: 142, etcYen: 3900 },
+    travel: { shinkansenMin: 75, shinkansenYen: 6000, carMin: 145, carKm: 165, etcYen: 3920 },
   },
 ];
 

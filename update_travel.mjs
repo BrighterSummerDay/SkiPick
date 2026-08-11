@@ -1,86 +1,94 @@
-﻿import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 
 const content = readFileSync('src/lib/resorts.ts', 'utf8');
 
-// Build regex replacements for each resort's travel line
-// Find travel lines by context (slug + travel pattern)
+// Travel updates from Tokyo Station (東京駅) as departure point
 const resortUpdates = [
-  // echigo-yuzawa region
-  { slug: 'gala-yuzawa', carMin: 115, carKm: 185, etcYen: 4420 },
-  { slug: 'naeba', carMin: 135, carKm: 200, etcYen: 4420 },
-  { slug: 'kagura', carMin: 125, carKm: 188, etcYen: 4420 },
-  { slug: 'kandatsu', carMin: 115, carKm: 182, etcYen: 4420 },
-  { slug: 'iwappara', carMin: 115, carKm: 183, etcYen: 4420 },
-  { slug: 'muika', carMin: 120, carKm: 185, etcYen: 4420 },
-  { slug: 'joetsu-kokusai', carMin: 125, carKm: 188, etcYen: 4420 },
-  { slug: 'naspa', carMin: 113, carKm: 182, etcYen: 4420 },
-  { slug: 'yuzawa-kogen', carMin: 115, carKm: 183, etcYen: 4420 },
-  { slug: 'ishiuchi-maruyama', carMin: 115, carKm: 183, etcYen: 4420 },
-  { slug: 'muikamachi-hakkaisan', carMin: 130, carKm: 190, etcYen: 4990 },
-  { slug: 'okutadami', carMin: 230, carKm: 255, etcYen: 5170 },
-  { slug: 'grandeco', carMin: 250, carKm: 290, etcYen: 7800 },
-  // gunma-tochigi region - Nerima -> Numadate IC (¥3600, ~80min)
-  { slug: 'kawaba', carMin: 110, carKm: 143, etcYen: 3600 },
-  { slug: 'oze-iwakura', carMin: 120, carKm: 163, etcYen: 3600 },
-  { slug: 'marunuma-kogen', carMin: 120, carKm: 148, etcYen: 3600 },
-  { slug: 'tambara', carMin: 115, carKm: 145, etcYen: 3600 },
-  { slug: 'katashina-kogen', carMin: 120, carKm: 148, etcYen: 3600 },
-  { slug: 'snow-park-ozonejikura', carMin: 120, carKm: 163, etcYen: 3600 },
-  { slug: 'edelweiss', carMin: 115, carKm: 143, etcYen: 3600 },
-  // Nerima -> Minakami IC (¥3900, ~90min)
-  { slug: 'minakami-kogen', carMin: 115, carKm: 148, etcYen: 3900 },
-  { slug: 'minakami-kogen-fujiwara', carMin: 110, carKm: 143, etcYen: 3900 },
-  { slug: 'okutone-snow-park', carMin: 125, carKm: 150, etcYen: 3900 },
-  { slug: 'norn-minakami', carMin: 100, carKm: 132, etcYen: 3900 },
-  { slug: 'hodaigi', carMin: 110, carKm: 140, etcYen: 3900 },
-  { slug: 'white-valley-minakami', carMin: 110, carKm: 138, etcYen: 3900 },
-  { slug: 'mt-t-hoshino', carMin: 115, carKm: 142, etcYen: 3900 },
-  // Tochigi - Nerima -> Nishi-Nasuno Shiobara IC via Tohoku Expressway
-  { slug: 'hunter-mountain', carMin: 150, carKm: 185, etcYen: 5200 },
-  { slug: 'nikko-yumoto', carMin: 175, carKm: 168, etcYen: 4800 },
-  { slug: 'snow-park', carMin: 140, carKm: 162, etcYen: 4200 },
-  { slug: 'snowair', carMin: 135, carKm: 158, etcYen: 4000 },
-  // joshinetsu region - Karuizawa-Shinshu-Nakano
-  { slug: 'karuizawa-prince', carMin: 120, carKm: 148, etcYen: 4010 },
-  { slug: 'shiga-kogen', carMin: 210, carKm: 230, etcYen: 5900 },
-  { slug: 'nozawa-onsen', carMin: 200, carKm: 240, etcYen: 4320 },
-  { slug: 'madarao', carMin: 205, carKm: 240, etcYen: 4320 },
-  { slug: 'ikenotaira', carMin: 205, carKm: 242, etcYen: 4320 },
-  { slug: 'tangram', carMin: 205, carKm: 242, etcYen: 4320 },
-  { slug: 'togari-nozawa-onsen', carMin: 200, carKm: 238, etcYen: 4320 },
-  { slug: 'yamaboku', carMin: 220, carKm: 255, etcYen: 5900 },
-  { slug: 'x-jam', carMin: 150, carKm: 165, etcYen: 4010 },
-  { slug: 'abakuma', carMin: 180, carKm: 205, etcYen: 5200 },
-  // hakuba region - Nerima -> Azumino IC (¥4410, ~170min) + 90min to Hakuba
-  { slug: 'hakuba-goryu', carMin: 260, carKm: 285, etcYen: 4410 },
-  { slug: 'happo-one', carMin: 260, carKm: 285, etcYen: 4410 },
-  { slug: 'cortina', carMin: 270, carKm: 290, etcYen: 4410 },
-  { slug: 'hakuba-47', carMin: 260, carKm: 285, etcYen: 4410 },
-  { slug: 'hakuba-iwatake', carMin: 260, carKm: 285, etcYen: 4410 },
-  { slug: 'tsugaike', carMin: 265, carKm: 287, etcYen: 4410 },
-  // myoko region - Nerima -> Myoko-kogen IC (¥6040, ~175min)
-  { slug: 'myoko-suginohara', carMin: 175, carKm: 252, etcYen: 6040 },
-  { slug: 'akakura-onsen', carMin: 180, carKm: 253, etcYen: 6040 },
-  { slug: 'akakura-kanko', carMin: 180, carKm: 253, etcYen: 6040 },
-  { slug: 'ikenotaira-myoko', carMin: 175, carKm: 250, etcYen: 6040 },
-  { slug: 'seki-onsen', carMin: 165, carKm: 248, etcYen: 6040 },
-  // yamagata region - much farther
-  { slug: 'zao-onsen', carMin: 270, carKm: 358, etcYen: 7900 },
-  { slug: 'zao-central', carMin: 270, carKm: 358, etcYen: 7900 },
-  { slug: 'aizumi-azuma', carMin: 210, carKm: 260, etcYen: 6200 },
-  { slug: 'oguna-hotaka', carMin: 110, carKm: 143, etcYen: 3600 },
-  { slug: 'snow-resort-masutsuno', carMin: 170, carKm: 198, etcYen: 4800 },
-  { slug: 'yutenji-onsen', carMin: 155, carKm: 170, etcYen: 4500 },
-  { slug: 'snow-resort-masutsuno-jizodaira', carMin: 165, carKm: 178, etcYen: 4800 },
+  // Echigo-Yuzawa Region
+  { slug: 'gala-yuzawa', carMin: 150, carKm: 196, etcYen: 4410 },
+  { slug: 'naeba', carMin: 170, carKm: 202, etcYen: 4410 },
+  { slug: 'kagura', carMin: 167, carKm: 195, etcYen: 4410 },
+  { slug: 'kandatsu', carMin: 145, carKm: 193, etcYen: 4410 },
+  { slug: 'iwappara', carMin: 145, carKm: 194, etcYen: 4410 },
+  { slug: 'yuzawa-park', carMin: 145, carKm: 193, etcYen: 4410 },
+  { slug: 'yuzawa-nakazato', carMin: 142, carKm: 192, etcYen: 4410 },
+  { slug: 'yuzawa-kogen', carMin: 148, carKm: 195, etcYen: 4410 },
+  { slug: 'naspa-ski-garden', carMin: 145, carKm: 195, etcYen: 4410 },
+  { slug: 'ishiuchi-maruyama', carMin: 150, carKm: 198, etcYen: 4560 },
+  { slug: 'maiko', carMin: 145, carKm: 200, etcYen: 4560 },
+  { slug: 'joetsu-kokusai', carMin: 155, carKm: 204, etcYen: 4560 },
+  { slug: 'hakkaisan', carMin: 170, carKm: 220, etcYen: 4760 },
+  { slug: 'hakkaisan-sanroku', carMin: 165, carKm: 216, etcYen: 4760 },
+  { slug: 'muika', carMin: 155, carKm: 210, etcYen: 4760 },
+  { slug: 'chateau-shiozawa', carMin: 152, carKm: 202, etcYen: 4560 },
+  { slug: 'nakazato-snow-wood', carMin: 142, carKm: 192, etcYen: 4410 },
+  { slug: 'suhara', carMin: 180, carKm: 225, etcYen: 5100 },
+  { slug: 'yakushi', carMin: 170, carKm: 220, etcYen: 5100 },
+  { slug: 'koide', carMin: 168, carKm: 218, etcYen: 5100 },
+  { slug: 'okutadami-maruyama', carMin: 225, carKm: 250, etcYen: 5100 },
+  { slug: 'new-green-pia-tsunan', carMin: 180, carKm: 225, etcYen: 4560 },
+
+  // Gunma-Tochigi Region
+  { slug: 'kawaba', carMin: 135, carKm: 165, etcYen: 3710 },
+  { slug: 'oze-iwakura', carMin: 150, carKm: 180, etcYen: 3710 },
+  { slug: 'marunuma-kogen', carMin: 165, carKm: 195, etcYen: 3710 },
+  { slug: 'minakami-hodaigi', carMin: 150, carKm: 165, etcYen: 3920 },
+  { slug: 'ogna-hotaka', carMin: 145, carKm: 175, etcYen: 3710 },
+  { slug: 'hunter-mountain-shiobara', carMin: 155, carKm: 180, etcYen: 3940 },
+  { slug: 'katashina-kogen', carMin: 148, carKm: 178, etcYen: 3710 },
+  { slug: 'edelweiss-ski-resort', carMin: 150, carKm: 178, etcYen: 3940 },
+  { slug: 'snow-park-oze-tokura', carMin: 155, carKm: 183, etcYen: 3710 },
+  { slug: 'tambara-ski-park', carMin: 145, carKm: 160, etcYen: 3710 },
+  { slug: 'okutone-snow-park', carMin: 130, carKm: 155, etcYen: 3920 },
+  { slug: 'norn-minakami', carMin: 125, carKm: 150, etcYen: 3920 },
+  { slug: 'minakami-kogen-resort', carMin: 155, carKm: 170, etcYen: 3920 },
+  { slug: 'minakami-fujiwara', carMin: 155, carKm: 170, etcYen: 3920 },
+  { slug: 'white-valley-minakami', carMin: 135, carKm: 155, etcYen: 3920 },
+  { slug: 'nikko-yumoto-onsen', carMin: 165, carKm: 170, etcYen: 4190 },
+  { slug: 'mt-t-hoshino', carMin: 145, carKm: 165, etcYen: 3920 },
+
+  // Joshinetsu Region
+  { slug: 'karuizawa-prince', carMin: 125, carKm: 160, etcYen: 3800 },
+  { slug: 'sugadaira-kogen', carMin: 170, carKm: 200, etcYen: 4540 },
+  { slug: 'palcall-tsumagoi', carMin: 175, carKm: 195, etcYen: 3800 },
+  { slug: 'manza-onsen', carMin: 190, carKm: 205, etcYen: 3800 },
+  { slug: 'kusatsu-onsen', carMin: 165, carKm: 190, etcYen: 2900 },
+  { slug: 'kazawa-snow-area', carMin: 160, carKm: 185, etcYen: 3800 },
+  { slug: 'minenohara-kogen', carMin: 172, carKm: 202, etcYen: 4540 },
+  { slug: 'yunomaru', carMin: 155, carKm: 182, etcYen: 4150 },
+  { slug: 'saku-parada', carMin: 125, carKm: 162, etcYen: 4060 },
+  { slug: 'karuizawa-snow-park', carMin: 150, carKm: 175, etcYen: 3800 },
+  { slug: 'takamine-mountain-park', carMin: 160, carKm: 185, etcYen: 4150 },
+  { slug: 'yamaboku-wild-snow-park', carMin: 210, carKm: 255, etcYen: 5410 },
+  { slug: 'hijiri-kogen', carMin: 160, carKm: 210, etcYen: 4700 },
+
+  // Shiga-Nozawa Region
+  { slug: 'nozawa-onsen', carMin: 200, carKm: 255, etcYen: 5620 },
+  { slug: 'togari-onsen', carMin: 205, carKm: 260, etcYen: 5620 },
+  { slug: 'romance-no-kamisama', carMin: 195, carKm: 250, etcYen: 5620 },
+  { slug: 'sakae-club', carMin: 220, carKm: 280, etcYen: 5620 },
+  { slug: 'shiga-kogen', carMin: 200, carKm: 250, etcYen: 5410 },
+  { slug: 'ryuo-ski-park', carMin: 190, carKm: 245, etcYen: 5410 },
+  { slug: 'x-jam-takaifuji-yomase', carMin: 185, carKm: 245, etcYen: 5410 },
+  { slug: 'komaruyama', carMin: 185, carKm: 242, etcYen: 5410 },
+
+  // Hakuba Region
+  { slug: 'kashimayari', carMin: 210, carKm: 260, etcYen: 4740 },
+  { slug: 'jiigatake', carMin: 205, carKm: 255, etcYen: 4740 },
+  { slug: 'tsugaike-kogen', carMin: 235, carKm: 283, etcYen: 4740 },
+  { slug: 'hakuba-iwatake', carMin: 230, carKm: 278, etcYen: 4740 },
+  { slug: 'hakuba-goryu-47', carMin: 220, carKm: 270, etcYen: 4740 },
+  { slug: 'hakuba-cortina', carMin: 245, carKm: 290, etcYen: 4740 },
+  { slug: 'hakuba-sanosaka', carMin: 215, carKm: 265, etcYen: 4740 },
+  { slug: 'hakuba-happo-one', carMin: 225, carKm: 275, etcYen: 4740 },
 ];
 
-// For each update, find the resort block and update the travel line
 let updatedContent = content;
 let updateCount = 0;
 
 for (const update of resortUpdates) {
   const slugPattern = new RegExp(
-    '(slug:\\s*"' + update.slug + '"[\\s\\S]*?travel:\\s*\\{[^}]*carMin:\\s*)\\d+([^}]*carKm:\\s*)\\d+([^}]*etcYen:\\s*)\\d+',
+    '(slug:\\s*"' + update.slug + '"[\\s\\S]*?travel:\\s*\\{[^}]*?carMin:\\s*)\\d+([^}]*?carKm:\\s*)\\d+([^}]*?etcYen:\\s*)\\d+',
     'g'
   );
   const newContent = updatedContent.replace(slugPattern, (match, p1, p2, p3) => {
