@@ -25,8 +25,10 @@ export function HomeHero() {
   const compareQuery = activeResort ? activeResort.slug : "";
 
   const resortsInRegion = selectedRegion ? resorts.filter((r) => r.regionId === selectedRegion) : [];
-  const minPrice = resortsInRegion.length ? Math.min(...resortsInRegion.map((r) => r.basePrice)) : 0;
-  const maxPrice = resortsInRegion.length ? Math.max(...resortsInRegion.map((r) => r.basePrice)) : 0;
+  const minCarKm = resortsInRegion.length ? Math.min(...resortsInRegion.map((r) => r.travel.carKm)) : 0;
+  const maxCarKm = resortsInRegion.length ? Math.max(...resortsInRegion.map((r) => r.travel.carKm)) : 0;
+  const minCarMin = resortsInRegion.length ? Math.min(...resortsInRegion.map((r) => r.travel.carMin)) : 0;
+  const maxCarMin = resortsInRegion.length ? Math.max(...resortsInRegion.map((r) => r.travel.carMin)) : 0;
 
   const regionDetail =
     selectedRegion && trd.has(`${selectedRegion}.title`)
@@ -121,11 +123,23 @@ export function HomeHero() {
                 <span className="font-data font-semibold text-ink">¥{activeResort.basePrice.toLocaleString()}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-ink-muted">{tm("statTravel")}</span>
+                <span className="text-ink-muted">{tm("statShinkansenLabel")}</span>
                 <span className="font-data font-semibold text-ink">
-                  {activeResort.travel.shinkansenMin
-                    ? formatShinkansenMin(activeResort.travel.shinkansenMin, locale)
-                    : formatCarMin(activeResort.travel.carMin, locale)}
+                  {activeResort.travel.shinkansenMin > 0
+                    ? tm("statShinkansenValue", {
+                        time: formatShinkansenMin(activeResort.travel.shinkansenMin, locale),
+                        price: activeResort.travel.shinkansenYen.toLocaleString(),
+                      })
+                    : tm("noShinkansen")}
+                </span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-ink-muted">{tm("statCarLabel")}</span>
+                <span className="font-data font-semibold text-ink">
+                  {tm("statCarValue", {
+                    time: formatCarMin(activeResort.travel.carMin, locale),
+                    price: activeResort.travel.etcYen.toLocaleString(),
+                  })}
                 </span>
               </div>
               <div className="flex items-center justify-between">
@@ -187,15 +201,17 @@ export function HomeHero() {
                 <span className="font-data font-semibold text-ink">{resortsInRegion.length} 座</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-ink-muted">{tm("travelLabel")}</span>
-                <span className="font-data font-semibold text-ink">{regionDetail.travelInfo}</span>
+                <span className="text-ink-muted">{tm("carKmRangeLabel")}</span>
+                <span className="font-data font-semibold text-ink">
+                  {minCarKm === maxCarKm ? `${minCarKm} km` : `${minCarKm} ~ ${maxCarKm} km`}
+                </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-ink-muted">{tm("priceRangeLabel")}</span>
+                <span className="text-ink-muted">{tm("carTimeRangeLabel")}</span>
                 <span className="font-data font-semibold text-ink">
-                  {minPrice === maxPrice
-                    ? `¥${minPrice.toLocaleString()}`
-                    : `¥${minPrice.toLocaleString()} ~ ¥${maxPrice.toLocaleString()}`}
+                  {minCarMin === maxCarMin
+                    ? formatCarMin(minCarMin, locale)
+                    : `${formatCarMin(minCarMin, locale)} ~ ${formatCarMin(maxCarMin, locale)}`}
                 </span>
               </div>
             </div>

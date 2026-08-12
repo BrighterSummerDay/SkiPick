@@ -283,9 +283,9 @@ export default function MapPage() {
                   value={
                     activeResort.travel.shinkansenMin > 0
                       ? t("statShinkansenValue", {
-                          time: formatShinkansenMin(activeResort.travel.shinkansenMin, locale),
-                          price: activeResort.travel.shinkansenYen.toLocaleString(),
-                        })
+                        time: formatShinkansenMin(activeResort.travel.shinkansenMin, locale),
+                        price: activeResort.travel.shinkansenYen.toLocaleString(),
+                      })
                       : t("noShinkansen")
                   }
                 />
@@ -350,15 +350,15 @@ export default function MapPage() {
                   value={
                     minCarKm === maxCarKm
                       ? `${minCarKm} km`
-                      : `${minCarKm}km - ${maxCarKm}km`
+                      : `${minCarKm} ~ ${maxCarKm} km`
                   }
                 />
                 <Stat
                   label={t("carTimeRangeLabel")}
                   value={
                     minCarMin === maxCarMin
-                      ? `${minCarMin} ${t("minutes")}`
-                      : `${minCarMin} - ${maxCarMin} ${t("minutes")}`
+                      ? formatCarMin(minCarMin, locale)
+                      : `${formatCarMin(minCarMin, locale)} ~ ${formatCarMin(maxCarMin, locale)}`
                   }
                 />
               </div>

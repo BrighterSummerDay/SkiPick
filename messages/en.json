@@ -79,6 +79,7 @@
     "title": "Resort Map",
     "subtitle": "Click a shaded area on the map to see resort details.",
     "statBasePrice": "Day pass",
+    "statTravel": "From Tokyo",
     "statShinkansenLabel": "Shinkansen",
     "statShinkansenValue": "{time} · ¥{price}",
     "statCarLabel": "By car",

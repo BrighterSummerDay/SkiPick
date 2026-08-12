@@ -79,6 +79,7 @@
     "title": "スキー場マップ",
     "subtitle": "地図上のエリアをクリックすると詳細が表示されます。",
     "statBasePrice": "1日券",
+    "statTravel": "東京アクセス",
     "statShinkansenLabel": "新幹線",
     "statShinkansenValue": "{time} · ¥{price}",
     "statCarLabel": "車",
