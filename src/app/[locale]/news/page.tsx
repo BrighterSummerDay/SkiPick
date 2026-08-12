@@ -6,9 +6,8 @@ export default async function NewsPage() {
   const [t, news] = await Promise.all([getTranslations("news"), getLocalizedNews()]);
 
   return (
-    <div className="mx-auto max-w-[1040px] px-4 sm:px-8 mb-8 sm:mb-12">
-
-      <div className="grid gap-4 sm:gap-6">
+    <div className="mx-auto max-w-[1100px] w-full px-4 sm:px-8 mb-8 sm:mb-12">
+      <div className="grid gap-4 sm:gap-6 w-full">
         {news.map((item) => (
           <NewsCard key={item.slug} item={item} />
         ))}

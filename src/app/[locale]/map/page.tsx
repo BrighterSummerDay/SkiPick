@@ -90,8 +90,10 @@ export default function MapPage() {
     [selectedRegion, resorts]
   );
 
-  const minPrice = resortsInRegion.length ? Math.min(...resortsInRegion.map((r) => r.basePrice)) : 0;
-  const maxPrice = resortsInRegion.length ? Math.max(...resortsInRegion.map((r) => r.basePrice)) : 0;
+  const minCarKm = resortsInRegion.length ? Math.min(...resortsInRegion.map((r) => r.travel.carKm)) : 0;
+  const maxCarKm = resortsInRegion.length ? Math.max(...resortsInRegion.map((r) => r.travel.carKm)) : 0;
+  const minCarMin = resortsInRegion.length ? Math.min(...resortsInRegion.map((r) => r.travel.carMin)) : 0;
+  const maxCarMin = resortsInRegion.length ? Math.max(...resortsInRegion.map((r) => r.travel.carMin)) : 0;
 
   const regionDetail =
     selectedRegion && trd.has(`${selectedRegion}.title`)
@@ -277,12 +279,22 @@ export default function MapPage() {
               <div className="mt-6 space-y-3">
                 <Stat label={t("statBasePrice")} value={`¥${activeResort.basePrice.toLocaleString()}`} />
                 <Stat
-                  label={t("statTravel")}
+                  label={t("statShinkansenLabel")}
                   value={
-                    activeResort.travel.shinkansenMin
-                      ? formatShinkansenMin(activeResort.travel.shinkansenMin, locale)
-                      : formatCarMin(activeResort.travel.carMin, locale)
+                    activeResort.travel.shinkansenMin > 0
+                      ? t("statShinkansenValue", {
+                          time: formatShinkansenMin(activeResort.travel.shinkansenMin, locale),
+                          price: activeResort.travel.shinkansenYen.toLocaleString(),
+                        })
+                      : t("noShinkansen")
                   }
+                />
+                <Stat
+                  label={t("statCarLabel")}
+                  value={t("statCarValue", {
+                    time: formatCarMin(activeResort.travel.carMin, locale),
+                    price: activeResort.travel.etcYen.toLocaleString(),
+                  })}
                 />
                 <Stat
                   label={t("statCourses")}
@@ -333,13 +345,20 @@ export default function MapPage() {
 
               <div className="mt-4 space-y-2 border-t border-white/60 pt-3 text-xs">
                 <Stat label={t("resortCountLabel")} value={`${resortsInRegion.length} 座`} />
-                <Stat label={t("travelLabel")} value={regionDetail.travelInfo} />
                 <Stat
-                  label={t("priceRangeLabel")}
+                  label={t("carKmRangeLabel")}
                   value={
-                    minPrice === maxPrice
-                      ? `¥${minPrice.toLocaleString()}`
-                      : `¥${minPrice.toLocaleString()} ~ ¥${maxPrice.toLocaleString()}`
+                    minCarKm === maxCarKm
+                      ? `${minCarKm} km`
+                      : `${minCarKm}km - ${maxCarKm}km`
+                  }
+                />
+                <Stat
+                  label={t("carTimeRangeLabel")}
+                  value={
+                    minCarMin === maxCarMin
+                      ? `${minCarMin} ${t("minutes")}`
+                      : `${minCarMin} - ${maxCarMin} ${t("minutes")}`
                   }
                 />
               </div>

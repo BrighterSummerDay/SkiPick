@@ -42,7 +42,7 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      <div className="mx-auto max-w-[1040px] px-4 sm:px-6 pt-3">
+      <div className="mx-auto max-w-[1100px] w-full px-4 sm:px-8 pt-3">
         <div className="glass-strong rounded-2xl px-4 sm:px-6 h-14 flex items-center justify-between shadow-[0_10px_40px_-20px_rgba(30,91,163,0.35)]">
 
           {/* ── Logo ──────────────────────────────── */}

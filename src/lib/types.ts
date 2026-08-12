@@ -12,6 +12,7 @@ export interface Resort {
   areaPolygon: [number, number][] | [number, number][][];
   basePrice: number; // 单日券，日元
   seasonPassPrice: number; // season pass，日元
+  lastSeasonVisitors?: number; // 上个雪季来场人数（人次），例如 350000
   courses: {
     total: number;
     beginner: number;
