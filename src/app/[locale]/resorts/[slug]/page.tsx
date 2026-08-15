@@ -267,6 +267,42 @@ export default async function ResortDetailPage({
         </GlassCard>
       </div>
 
+      {/* 第四行：夜场与地形公园设施卡片 (Facilities Card) */}
+      <GlassCard className="p-6 mt-6" frost={false}>
+        <div className="flex items-center justify-between">
+          <h3 className="font-bold text-[15px]">{t("sectionFacilities")}</h3>
+          <span className="text-[11px] text-ink-faint font-data">Features</span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          {/* 夜场营业 */}
+          <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between gap-3">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-ink-main text-[15px]">{t("nightSkiingTitle")}</span>
+              <span className={`text-xs font-semibold px-3 py-1 rounded-full ${resort.hasNightSkiing ? "bg-accent-ice/10 text-accent-ice" : "bg-black/5 text-ink-faint"}`}>
+                {resort.hasNightSkiing ? t("hasNightSkiingYes") : t("hasNightSkiingNo")}
+              </span>
+            </div>
+            {resort.hasNightSkiing && resort.nightSkiingHours && (
+              <div className="text-xs text-ink-muted flex items-center justify-between pt-2.5 border-t border-white/10">
+                <span>{t("nightSkiingHours")}</span>
+                <span className="font-data font-bold text-accent-ice">{resort.nightSkiingHours}</span>
+              </div>
+            )}
+          </div>
+
+          {/* 地形公园 */}
+          <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between gap-3">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-ink-main text-[15px]">{t("snowParkTitle")}</span>
+              <span className={`text-xs font-semibold px-3 py-1 rounded-full ${resort.hasPark ? "bg-accent-ice/10 text-accent-ice" : "bg-black/5 text-ink-faint"}`}>
+                {resort.hasPark ? t("hasParkYes") : t("hasParkNo")}
+              </span>
+            </div>
+          </div>
+        </div>
+      </GlassCard>
+
       <br />
 
       {/* 4. 社区现场反馈 */}

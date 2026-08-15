@@ -205,7 +205,9 @@
       "car": "東京から車で",
       "courses": "コース数",
       "lifts": "リフト / ゴンドラ",
-      "difficultyBar": "難易度構成"
+      "difficultyBar": "難易度構成",
+      "nightSkiing": "ナイター営業",
+      "snowPark": "スノーパーク"
     }
   },
   "resortsPage": {
@@ -213,7 +215,13 @@
     "subtitle": "スキー場を一覧で確認し、詳細ページを開けます。\n掲載中のスキー場：{count}件",
     "resortCount": "{count} 件のスキー場を掲載",
     "priceLabel": "1日券",
-    "viewDetail": "詳細を見る"
+    "viewDetail": "詳細を見る",
+    "nightSkiingLabel": "ナイター",
+    "parkLabel": "スノーパーク",
+    "hasNight": "ナイターあり",
+    "noNight": "ナイターなし",
+    "hasPark": "パークあり",
+    "noPark": "パークなし"
   },
   "detail": {
     "back": "← マップに戻る",
@@ -243,6 +251,14 @@
     "travelCar": "車",
     "travelLifts": "リフト総数",
     "travelGondola": "ゴンドラ数",
+    "sectionFacilities": "ナイター・スノーパーク施設",
+    "nightSkiingTitle": "ナイター営業",
+    "nightSkiingHours": "営業時間",
+    "hasNightSkiingYes": "ナイターあり",
+    "hasNightSkiingNo": "ナイターなし",
+    "snowParkTitle": "スノーパーク (Park)",
+    "hasParkYes": "スノーパークあり",
+    "hasParkNo": "スノーパークなし",
     "weatherTitle": "スキー場のリアルタイム天候",
     "weatherLoading": "天候データを読み込み中...",
     "weatherError": "天候データを取得できませんでした",

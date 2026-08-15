@@ -25,7 +25,9 @@ export type MetricId =
   | "car"
   | "courses"
   | "lifts"
-  | "difficultyBar";
+  | "difficultyBar"
+  | "nightSkiing"
+  | "snowPark";
 
 /** i18n 翻译函数类型（来自 useTranslations("compare")） */
 export type TFunction = (key: string, values?: Record<string, string | number>) => string;
@@ -152,6 +154,28 @@ export const ALL_METRICS: CompareMetric[] = [
     id: "topElevation",
     labelKey: "metrics.topElevation",
     renderCell: (r) => React.createElement("span", { className: "font-data" }, `${r.elevation.topM} m`),
+  },
+
+  // ── 夜场与公园 ───────────────────────────────────
+  {
+    id: "nightSkiing",
+    labelKey: "metrics.nightSkiing",
+    renderCell: (r) =>
+      r.hasNightSkiing
+        ? React.createElement(
+            "span",
+            { className: "text-accent-ice font-semibold" },
+            r.nightSkiingHours ? `有 (${r.nightSkiingHours})` : "有"
+          )
+        : React.createElement("span", { className: "text-ink-faint" }, "无"),
+  },
+  {
+    id: "snowPark",
+    labelKey: "metrics.snowPark",
+    renderCell: (r) =>
+      r.hasPark
+        ? React.createElement("span", { className: "text-accent-ice font-semibold" }, "有")
+        : React.createElement("span", { className: "text-ink-faint" }, "无"),
   },
 ];
 

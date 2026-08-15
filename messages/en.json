@@ -205,7 +205,9 @@
       "car": "Car travel",
       "courses": "Runs",
       "lifts": "Lifts / gondolas",
-      "difficultyBar": "Difficulty mix"
+      "difficultyBar": "Difficulty mix",
+      "nightSkiing": "Night Skiing",
+      "snowPark": "Terrain Park"
     }
   },
   "resortsPage": {
@@ -213,7 +215,13 @@
     "subtitle": "Browse resorts in one view.\nCurrent ski resorts: {count}",
     "resortCount": "{count} resorts listed",
     "priceLabel": "Day pass",
-    "viewDetail": "View details"
+    "viewDetail": "View details",
+    "nightSkiingLabel": "Night Skiing",
+    "parkLabel": "Terrain Park",
+    "hasNight": "Night Skiing",
+    "noNight": "No Night Skiing",
+    "hasPark": "Terrain Park",
+    "noPark": "No Park"
   },
   "detail": {
     "back": "← Back to map",
@@ -243,6 +251,14 @@
     "travelCar": "Drive by Car",
     "travelLifts": "Total Lifts",
     "travelGondola": "Gondolas",
+    "sectionFacilities": "Night Skiing & Park Facilities",
+    "nightSkiingTitle": "Night Skiing",
+    "nightSkiingHours": "Hours",
+    "hasNightSkiingYes": "Night Skiing Available",
+    "hasNightSkiingNo": "No Night Skiing",
+    "snowParkTitle": "Terrain Park",
+    "hasParkYes": "Terrain Park Available",
+    "hasParkNo": "No Terrain Park",
     "weatherTitle": "Live Mountain Weather",
     "weatherLoading": "Loading weather data...",
     "weatherError": "Weather data unavailable",

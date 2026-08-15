@@ -205,7 +205,9 @@
       "car": "东京出发自驾",
       "courses": "雪道数量",
       "lifts": "缆车 / 箱型",
-      "difficultyBar": "难度占比"
+      "difficultyBar": "难度占比",
+      "nightSkiing": "夜场营业",
+      "snowPark": "地形公园"
     }
   },
   "resortsPage": {
@@ -213,7 +215,13 @@
     "subtitle": "查看雪场卡片，并点击进入详情页面。\n目前已收录 {count} 座雪场",
     "resortCount": "已收录 {count} 座雪场",
     "priceLabel": "单日券",
-    "viewDetail": "查看雪场详情"
+    "viewDetail": "查看雪场详情",
+    "nightSkiingLabel": "夜场",
+    "parkLabel": "地形公园",
+    "hasNight": "有夜场",
+    "noNight": "无夜场",
+    "hasPark": "有公园",
+    "noPark": "无公园"
   },
   "detail": {
     "back": "← 返回地图",
@@ -243,6 +251,14 @@
     "travelCar": "自驾出行",
     "travelLifts": "缆车总数",
     "travelGondola": "箱型缆车(Gondola)",
+    "sectionFacilities": "夜场与地形公园设施",
+    "nightSkiingTitle": "夜场营业",
+    "nightSkiingHours": "营业时间",
+    "hasNightSkiingYes": "有夜场",
+    "hasNightSkiingNo": "无夜场",
+    "snowParkTitle": "地形公园 (Snow Park)",
+    "hasParkYes": "有地形公园",
+    "hasParkNo": "无地形公园",
     "weatherTitle": "雪场实时天气",
     "weatherLoading": "天气数据加载中...",
     "weatherError": "暂无实时天气数据",

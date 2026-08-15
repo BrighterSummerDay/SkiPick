@@ -13,6 +13,7 @@ export default function MapPage() {
   const t = useTranslations("map");
   const tr = useTranslations("regions");
   const trd = useTranslations("regionDetails");
+  const trp = useTranslations("resortsPage");
   const locale = useLocale();
   const resorts = useLocalizedResorts();
   const [selected, setSelected] = useState<string | null>(null);
@@ -303,18 +304,43 @@ export default function MapPage() {
                     km: activeResort.courses.longestKm,
                   })}
                 />
-                <Stat label={t("statVertical")} value={`${activeResort.elevation.verticalM}m`} />
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                {activeResort.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2.5 py-1 rounded-full bg-accent-ice/10 text-[11px] text-accent-ice font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="mt-6 flex flex-col gap-2">
+                {/* 第一行：设施标签（有无夜场，有无公园） */}
+                <div className="flex flex-wrap gap-1.5">
+                  {activeResort.hasNightSkiing ? (
+                    <span className="px-2.5 py-1 rounded-full bg-accent-ice/10 text-[11px] text-accent-ice font-medium">
+                      {trp("hasNight")}{activeResort.nightSkiingHours ? ` (${activeResort.nightSkiingHours})` : ""}
+                    </span>
+                  ) : (
+                    <span className="px-2.5 py-1 rounded-full bg-black/5 text-[11px] text-ink-faint font-medium">
+                      {trp("noNight")}
+                    </span>
+                  )}
+
+                  {activeResort.hasPark ? (
+                    <span className="px-2.5 py-1 rounded-full bg-accent-ice/10 text-[11px] text-accent-ice font-medium">
+                      {trp("hasPark")}
+                    </span>
+                  ) : (
+                    <span className="px-2.5 py-1 rounded-full bg-black/5 text-[11px] text-ink-faint font-medium">
+                      {trp("noPark")}
+                    </span>
+                  )}
+                </div>
+
+                {/* 第二行：普通特征标签 */}
+                <div className="flex flex-wrap gap-1.5">
+                  {activeResort.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-full bg-accent-ice/10 text-[11px] text-accent-ice font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <div className="mt-auto pt-6 flex flex-col gap-2.5">

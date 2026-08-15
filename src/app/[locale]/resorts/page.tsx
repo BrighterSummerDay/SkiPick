@@ -30,12 +30,36 @@ export default async function ResortsPage() {
               </div>
             </div>
 
-            <div className="mt-6 flex flex-col gap-4">
+            <div className="mt-6 flex flex-col gap-2">
+              {/* 第一行：设施标签（有无夜场，有无公园） */}
+              <div className="flex flex-wrap gap-2">
+                {resort.hasNightSkiing ? (
+                  <span className="px-3 py-1 rounded-full bg-accent-ice/10 text-[11px] text-accent-ice font-medium">
+                    {t("hasNight")}{resort.nightSkiingHours ? ` (${resort.nightSkiingHours})` : ""}
+                  </span>
+                ) : (
+                  <span className="px-3 py-1 rounded-full bg-black/5 text-[11px] text-ink-faint font-medium">
+                    {t("noNight")}
+                  </span>
+                )}
+
+                {resort.hasPark ? (
+                  <span className="px-3 py-1 rounded-full bg-accent-ice/10 text-[11px] text-accent-ice font-medium">
+                    {t("hasPark")}
+                  </span>
+                ) : (
+                  <span className="px-3 py-1 rounded-full bg-black/5 text-[11px] text-ink-faint font-medium">
+                    {t("noPark")}
+                  </span>
+                )}
+              </div>
+
+              {/* 第二行：普通特征标签 */}
               <div className="flex flex-wrap gap-2">
                 {resort.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 rounded-full bg-accent-ice/10 text-[11px] text-accent-ice"
+                    className="px-3 py-1 rounded-full bg-accent-ice/10 text-[11px] text-accent-ice font-medium"
                   >
                     {tag}
                   </span>

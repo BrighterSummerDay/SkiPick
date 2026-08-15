@@ -36,6 +36,9 @@ export interface Resort {
     carKm: number;
     etcYen: number;
   };
+  hasNightSkiing: boolean; // 是否有夜场
+  nightSkiingHours?: string; // 夜场营业时间
+  hasPark: boolean; // 是否有地形公园
 }
 
 /** 雪场的多语言文本内容，来自 messages/{locale}.json 的 resorts 命名空间 */
