@@ -15,6 +15,7 @@ src/
       layout.tsx             语言相关的根布局
       map/page.tsx           地图页
       news/page.tsx          公告页
+      feedback/page.tsx      意见反馈页
       compare/page.tsx       横向对比页
       resorts//page.tsx      雪场详情页
     globals.css              全局css配置
