@@ -8,7 +8,8 @@
     "map": "Resort Map",
     "compare": "Compare",
     "resorts": "Ski Resorts",
-    "news": "News"
+    "news": "News",
+    "feedback": "Feedback"
   },
   "footer": {
     "note": "SkiPick · Data maintained by the community and official sources",
@@ -50,29 +51,27 @@
     "pageTitle": "News",
     "pageSubtitle": "Latest updates, website changes, and release notes.",
     "backHome": "Back to home",
+    "collapse": "Click to collapse",
+    "scrollMore": "Scroll down for more",
+    "reachedBottom": "You've reached the end",
     "categories": {
       "announcement": "Announcement",
       "changelog": "Changelog"
     },
-    "2026-08-06": {
+    "changelog 2026-08-06": {
       "title": "Version 0.5 is Updated",
       "excerpt": "SkiPick 0.5 is now live! Currently in testing, it only supports ski resorts near Tokyo.",
       "content": "This is a one-person project, so please be patient with the limited time available.\nThe current version only supports ski resorts near Tokyo. Data is based on official information for the 25-26 season, and 26-27 season data has not yet been updated.\n\nFuture development plans:\n- Early-bird data for the 26-27 season\n- Support for community feedback features\n- Support for ski resorts nationwide"
     },
-    "site-refresh-2026-08": {
-      "title": "Website refresh and new home experience",
-      "excerpt": "The homepage has been redesigned with a more visual resort overview and clearer comparison entry points.",
-      "content": "We refreshed the overall visual style of the site, strengthened the map-driven entry experience, and improved the hero section so new visitors can understand the product faster. The featured resort preview and the latest updates are now displayed more clearly on the homepage."
+    "announcement002": {
+      "title": "Welcome to the Ski-Pick Beta! We'd love to hear your feedback",
+      "excerpt": "Ski-Pick is currently being independently designed and developed by a solo creator, and is now in its early beta testing and feature enhancement phase.",
+      "content": "The project is under rapid iteration, and certain features and datasets are continuously being refined and updated.\nDuring this period, you may notice frequent tweaks and optimizations across the site.\nWe warmly invite you to explore the site and share your valuable thoughts!\n\nFound a bug or layout issue?\nHave an idea for a new feature or missing ski resort data?\n\nFeel free to let us know anytime via the feedback button. Let's make Ski-Pick better together!\nThank you so much for your support, patience, and contribution during this beta stage!"
     },
-    "compare-flow-update": {
-      "title": "Comparison flow improved for quicker decisions",
-      "excerpt": "The compare experience now highlights the most useful metrics first, making side-by-side decisions faster.",
-      "content": "We reorganized the compare screen so travel time, price, and run mix are easier to scan. This makes it simpler to shortlist resorts before you decide which one to visit."
-    },
-    "map-guidance-update": {
-      "title": "Map guidance and resort detail improvements",
-      "excerpt": "A clearer overview and better guidance were added to the resort map and detail pages.",
-      "content": "We refined the map interaction flow and added more direct guidance on how to explore resort details. The result is a smoother experience for users who want to discover specific ski areas quickly."
+    "announcement001": {
+      "title": "Welcome to Ski-Pick!",
+      "excerpt": "Ski-Pick is a platform dedicated to helping ski and snowboard enthusiasts gain objective location insights on ski resorts across Japan, enabling easy multi-resort comparisons for better decision-making.",
+      "content": "This project was born out of my own frustration when choosing ski resorts. As an office worker based in Tokyo, I look for and purchase season passes every year. However, I found that information on Japanese ski resorts is often scattered. Comparing the geographical locations and season pass prices of resorts around Tokyo meant constantly switching back and forth between numerous websites. Driven by the desire to create a solution that met my own needs, Ski-Pick came to life.\n\nI hope this platform helps fellow snow sports lovers easily navigate resort locations, compare season pass prices, transportation costs, and other key details across multiple destinations—making ski trip planning faster, simpler, and more efficient.\n\nAugust 2, 2026: Ski-Pick Demo v0.1 officially went live.\nAugust 15, 2026: After two weeks of continuous polishing and updates, Beta v0.5 was officially launched.\n\nA special thanks to my friends who supported me throughout this journey and continuously provided valuable feedback and advice. Your input helped me identify many UX and responsiveness flaws, allowing this side project to take shape and steadily improve its user experience."
     }
   },
   "map": {
@@ -221,7 +220,23 @@
     "hasNight": "Night Skiing",
     "noNight": "No Night Skiing",
     "hasPark": "Terrain Park",
-    "noPark": "No Park"
+    "noPark": "No Park",
+    "hasGondola": "Gondola",
+    "noGondola": "No Gondola",
+    "gondolaLabel": "Gondola",
+    "filterTitle": "Filter & Sort",
+    "filterConditions": "Filters",
+    "allRegions": "All Regions",
+    "regionLabel": "Region",
+    "priceSortLabel": "Price Sort",
+    "sortDefault": "Default",
+    "sortPriceAsc": "Day Pass: Low → High ↑",
+    "sortPriceDesc": "Day Pass: High → Low ↓",
+    "resetFilters": "Reset Filters",
+    "showingCount": "Showing {count} resorts",
+    "emptyFiltered": "No resorts match your filters. Try resetting or adjusting your filter criteria.",
+    "scrollMore": "Scroll down for more",
+    "reachedBottom": "You've reached the end"
   },
   "detail": {
     "back": "← Back to map",
@@ -973,5 +988,39 @@
         "Deep Powder Bowls"
       ]
     }
+  },
+  "feedbackPage": {
+    "pageTitle": "Feedback & Comments",
+    "pageSubtitle": "Found a bug, layout issue, or have ideas for new features and resort data? Leave us your feedback!",
+    "contactTitle": "Contact Admin",
+    "contactDesc": "If you have questions, urgent issues, or ideas for cooperation, feel free to email me directly:",
+    "formTitle": "Leave a Comment",
+    "nicknameLabel": "Nickname",
+    "nicknameRequiredHint": "* Required (1-30 chars)",
+    "nicknamePlaceholder": "e.g. PowderRider / Alex",
+    "contentLabel": "Message",
+    "contentRequiredHint": "* Required (1-1000 chars)",
+    "contentPlaceholder": "Please describe your issue or suggestion in detail...",
+    "submitBtn": "Submit Feedback",
+    "submitting": "Submitting...",
+    "submitSuccess": "Feedback submitted successfully! Thank you for your input.",
+    "listTitle": "Recent Comments",
+    "adminBadge": "Admin Reply",
+    "adminLoginBtn": "Admin Login",
+    "adminModalTitle": "Admin Authentication",
+    "adminKeyPlaceholder": "Enter admin secret key",
+    "adminVerifySubmit": "Verify Secret Key",
+    "adminLoginSuccess": "Admin authenticated successfully!",
+    "adminKeyError": "Invalid secret key. Please try again.",
+    "replyBtn": "Reply",
+    "replySubmit": "Submit Reply",
+    "replyPlaceholder": "Write a reply to the user...",
+    "cancel": "Cancel",
+    "prevPage": "Previous",
+    "nextPage": "Next",
+    "pageInfo": "Page {page} of {totalPages} ({totalCount} comments)",
+    "empty": "No comments yet. Be the first to leave feedback!",
+    "rateLimitNotice": "Posting too fast. Limit is 1 comment per 5 minutes per IP.",
+    "demoNotice": "💡 Demo Mode: Supabase credentials are not set in .env.local. Currently showing mock data."
   }
 }

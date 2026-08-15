@@ -8,7 +8,8 @@
     "map": "雪场地图",
     "compare": "雪场对比",
     "resorts": "雪场一览",
-    "news": "更新公告"
+    "news": "更新公告",
+    "feedback": "意见反馈"
   },
   "footer": {
     "note": "SkiPick · 数据由社区与官方信息共同维护",
@@ -50,29 +51,27 @@
     "pageTitle": "公告与更新",
     "pageSubtitle": "汇总网站更新、版本说明和功能变化。",
     "backHome": "返回首页",
+    "collapse": "点击折叠",
+    "scrollMore": "向下滚动查看更多",
+    "reachedBottom": "已经到底了",
     "categories": {
       "announcement": "公告",
       "changelog": "更新日志"
     },
-    "2026-08-06": {
-      "title": "Version 0.5 更新",
-      "excerpt": "SkiPick 0.5版本发布，目前处于测试阶段，仅支持东京周边地区雪场。",
-      "content": "一个人开发的网站，时间有限敬请见谅。\n当前版本仅支持东京周边雪场。数据来源于25-26雪季的官方信息，暂未更新26-27雪季数据。\n\n后续开发计划：\n- 26-27雪季早鸟数据\n- 支持社区反馈功能\n- 支持全国雪场"
+    "changelog 2026-08-06": {
+      "title": "Beta测试版本 v0.5 发布",
+      "excerpt": "SkiPick v0.5 发布，目前处于测试阶段，支持东京周边地区雪场。",
+      "content": "一人独立开发，时间有限，不完善之处还请多包涵。\n当前版本仅支持东京周边雪场。数据来源于25-26雪季的官方信息（有不准确之处敬请见谅），暂未更新26-27雪季数据。\n\n后续开发计划：\n- 26-27雪季早鸟数据\n- 支持社区反馈功能\n- 支持全国雪场"
     },
-    "site-refresh-2026-08": {
-      "title": "网站首页焕新，体验更清晰",
-      "excerpt": "首页视觉与信息层级已重构，让雪场概览和对比入口更容易理解。",
-      "content": "我们重构了首页的整体视觉与信息流，让地图入口、精选雪场和更新公告的展示更自然。新访客可以更快地理解网站的核心价值。"
+    "announcement002": {
+      "title": "欢迎参加Beta测试，期待您的意见与反馈",
+      "excerpt": "项目目前仍处于快速迭代阶段，部分数据与功能正在持续补全中。 如果你在使用过程中发现任何异常，或对产品有任何好的想法，欢迎随时反馈，一起把 Ski-Pick 做得更好！",
+      "content": "Ski-Pick 目前由我一人独立设计与开发，项目正处于前期测试与功能完善阶段。\n在此期间，部分功能可能仍在优化中，页面也可能会不定期更新调整。\n非常欢迎大家体验并提出宝贵的意见！\n\n遇到 Bug 或排版问题？\n有想要看到的新功能或雪场数据？\n\n欢迎随时通过反馈功能告诉我。\n感谢每一位测试阶段用户的包容与支持！"
     },
-    "compare-flow-update": {
-      "title": "对比流程优化，决策更快",
-      "excerpt": "对比页将最关键的指标前置展示，帮助你更快完成横向筛选。",
-      "content": "我们重新整理了对比页面的内容顺序，让交通时间、价格和雪道结构一眼可看。这样用户可以更快地缩小候选范围，并做出更清晰的选择。"
-    },
-    "map-guidance-update": {
-      "title": "地图引导与详情页体验提升",
-      "excerpt": "地图的探索路径和详情页说明得到了更清晰的优化。",
-      "content": "我们优化了地图的操作引导，让用户更容易从地图进入目标雪场详情页。整体浏览体验更加顺畅，尤其适合想快速了解某个雪场的用户。"
+    "announcement001": {
+      "title": "欢迎来到 Ski-Pick！",
+      "excerpt": "Ski-Pick 是一个致力于帮助滑雪爱好者更客观掌握日本滑雪场地理位置信息，并能进行多雪场对比，从而更好做决策的网站。",
+      "content": "这个网站项目起源于我自己选择雪场时感受到的不便。作为一名东京的上班族，每年我都需要挑选并且购买滑雪场的季卡。但我发现日本的滑雪场信息很分散，尤其是在我对比东京周边滑雪场的地理位置和季卡价格时，经常需要在很多不同的网站之间来回查看。于是我希望能够创建一个满足我需求的网站，于是Ski-Pick就应运而生了。\n\n我希望这个网站能帮助更多滑雪爱好者掌握日本滑雪场地理位置信息，方便在多个雪场之间对比季票价格、交通成本等信息，让滑雪出行决策更简单快速且高效。\n\n2026年8月2日， Ski-Pick 的demo版本v0.1正式上线。\n2026年8月15日， 经过两周的不断打磨与更新，测试版本v0.5终于正式上线。\n\n在此特别感谢一路陪伴、不断给我提出宝贵意见和建议的朋友们，是你们的反馈帮我意识到了许多交互和适配上的不足，让这个小项目逐渐成型、交互体验也越来越好。"
     }
   },
   "map": {
@@ -221,7 +220,23 @@
     "hasNight": "有夜场",
     "noNight": "无夜场",
     "hasPark": "有公园",
-    "noPark": "无公园"
+    "noPark": "无公园",
+    "hasGondola": "有箱型缆车",
+    "noGondola": "无箱型缆车",
+    "gondolaLabel": "箱型缆车",
+    "filterTitle": "雪场筛选与排序",
+    "filterConditions": "筛选条件",
+    "allRegions": "全部大区域",
+    "regionLabel": "大区域",
+    "priceSortLabel": "价格排序",
+    "sortDefault": "默认推荐",
+    "sortPriceAsc": "单日券：低到高 ↑",
+    "sortPriceDesc": "单日券：高到低 ↓",
+    "resetFilters": "重置筛选",
+    "showingCount": "共 {count} 座符合条件的雪场",
+    "emptyFiltered": "没有找到符合当前筛选条件的雪场，尝试重置或调整筛选条件吧。",
+    "scrollMore": "向下滚动查看更多",
+    "reachedBottom": "已经到底了"
   },
   "detail": {
     "back": "← 返回地图",
@@ -972,5 +987,39 @@
         "极致深雪粉雪"
       ]
     }
+  },
+  "feedbackPage": {
+    "pageTitle": "意见与反馈",
+    "pageSubtitle": "遇到的 Bug、排版问题，或者希望看到的新功能与雪场数据，都欢迎在这里留下您的想法！",
+    "contactTitle": "联系站长",
+    "contactDesc": "如有遇到问题、需要反馈或者任何合作想法，欢迎随时通过邮件联系站长：",
+    "formTitle": "发布留言",
+    "nicknameLabel": "昵称",
+    "nicknameRequiredHint": "* 必填，1-30 个字符",
+    "nicknamePlaceholder": "例如：雪道飞人 / 小明",
+    "contentLabel": "留言内容",
+    "contentRequiredHint": "* 必填，1-1000 个字符",
+    "contentPlaceholder": "请详细描述您遇到的问题或宝贵的建议...",
+    "submitBtn": "提交留言",
+    "submitting": "提交中...",
+    "submitSuccess": "留言提交成功！感谢您的宝贵建议。",
+    "listTitle": "最新留言列表",
+    "adminBadge": "站长回复",
+    "adminLoginBtn": "管理员入口",
+    "adminModalTitle": "管理员身份验证",
+    "adminKeyPlaceholder": "请输入管理员密钥 (ADMIN_SECRET_KEY)",
+    "adminVerifySubmit": "验证凭证",
+    "adminLoginSuccess": "管理员凭证验证成功！",
+    "adminKeyError": "密钥不正确，请重新输入",
+    "replyBtn": "回复留言",
+    "replySubmit": "提交回复",
+    "replyPlaceholder": "请输入给用户的回复内容...",
+    "cancel": "取消",
+    "prevPage": "上一页",
+    "nextPage": "下一页",
+    "pageInfo": "第 {page} / {totalPages} 页 (共 {totalCount} 条留言)",
+    "empty": "暂无留言，快来留下第一条反馈吧！",
+    "rateLimitNotice": "留言太频繁，同一 IP 5 分钟内仅支持提交一条留言。",
+    "demoNotice": "演示模式：当前未接入数据库，已显示本地模拟演示数据。"
   }
 }

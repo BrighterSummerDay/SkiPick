@@ -1,5 +1,13 @@
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 import clsx from "clsx";
+
+interface GlassCardProps extends HTMLAttributes<HTMLDivElement> {
+  children: ReactNode;
+  className?: string;
+  strong?: boolean;
+  frost?: boolean;
+  id?: string;
+}
 
 export function GlassCard({
   children,
@@ -7,13 +15,8 @@ export function GlassCard({
   strong,
   frost = true,
   id,
-}: {
-  children: ReactNode;
-  className?: string;
-  strong?: boolean;
-  frost?: boolean;
-  id?: string;
-}) {
+  ...props
+}: GlassCardProps) {
   return (
     <div
       id={id}
@@ -23,6 +26,7 @@ export function GlassCard({
         frost && "frost-ring",
         className
       )}
+      {...props}
     >
       {children}
     </div>

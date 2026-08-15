@@ -146,8 +146,8 @@ html[lang="ja"] body {
 :root {
   --header-offset: 78px;
   /* 保持和实际 header 一致，用于 main 顶部内边距 */
-  --header-mask-height: 100px;
-  /* 遮罩实际高度：0-40px 全不显示，40-100px 渐隐 */
+  --header-mask-height: 80px;
+  /* 遮罩实际高度：0-40px 全不显示，40-80px 渐隐 */
 }
 
 main::before {
@@ -160,20 +160,22 @@ main::before {
   pointer-events: none;
   z-index: 45;
   /* 放在内容之上，但低于导航的 z-50 */
-  /* 顶部 0-40px 为页面背景色，完全遮挡下方内容；40-100px 渐隐到透明 */
+  /* 顶部 0-40px 为页面背景色，完全遮挡下方内容；40-80px 渐隐到透明 */
   background: linear-gradient(180deg,
       rgba(214, 230, 245, 1) 0px,
       /* #d6e6f5 == --bg-deep */
       rgba(214, 230, 245, 1) 40px,
-      rgba(214, 230, 245, 0.65) 70px,
-      rgba(214, 230, 245, 0) 100px);
+      rgba(214, 230, 245, 0.65) 60px,
+      rgba(214, 230, 245, 0) 80px);
 }
 
-/* 工具页面（地图探索页 #map-page-container、雪场对比页 #compare-page-container）专属：
+/* 工具页面（地图探索页 #map-page-container、雪场对比页 #compare-page-container、雪场一览页 #resorts-page-container）专属：
    锁定 100vh 弹性视口，保留精致 Footer，消除整体页面滚动条 */
 @media (min-height: 520px) {
+
   body:has(#map-page-container),
-  body:has(#compare-page-container) {
+  body:has(#compare-page-container),
+  body:has(#resorts-page-container) {
     overflow: hidden;
     height: 100vh;
     display: flex;

@@ -11,6 +11,7 @@ export function Navbar() {
   const tCompare = useTranslations("compare");
   const tResorts = useTranslations("resortsPage");
   const tNews = useTranslations("news");
+  const tFeedback = useTranslations("feedbackPage");
   const pathname = usePathname();
 
   const navItems = [
@@ -37,6 +38,12 @@ export function Navbar() {
       label: tNav("news"),
       subtitle: tNews("pageSubtitle"),
       isActive: pathname.startsWith("/news"),
+    },
+    {
+      href: "/feedback",
+      label: tNav("feedback"),
+      subtitle: tFeedback("pageSubtitle"),
+      isActive: pathname.startsWith("/feedback"),
     },
   ];
 
