@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { getSupabaseClient, isSupabaseConfigured, type FeedbackRecord } from "@/lib/supabase";
 
-export const runtime = "edge";
-
 // 内存中降级备选（当未配置 Supabase 环境变量时提供流畅体验）
 let fallbackFeedbacks: FeedbackRecord[] = [
   {
