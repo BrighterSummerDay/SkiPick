@@ -6,6 +6,7 @@
     "postinstall": "node -e \"const fs=require('fs'); ['maplibre-gl-worker.mjs','maplibre-gl-shared.mjs','maplibre-gl-worker-dev.mjs','maplibre-gl-shared-dev.mjs'].forEach(f=>fs.existsSync('node_modules/maplibre-gl/dist/'+f) && fs.copyFileSync('node_modules/maplibre-gl/dist/'+f,'public/'+f))\"",
     "dev": "next dev",
     "build": "next build",
+    "deploy": "npx @opennextjs/cloudflare build && npx wrangler deploy",
     "start": "next start",
     "lint": "eslint"
   },
