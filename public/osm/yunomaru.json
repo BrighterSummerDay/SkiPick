@@ -1,0 +1,409 @@
+{
+  "slug": "yunomaru",
+  "fetchedAt": "2026-08-16T05:32:24.047Z",
+  "runs": {
+    "type": "FeatureCollection",
+    "features": []
+  },
+  "lifts": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": 886350416,
+        "properties": {
+          "osmId": 886350416,
+          "name": "1",
+          "nameJa": "1",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": null,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 512,
+          "verticalM": 107,
+          "avgSlope": 21,
+          "access": null,
+          "nameEn": "1",
+          "nameZh": "1"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.4205049,
+              36.4282711
+            ],
+            [
+              138.4200233,
+              36.4285453
+            ],
+            [
+              138.419524,
+              36.4288296
+            ],
+            [
+              138.4193421,
+              36.4289332
+            ],
+            [
+              138.4188804,
+              36.4291961
+            ],
+            [
+              138.4181939,
+              36.429587
+            ],
+            [
+              138.4176381,
+              36.4299035
+            ],
+            [
+              138.4171293,
+              36.4301932
+            ],
+            [
+              138.4166878,
+              36.4304446
+            ],
+            [
+              138.416259,
+              36.4306887
+            ],
+            [
+              138.4158302,
+              36.4309329
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 886350417,
+        "properties": {
+          "osmId": 886350417,
+          "name": "5",
+          "nameJa": "5",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": null,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 395,
+          "verticalM": 53,
+          "avgSlope": 13,
+          "access": null,
+          "nameEn": "5",
+          "nameZh": "5"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.4231044,
+              36.4260469
+            ],
+            [
+              138.4234927,
+              36.4257408
+            ],
+            [
+              138.4238123,
+              36.425489
+            ],
+            [
+              138.4240538,
+              36.4252986
+            ],
+            [
+              138.424341,
+              36.4250722
+            ],
+            [
+              138.4248354,
+              36.4246825
+            ],
+            [
+              138.425405,
+              36.4242336
+            ],
+            [
+              138.4259566,
+              36.4237988
+            ],
+            [
+              138.4262587,
+              36.4235607
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 886350418,
+        "properties": {
+          "osmId": 886350418,
+          "name": "2",
+          "nameJa": "2",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": null,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 467,
+          "verticalM": 64,
+          "avgSlope": 14,
+          "access": null,
+          "nameEn": "2",
+          "nameZh": "2"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.421656,
+              36.4257016
+            ],
+            [
+              138.4239024,
+              36.4241488
+            ],
+            [
+              138.42466,
+              36.4236251
+            ],
+            [
+              138.4251445,
+              36.4232902
+            ],
+            [
+              138.4256149,
+              36.422965
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 886350419,
+        "properties": {
+          "osmId": 886350419,
+          "name": "6",
+          "nameJa": "6",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": null,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 1027,
+          "verticalM": 185,
+          "avgSlope": 18,
+          "access": null,
+          "nameEn": "6",
+          "nameZh": "6"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.4215916,
+              36.422419
+            ],
+            [
+              138.4223161,
+              36.4220379
+            ],
+            [
+              138.4230643,
+              36.4216444
+            ],
+            [
+              138.4235421,
+              36.421393
+            ],
+            [
+              138.4240908,
+              36.4211044
+            ],
+            [
+              138.4248752,
+              36.4206918
+            ],
+            [
+              138.4252483,
+              36.4204955
+            ],
+            [
+              138.4271849,
+              36.4194769
+            ],
+            [
+              138.4277693,
+              36.4191694
+            ],
+            [
+              138.4283341,
+              36.4188724
+            ],
+            [
+              138.4288118,
+              36.4186211
+            ],
+            [
+              138.4293187,
+              36.4183545
+            ],
+            [
+              138.4298424,
+              36.418079
+            ],
+            [
+              138.4305772,
+              36.4176924
+            ],
+            [
+              138.4309344,
+              36.4175045
+            ],
+            [
+              138.4311993,
+              36.4173652
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 886350420,
+        "properties": {
+          "osmId": 886350420,
+          "name": "3",
+          "nameJa": "3",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": null,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 584,
+          "verticalM": 142,
+          "avgSlope": 24,
+          "access": null,
+          "nameEn": "3",
+          "nameZh": "3"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.4242041,
+              36.4228884
+            ],
+            [
+              138.4247489,
+              36.4226426
+            ],
+            [
+              138.4253452,
+              36.4223735
+            ],
+            [
+              138.4260254,
+              36.4220666
+            ],
+            [
+              138.4269863,
+              36.4216331
+            ],
+            [
+              138.4280115,
+              36.4211705
+            ],
+            [
+              138.4289201,
+              36.4207605
+            ],
+            [
+              138.429638,
+              36.4204366
+            ],
+            [
+              138.4299011,
+              36.4203179
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 886350421,
+        "properties": {
+          "osmId": 886350421,
+          "name": "4",
+          "nameJa": "4",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": null,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 745,
+          "verticalM": 165,
+          "avgSlope": 22,
+          "access": null,
+          "nameEn": "4",
+          "nameZh": "4"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.425395,
+              36.4258883
+            ],
+            [
+              138.4257573,
+              36.4254694
+            ],
+            [
+              138.4263134,
+              36.4248265
+            ],
+            [
+              138.4267621,
+              36.4243078
+            ],
+            [
+              138.4273788,
+              36.4235947
+            ],
+            [
+              138.4281749,
+              36.4226743
+            ],
+            [
+              138.4289455,
+              36.4217832
+            ],
+            [
+              138.4296472,
+              36.4209719
+            ],
+            [
+              138.4298628,
+              36.4207226
+            ],
+            [
+              138.4301532,
+              36.4203869
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

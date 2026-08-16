@@ -102,7 +102,23 @@
     "resortsInRegionTitle": "エリア内のスキー場一覧",
     "compareRegionResorts": "このエリアのスキー場を比較",
     "searchPlaceholder": "スキー場名を検索...",
-    "noSearchResult": "一致するスキー場が見つかりません"
+    "noSearchResult": "一致するスキー場が見つかりません",
+    "osm": {
+      "downhillRun": "ゲレンデコース",
+      "distance": "滑走距離",
+      "descent": "標高差",
+      "vertical": "標高差",
+      "avgSlope": "平均斜度",
+      "maxSlope": "最大斜度",
+      "capacity": "輸送能力",
+      "paxPerHour": "人/時間",
+      "seats": "定員",
+      "duration": "所要時間",
+      "bubble": "フード付き",
+      "heated": "シートヒーター付き",
+      "source": "出典: OpenStreetMap",
+      "loading": "コース・リフトを読み込み中…"
+    }
   },
   "regions": {
     "echigo-yuzawa": "越後湯沢・中越",

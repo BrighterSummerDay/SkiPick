@@ -102,7 +102,23 @@
     "resortsInRegionTitle": "Resorts in Region",
     "compareRegionResorts": "Compare Region Resorts",
     "searchPlaceholder": "Search ski resort...",
-    "noSearchResult": "No matching ski resorts"
+    "noSearchResult": "No matching ski resorts",
+    "osm": {
+      "downhillRun": "Downhill ski run",
+      "distance": "Distance",
+      "descent": "Descent",
+      "vertical": "Vertical",
+      "avgSlope": "Average Slope",
+      "maxSlope": "Max Slope",
+      "capacity": "Capacity",
+      "paxPerHour": "pax/hr",
+      "seats": "Seats",
+      "duration": "Duration",
+      "bubble": "Bubble / Cover",
+      "heated": "Heated Seats",
+      "source": "Source: OpenStreetMap",
+      "loading": "Loading trails…"
+    }
   },
   "regions": {
     "echigo-yuzawa": "Echigo-Yuzawa & Chuetsu",

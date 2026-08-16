@@ -102,7 +102,23 @@
     "resortsInRegionTitle": "区域内雪场列表",
     "compareRegionResorts": "对比本区域所有雪场",
     "searchPlaceholder": "搜索雪场名称...",
-    "noSearchResult": "未找到匹配的雪场"
+    "noSearchResult": "未找到匹配的雪场",
+    "osm": {
+      "downhillRun": "高山雪道",
+      "distance": "长度",
+      "descent": "相对落差",
+      "vertical": "爬升高差",
+      "avgSlope": "平均坡度",
+      "maxSlope": "最大坡度",
+      "capacity": "运力",
+      "paxPerHour": "人/小时",
+      "seats": "乘员数",
+      "duration": "运行时间",
+      "bubble": "带防风罩",
+      "heated": "带加热座椅",
+      "source": "数据来源: OpenStreetMap",
+      "loading": "正在加载雪道与缆车…"
+    }
   },
   "regions": {
     "echigo-yuzawa": "越后汤泽・中越",

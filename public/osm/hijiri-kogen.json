@@ -1,0 +1,240 @@
+{
+  "slug": "hijiri-kogen",
+  "fetchedAt": "2026-08-16T05:29:14.407Z",
+  "runs": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": 454509750,
+        "properties": {
+          "osmId": 454509750,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "advanced",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 299,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.0727964,
+              36.4857203
+            ],
+            [
+              138.0728142,
+              36.4859453
+            ],
+            [
+              138.0724816,
+              36.4869157
+            ],
+            [
+              138.0721275,
+              36.4876489
+            ],
+            [
+              138.0717574,
+              36.4882527
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 454509753,
+        "properties": {
+          "osmId": 454509753,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 296,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.0738281,
+              36.4863895
+            ],
+            [
+              138.0737422,
+              36.4867216
+            ],
+            [
+              138.0735169,
+              36.4872478
+            ],
+            [
+              138.0727713,
+              36.4878516
+            ],
+            [
+              138.0724011,
+              36.4880371
+            ],
+            [
+              138.0717574,
+              36.4882527
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 454509756,
+        "properties": {
+          "osmId": 454509756,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "easy",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 535,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.0728249,
+              36.4857038
+            ],
+            [
+              138.0732004,
+              36.4858375
+            ],
+            [
+              138.0734204,
+              36.4859582
+            ],
+            [
+              138.0738281,
+              36.4863895
+            ],
+            [
+              138.0740212,
+              36.4866742
+            ],
+            [
+              138.0741124,
+              36.4868812
+            ],
+            [
+              138.0741392,
+              36.4871055
+            ],
+            [
+              138.0739675,
+              36.4876618
+            ],
+            [
+              138.0737798,
+              36.4879551
+            ],
+            [
+              138.0731307,
+              36.4883346
+            ],
+            [
+              138.0728517,
+              36.4883864
+            ],
+            [
+              138.0720363,
+              36.4883433
+            ],
+            [
+              138.0717574,
+              36.4882527
+            ],
+            [
+              138.0714806,
+              36.4880847
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "lifts": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": 282485041,
+        "properties": {
+          "osmId": 282485041,
+          "name": null,
+          "nameJa": null,
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": null,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 288,
+          "verticalM": null,
+          "avgSlope": null,
+          "access": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              138.0714806,
+              36.4880847
+            ],
+            [
+              138.0718017,
+              36.4875077
+            ],
+            [
+              138.0720221,
+              36.4871117
+            ],
+            [
+              138.0722108,
+              36.4867727
+            ],
+            [
+              138.0724035,
+              36.4864262
+            ],
+            [
+              138.0726078,
+              36.4860592
+            ],
+            [
+              138.0727964,
+              36.4857203
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

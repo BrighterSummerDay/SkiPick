@@ -7,6 +7,7 @@ import {
   MapGeoJSONFeature,
   setWorkerUrl,
 } from "maplibre-gl";
+import { useLocale } from "next-intl";
 import { resorts } from "@/lib/resorts";
 import { REGIONS, OVERVIEW_CAMERA, getRegionById } from "@/lib/regions";
 import { getMapStyleUrl } from "@/lib/mapStyle";
@@ -16,6 +17,74 @@ if (typeof window !== "undefined") {
 }
 
 const HIDDEN_REGION = "__none__";
+
+// ── OSM 数据类型 ────────────────────────────────────────────────────────────
+
+interface OsmRunProperties {
+  osmId: number;
+  name: string | null;
+  nameJa: string | null;
+  nameEn?: string | null;
+  nameZh?: string | null;
+  pisteType: string;
+  difficulty: string | null;
+  grooming: string | null;
+  lit: string | null;
+  distanceM: number;
+  descentM: number | null;
+  avgSlope: number | null;
+  maxSlope: number | null;
+}
+
+interface OsmLiftProperties {
+  osmId: number;
+  name: string | null;
+  nameJa: string | null;
+  nameEn?: string | null;
+  nameZh?: string | null;
+  aerialwayType: string;
+  capacity: number | null;
+  duration: string | null;
+  occupancy: number | null;
+  bubble: string | null;
+  heating: string | null;
+  distanceM: number;
+  verticalM: number | null;
+  avgSlope: number | null;
+  access: string | null;
+}
+
+interface OsmData {
+  slug: string;
+  fetchedAt: string;
+  runs: GeoJSON.FeatureCollection<GeoJSON.LineString, OsmRunProperties>;
+  lifts: GeoJSON.FeatureCollection<GeoJSON.LineString, OsmLiftProperties>;
+}
+
+type PopupInfo =
+  | { kind: "run"; props: OsmRunProperties; lngLat: [number, number] }
+  | { kind: "lift"; props: OsmLiftProperties; lngLat: [number, number] };
+
+// ── 难度颜色映射（与 OpenSkiMap 保持一致）────────────────────────────────
+const DIFFICULTY_COLOR: Record<string, string> = {
+  novice: "#4caf50",    // 绿
+  easy: "#4caf50",      // 绿
+  intermediate: "#2196f3", // 蓝
+  advanced: "#f44336",  // 红
+  expert: "#1a1a1a",    // 黑
+  freeride: "#9c27b0",  // 紫（off-piste）
+  extreme: "#1a1a1a",   // 黑
+};
+
+function getDifficultyColor(difficulty: string | null): string {
+  if (!difficulty) return "#9e9e9e";
+  return DIFFICULTY_COLOR[difficulty] ?? "#9e9e9e";
+}
+
+// ── lift 类型颜色（橙色系）────────────────────────────────────────────────
+const LIFT_COLOR = "#ff8c00";
+
+// ── Polygon 相关工具函数 ──────────────────────────────────────────────────
 
 function isMultiPolygon(poly: [number, number][] | [number, number][][]): poly is [number, number][][] {
   return Array.isArray(poly[0]) && Array.isArray(poly[0][0]);
@@ -162,6 +231,317 @@ function toRegionLabelCollection(regionNames: Record<string, string>) {
   };
 }
 
+// ── 格式化工具 ────────────────────────────────────────────────────────────
+
+function fmtDist(m: number | null | undefined): string {
+  if (m == null) return "—";
+  return m >= 1000 ? `${(m / 1000).toFixed(2)} km` : `${m} m`;
+}
+
+function fmtVertical(m: number | null | undefined): string {
+  if (m == null) return "—";
+  return `${m} m`;
+}
+
+function fmtSlope(pct: number | null | undefined): string {
+  if (pct == null) return "—";
+  const deg = Math.round(Math.atan(pct / 100) * (180 / Math.PI));
+  return `${deg}° (${pct}%)`;
+}
+
+// ── 多语言字典 ─────────────────────────────────────────────────────────────
+
+const OSM_I18N = {
+  zh: {
+    downhillRun: "高山雪道",
+    distance: "长度",
+    descent: "相对落差",
+    vertical: "爬升高差",
+    avgSlope: "平均坡度",
+    maxSlope: "最大坡度",
+    capacity: "运力",
+    paxPerHour: "人/小时",
+    seats: "乘员数",
+    duration: "运行时间",
+    bubble: "带防风罩",
+    heated: "带加热座椅",
+    source: "数据来源: OpenStreetMap",
+    loading: "正在加载雪道与缆车…",
+    difficulty: {
+      novice: "初学者",
+      easy: "初级",
+      intermediate: "中级",
+      advanced: "高级",
+      expert: "专家级",
+      freeride: "野雪道",
+      extreme: "极限级",
+    },
+    aerialway: {
+      gondola: "厢式缆车 (Gondola)",
+      cable_car: "大型索道缆车 (Cable Car)",
+      chair_lift: "吊椅缆车 (Chair Lift)",
+      mixed_lift: "混合缆车 (Telemix)",
+      "t-bar": "T型拖牵",
+      platter: "盘式拖牵",
+      rope_tow: "绳索拖牵",
+      magic_carpet: "魔毯",
+      "j-bar": "J型拖牵",
+      station: "缆车站",
+    },
+  },
+  ja: {
+    downhillRun: "ゲレンデコース",
+    distance: "滑走距離",
+    descent: "標高差",
+    vertical: "標高差",
+    avgSlope: "平均斜度",
+    maxSlope: "最大斜度",
+    capacity: "輸送能力",
+    paxPerHour: "人/時間",
+    seats: "定員",
+    duration: "所要時間",
+    bubble: "フード付き",
+    heated: "シートヒーター付き",
+    source: "出典: OpenStreetMap",
+    loading: "コース・リフトを読み込み中…",
+    difficulty: {
+      novice: "初心者",
+      easy: "初級",
+      intermediate: "中級",
+      advanced: "上級",
+      expert: "エキスパート",
+      freeride: "フリーライド",
+      extreme: "超上級",
+    },
+    aerialway: {
+      gondola: "ゴンドラ",
+      cable_car: "ロープウェイ",
+      chair_lift: "リフト",
+      mixed_lift: "コンビリフト",
+      "t-bar": "Tバーリフト",
+      platter: "プラッターリフト",
+      rope_tow: "ロープトゥ",
+      magic_carpet: "ベルトリフト",
+      "j-bar": "Jバーリフト",
+      station: "駅・乗り場",
+    },
+  },
+  en: {
+    downhillRun: "Downhill ski run",
+    distance: "Distance",
+    descent: "Descent",
+    vertical: "Vertical",
+    avgSlope: "Average Slope",
+    maxSlope: "Max Slope",
+    capacity: "Capacity",
+    paxPerHour: "pax/hr",
+    seats: "Seats",
+    duration: "Duration",
+    bubble: "Bubble / Cover",
+    heated: "Heated Seats",
+    source: "Source: OpenStreetMap",
+    loading: "Loading trails…",
+    difficulty: {
+      novice: "Novice",
+      easy: "Easy",
+      intermediate: "Intermediate",
+      advanced: "Advanced",
+      expert: "Expert",
+      freeride: "Freeride",
+      extreme: "Extreme",
+    },
+    aerialway: {
+      gondola: "Gondola",
+      cable_car: "Cable Car",
+      chair_lift: "Chair Lift",
+      mixed_lift: "Mixed Lift",
+      "t-bar": "T-Bar",
+      platter: "Platter",
+      rope_tow: "Rope Tow",
+      magic_carpet: "Magic Carpet",
+      "j-bar": "J-Bar",
+      station: "Station",
+    },
+  },
+} as const;
+
+function getOsmDict(locale: string) {
+  if (locale === "ja") return OSM_I18N.ja;
+  if (locale === "en") return OSM_I18N.en;
+  return OSM_I18N.zh;
+}
+
+function aerialwayLabel(type: string, locale: string): string {
+  const dict = getOsmDict(locale);
+  return (dict.aerialway as Record<string, string>)[type] ?? type;
+}
+
+function difficultyLabel(d: string | null, locale: string): string {
+  const dict = getOsmDict(locale);
+  return d ? ((dict.difficulty as Record<string, string>)[d] ?? d) : "—";
+}
+
+function getLocalizedNames(
+  props: { name: string | null; nameJa?: string | null; nameEn?: string | null; nameZh?: string | null; osmId: number },
+  locale: string
+) {
+  const { name, nameJa, nameEn, nameZh, osmId } = props;
+  let primary = "";
+  let secondary: string | null = null;
+
+  if (locale === "zh") {
+    primary = nameZh ?? nameJa ?? nameEn ?? name ?? `OSM #${osmId}`;
+    if (nameJa && nameJa !== primary) secondary = nameJa;
+    else if (nameEn && nameEn !== primary) secondary = nameEn;
+  } else if (locale === "ja") {
+    primary = nameJa ?? name ?? nameEn ?? `OSM #${osmId}`;
+    if (nameEn && nameEn !== primary) secondary = nameEn;
+  } else {
+    // locale === "en"
+    primary = nameEn ?? name ?? nameJa ?? `OSM #${osmId}`;
+    if (nameJa && nameJa !== primary) secondary = nameJa;
+  }
+
+  return { primary, secondary };
+}
+
+// ── OSM 图层 ID 常量 ──────────────────────────────────────────────────────
+
+const OSM_LAYER_RUNS = "osm-runs";
+const OSM_LAYER_RUNS_HIGHLIGHT = "osm-runs-highlight";
+const OSM_LAYER_LIFTS = "osm-lifts";
+const OSM_LAYER_LIFTS_HIGHLIGHT = "osm-lifts-highlight";
+const OSM_SOURCE_RUNS = "osm-runs-source";
+const OSM_SOURCE_LIFTS = "osm-lifts-source";
+
+// ── 弹窗组件 ─────────────────────────────────────────────────────────────
+
+function RunPopup({
+  props,
+  locale,
+  onClose,
+}: {
+  props: OsmRunProperties;
+  locale: string;
+  onClose: () => void;
+}) {
+  const dict = getOsmDict(locale);
+  const color = getDifficultyColor(props.difficulty);
+  const { primary, secondary } = getLocalizedNames(props, locale);
+  const diffText = difficultyLabel(props.difficulty, locale);
+
+  return (
+    <div className="relative bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/60 p-4 min-w-[240px] max-w-[300px]">
+      <button
+        onClick={onClose}
+        className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 transition-colors"
+        aria-label="Close"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <div className="mb-3">
+        <div className="flex items-center gap-2 mb-1">
+          <span
+            className="inline-block w-3 h-3 rounded-full shrink-0"
+            style={{ backgroundColor: color }}
+          />
+          <span className="text-[11px] text-gray-500 font-medium uppercase tracking-wide">
+            {diffText !== "—" ? `${diffText} · ` : ""}{dict.downhillRun}
+          </span>
+        </div>
+        <h3 className="text-[15px] font-bold text-gray-900 leading-tight">{primary}</h3>
+        {secondary && (
+          <p className="text-[12px] text-gray-500 mt-0.5">{secondary}</p>
+        )}
+      </div>
+
+      <div className="space-y-1.5 text-[13px]">
+        <StatRow label={dict.distance} value={fmtDist(props.distanceM)} />
+        <StatRow label={dict.descent} value={fmtVertical(props.descentM)} />
+        <StatRow label={dict.avgSlope} value={fmtSlope(props.avgSlope)} />
+        <StatRow label={dict.maxSlope} value={fmtSlope(props.maxSlope)} />
+      </div>
+
+      <p className="mt-3 text-[10px] text-gray-400">{dict.source}</p>
+    </div>
+  );
+}
+
+function LiftPopup({
+  props,
+  locale,
+  onClose,
+}: {
+  props: OsmLiftProperties;
+  locale: string;
+  onClose: () => void;
+}) {
+  const dict = getOsmDict(locale);
+  const { primary, secondary } = getLocalizedNames(props, locale);
+
+  return (
+    <div className="relative bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/60 p-4 min-w-[240px] max-w-[300px]">
+      <button
+        onClick={onClose}
+        className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 transition-colors"
+        aria-label="Close"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <div className="mb-3">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="inline-block w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: LIFT_COLOR }} />
+          <span className="text-[11px] text-gray-500 font-medium uppercase tracking-wide">
+            {aerialwayLabel(props.aerialwayType, locale)}
+          </span>
+        </div>
+        <h3 className="text-[15px] font-bold text-gray-900 leading-tight">{primary}</h3>
+        {secondary && (
+          <p className="text-[12px] text-gray-500 mt-0.5">{secondary}</p>
+        )}
+      </div>
+
+      <div className="space-y-1.5 text-[13px]">
+        <StatRow label={dict.distance} value={fmtDist(props.distanceM)} />
+        <StatRow label={dict.vertical} value={fmtVertical(props.verticalM)} />
+        <StatRow label={dict.avgSlope} value={fmtSlope(props.avgSlope)} />
+        {props.capacity != null && <StatRow label={dict.capacity} value={`${props.capacity} ${dict.paxPerHour}`} />}
+        {props.occupancy != null && <StatRow label={dict.seats} value={`${props.occupancy}`} />}
+        {props.duration && <StatRow label={dict.duration} value={props.duration} />}
+        {props.bubble === "yes" && (
+          <div className="flex items-center gap-1.5 mt-1">
+            <span className="text-[11px] text-blue-600 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full font-medium">{dict.bubble}</span>
+          </div>
+        )}
+        {props.heating === "yes" && (
+          <div className="flex items-center gap-1.5">
+            <span className="text-[11px] text-orange-600 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full font-medium">{dict.heated}</span>
+          </div>
+        )}
+      </div>
+
+      <p className="mt-3 text-[10px] text-gray-400">{dict.source}</p>
+    </div>
+  );
+}
+
+function StatRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-center justify-between border-b border-gray-100 pb-1.5">
+      <span className="text-gray-500">{label}</span>
+      <span className="font-medium text-gray-900">{value}</span>
+    </div>
+  );
+}
+
+// ── 主组件 ────────────────────────────────────────────────────────────────
+
 export function ResortMap({
   onSelect,
   selectedSlug,
@@ -188,11 +568,18 @@ export function ResortMap({
   /** 返回按钮位置，首页使用 hero-right 摆放在 Hero 卡片右侧 */
   backButtonPosition?: "top-left" | "hero-right";
 }) {
+  const currentLocale = useLocale();
+  const locale = (currentLocale === "ja" || currentLocale === "en") ? currentLocale : "zh";
+  const dict = getOsmDict(locale);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
   const [internalActiveRegion, setInternalActiveRegion] = useState<string | null>(null);
+  const [osmLoading, setOsmLoading] = useState(false);
+  const [popup, setPopup] = useState<PopupInfo | null>(null);
+  const hoveredOsmIdRef = useRef<number | null>(null);
 
   const activeRegion = activeRegionProp !== undefined ? activeRegionProp : internalActiveRegion;
 
@@ -230,6 +617,189 @@ export function ResortMap({
     applyRegionFilter(map, null);
     setRegionLayersVisible(map, true);
     map.flyTo({ center: OVERVIEW_CAMERA.center, zoom: OVERVIEW_CAMERA.zoom, duration: 1200 });
+    removeOsmLayers(map);
+    setPopup(null);
+  }
+
+  // ── OSM 图层管理 ─────────────────────────────────────────────────────────
+
+  function removeOsmLayers(map: MLMap) {
+    for (const id of [OSM_LAYER_RUNS_HIGHLIGHT, OSM_LAYER_LIFTS_HIGHLIGHT, OSM_LAYER_RUNS, OSM_LAYER_LIFTS]) {
+      if (map.getLayer(id)) map.removeLayer(id);
+    }
+    for (const id of [OSM_SOURCE_RUNS, OSM_SOURCE_LIFTS]) {
+      if (map.getSource(id)) map.removeSource(id);
+    }
+  }
+
+  function addOsmLayers(map: MLMap, osmData: OsmData) {
+    removeOsmLayers(map);
+
+    // ── Runs source + layers ──────────────────────────────────────────────
+    map.addSource(OSM_SOURCE_RUNS, {
+      type: "geojson",
+      data: osmData.runs as unknown as GeoJSON.GeoJSON,
+      generateId: true,
+    });
+
+    // 主线（按难度着色）
+    map.addLayer({
+      id: OSM_LAYER_RUNS,
+      type: "line",
+      source: OSM_SOURCE_RUNS,
+      paint: {
+        "line-color": [
+          "match", ["get", "difficulty"],
+          "novice",       "#4caf50",
+          "easy",         "#4caf50",
+          "intermediate", "#2196f3",
+          "advanced",     "#f44336",
+          "expert",       "#1a1a1a",
+          "freeride",     "#9c27b0",
+          "#9e9e9e",
+        ],
+        "line-width": 2.5,
+        "line-opacity": 0.9,
+      },
+      layout: { "line-cap": "round", "line-join": "round" },
+    });
+
+    // 高亮线（hover/selected）
+    map.addLayer({
+      id: OSM_LAYER_RUNS_HIGHLIGHT,
+      type: "line",
+      source: OSM_SOURCE_RUNS,
+      paint: {
+        "line-color": "#ffffff",
+        "line-width": 5,
+        "line-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 0.9, 0],
+      },
+      layout: { "line-cap": "round", "line-join": "round" },
+    });
+
+    // ── Lifts source + layers ─────────────────────────────────────────────
+    map.addSource(OSM_SOURCE_LIFTS, {
+      type: "geojson",
+      data: osmData.lifts as unknown as GeoJSON.GeoJSON,
+      generateId: true,
+    });
+
+    map.addLayer({
+      id: OSM_LAYER_LIFTS,
+      type: "line",
+      source: OSM_SOURCE_LIFTS,
+      filter: ["!=", ["get", "aerialwayType"], "station"],
+      paint: {
+        "line-color": LIFT_COLOR,
+        "line-width": 3,
+        "line-opacity": 0.95,
+        "line-dasharray": [1, 0], // solid
+      },
+      layout: { "line-cap": "round", "line-join": "round" },
+    });
+
+    map.addLayer({
+      id: OSM_LAYER_LIFTS_HIGHLIGHT,
+      type: "line",
+      source: OSM_SOURCE_LIFTS,
+      filter: ["!=", ["get", "aerialwayType"], "station"],
+      paint: {
+        "line-color": "#ffffff",
+        "line-width": 6,
+        "line-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 0.85, 0],
+      },
+      layout: { "line-cap": "round", "line-join": "round" },
+    });
+
+    // ── 交互：hover ───────────────────────────────────────────────────────
+    map.on("mousemove", OSM_LAYER_RUNS, (e) => {
+      map.getCanvas().style.cursor = "pointer";
+      const f = e.features?.[0];
+      if (f?.id != null && f.id !== hoveredOsmIdRef.current) {
+        if (hoveredOsmIdRef.current != null) {
+          map.setFeatureState({ source: OSM_SOURCE_RUNS, id: hoveredOsmIdRef.current }, { hover: false });
+        }
+        hoveredOsmIdRef.current = f.id as number;
+        map.setFeatureState({ source: OSM_SOURCE_RUNS, id: f.id }, { hover: true });
+      }
+    });
+
+    map.on("mouseleave", OSM_LAYER_RUNS, () => {
+      map.getCanvas().style.cursor = "";
+      if (hoveredOsmIdRef.current != null) {
+        map.setFeatureState({ source: OSM_SOURCE_RUNS, id: hoveredOsmIdRef.current }, { hover: false });
+        hoveredOsmIdRef.current = null;
+      }
+    });
+
+    map.on("mousemove", OSM_LAYER_LIFTS, (e) => {
+      map.getCanvas().style.cursor = "pointer";
+      const f = e.features?.[0];
+      if (f?.id != null && f.id !== hoveredOsmIdRef.current) {
+        if (hoveredOsmIdRef.current != null) {
+          map.setFeatureState({ source: OSM_SOURCE_LIFTS, id: hoveredOsmIdRef.current }, { hover: false });
+        }
+        hoveredOsmIdRef.current = f.id as number;
+        map.setFeatureState({ source: OSM_SOURCE_LIFTS, id: f.id }, { hover: true });
+      }
+    });
+
+    map.on("mouseleave", OSM_LAYER_LIFTS, () => {
+      map.getCanvas().style.cursor = "";
+      if (hoveredOsmIdRef.current != null) {
+        map.setFeatureState({ source: OSM_SOURCE_LIFTS, id: hoveredOsmIdRef.current }, { hover: false });
+        hoveredOsmIdRef.current = null;
+      }
+    });
+
+    // ── 交互：click ───────────────────────────────────────────────────────
+    map.on("click", OSM_LAYER_RUNS, (e) => {
+      const f = e.features?.[0] as MapGeoJSONFeature | undefined;
+      if (!f) return;
+      const props = f.properties as OsmRunProperties;
+      setPopup({
+        kind: "run",
+        props,
+        lngLat: [e.lngLat.lng, e.lngLat.lat],
+      });
+    });
+
+    map.on("click", OSM_LAYER_LIFTS, (e) => {
+      const f = e.features?.[0] as MapGeoJSONFeature | undefined;
+      if (!f) return;
+      const props = f.properties as OsmLiftProperties;
+      setPopup({
+        kind: "lift",
+        props,
+        lngLat: [e.lngLat.lng, e.lngLat.lat],
+      });
+    });
+  }
+
+  async function loadOsmData(slug: string) {
+    const map = mapRef.current;
+    if (!map) return;
+    setOsmLoading(true);
+    setPopup(null);
+    try {
+      const res = await fetch(`/osm/${slug}.json`);
+      if (!res.ok) {
+        // 数据文件不存在，静默失败
+        removeOsmLayers(map);
+        return;
+      }
+      const osmData: OsmData = await res.json();
+      if (map.isStyleLoaded()) {
+        addOsmLayers(map, osmData);
+      } else {
+        map.once("idle", () => addOsmLayers(map, osmData));
+      }
+    } catch {
+      // 网络错误等，静默处理
+      removeOsmLayers(map);
+    } finally {
+      setOsmLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -502,11 +1072,14 @@ export function ResortMap({
       applyRegionFilter(map, null);
       setRegionLayersVisible(map, true);
       map.flyTo({ center: OVERVIEW_CAMERA.center, zoom: OVERVIEW_CAMERA.zoom, duration: 1200 });
+      removeOsmLayers(map);
+      setPopup(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeRegionProp]);
 
   // 外部（比如侧栏点了某个雪场）改变了 selectedSlug：
-  // 地图视角定位转移到该雪场中心，并按合适比例放大视角
+  // 地图视角定位转移到该雪场中心，并按合适比例放大视角，同时加载 OSM 图层
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -521,6 +1094,8 @@ export function ResortMap({
         setRegionLayersVisible(map, false);
         const bounds = getResortBounds(resort.areaPolygon);
         map.fitBounds(bounds, { padding: 60, maxZoom: 13.8, duration: 1200 });
+        // 加载 OSM 雪道/lift 图层
+        loadOsmData(selectedSlug);
       }
     } else if (activeRegionProp) {
       applyRegionFilter(map, activeRegionProp);
@@ -529,6 +1104,8 @@ export function ResortMap({
       if (region) {
         map.flyTo({ center: region.center, zoom: region.zoom, duration: 1200 });
       }
+      removeOsmLayers(map);
+      setPopup(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSlug]);
@@ -536,6 +1113,9 @@ export function ResortMap({
   function handleBackClick() {
     if (selectedSlug) {
       onSelect?.(null);
+      const map = mapRef.current;
+      if (map) { removeOsmLayers(map); }
+      setPopup(null);
     } else {
       backToOverview();
     }
@@ -544,6 +1124,8 @@ export function ResortMap({
   return (
     <div className="relative w-full h-full min-h-[320px] rounded-[20px] sm:rounded-[28px] overflow-hidden">
       <div ref={containerRef} className="absolute inset-0 w-full h-full" />
+
+      {/* 返回按钮 */}
       {(activeRegion || selectedSlug) && (
         <button
           onClick={handleBackClick}
@@ -554,6 +1136,28 @@ export function ResortMap({
         >
           ← {selectedSlug ? backToRegionLabel : backLabel}
         </button>
+      )}
+
+      {/* OSM 加载指示器 */}
+      {osmLoading && (
+        <div className="absolute top-4 right-14 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-sm border border-white/60 text-xs text-gray-600">
+          <svg className="animate-spin w-3 h-3 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+          </svg>
+          {dict.loading}
+        </div>
+      )}
+
+      {/* 弹窗：点击雪道/lift 显示详情 */}
+      {popup && (
+        <div className="absolute z-20 bottom-6 left-1/2 -translate-x-1/2 pointer-events-auto">
+          {popup.kind === "run" ? (
+            <RunPopup props={popup.props} locale={locale} onClose={() => setPopup(null)} />
+          ) : (
+            <LiftPopup props={popup.props} locale={locale} onClose={() => setPopup(null)} />
+          )}
+        </div>
       )}
     </div>
   );

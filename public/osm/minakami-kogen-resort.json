@@ -1,0 +1,2160 @@
+{
+  "slug": "minakami-kogen-resort",
+  "fetchedAt": "2026-08-16T05:32:14.150Z",
+  "runs": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": 503238148,
+        "properties": {
+          "osmId": 503238148,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 355,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0784753,
+              36.857633
+            ],
+            [
+              139.0782693,
+              36.858077
+            ],
+            [
+              139.0778683,
+              36.8584399
+            ],
+            [
+              139.077735,
+              36.858753
+            ],
+            [
+              139.0778965,
+              36.8591135
+            ],
+            [
+              139.0778257,
+              36.8594758
+            ],
+            [
+              139.0781226,
+              36.8596957
+            ],
+            [
+              139.0782452,
+              36.8599111
+            ],
+            [
+              139.0782613,
+              36.8601757
+            ],
+            [
+              139.0782022,
+              36.8603302
+            ],
+            [
+              139.0780655,
+              36.8604584
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238150,
+        "properties": {
+          "osmId": 503238150,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "advanced",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 688,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0858138,
+              36.8605352
+            ],
+            [
+              139.0850554,
+              36.8605145
+            ],
+            [
+              139.0858109,
+              36.8609212
+            ],
+            [
+              139.0848904,
+              36.8606595
+            ],
+            [
+              139.0842823,
+              36.8605476
+            ],
+            [
+              139.0835667,
+              36.8609525
+            ],
+            [
+              139.0829229,
+              36.8613216
+            ],
+            [
+              139.0824079,
+              36.8614933
+            ],
+            [
+              139.0812117,
+              36.861841
+            ],
+            [
+              139.0807503,
+              36.8618882
+            ],
+            [
+              139.0802514,
+              36.8618882
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238151,
+        "properties": {
+          "osmId": 503238151,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 427,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0863454,
+              36.8613817
+            ],
+            [
+              139.086324,
+              36.8614933
+            ],
+            [
+              139.0861684,
+              36.8618066
+            ],
+            [
+              139.0858573,
+              36.8622058
+            ],
+            [
+              139.0855515,
+              36.8624547
+            ],
+            [
+              139.0850151,
+              36.8628324
+            ],
+            [
+              139.0848058,
+              36.8629655
+            ],
+            [
+              139.0845698,
+              36.8630856
+            ],
+            [
+              139.0840387,
+              36.8632316
+            ],
+            [
+              139.0835828,
+              36.8632788
+            ],
+            [
+              139.0826976,
+              36.8630384
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238153,
+        "properties": {
+          "osmId": 503238153,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 1347,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0848381,
+              36.8600254
+            ],
+            [
+              139.0858138,
+              36.8605352
+            ],
+            [
+              139.0862489,
+              36.8607208
+            ],
+            [
+              139.0864634,
+              36.8608409
+            ],
+            [
+              139.0866029,
+              36.8610212
+            ],
+            [
+              139.08656,
+              36.8612444
+            ],
+            [
+              139.0863454,
+              36.8613817
+            ],
+            [
+              139.0860879,
+              36.8614247
+            ],
+            [
+              139.0856588,
+              36.8613817
+            ],
+            [
+              139.0852082,
+              36.8616221
+            ],
+            [
+              139.0849185,
+              36.8620084
+            ],
+            [
+              139.0847254,
+              36.8621715
+            ],
+            [
+              139.0834808,
+              36.8628238
+            ],
+            [
+              139.0832341,
+              36.8629183
+            ],
+            [
+              139.0826976,
+              36.8630384
+            ],
+            [
+              139.0819788,
+              36.8629612
+            ],
+            [
+              139.0812278,
+              36.8626865
+            ],
+            [
+              139.0802514,
+              36.8618882
+            ],
+            [
+              139.0800261,
+              36.8617508
+            ],
+            [
+              139.0792116,
+              36.8612603
+            ],
+            [
+              139.0786317,
+              36.860854
+            ],
+            [
+              139.0777783,
+              36.860569
+            ],
+            [
+              139.07713,
+              36.8607036
+            ],
+            [
+              139.0764401,
+              36.8605458
+            ],
+            [
+              139.0757927,
+              36.860418
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238155,
+        "properties": {
+          "osmId": 503238155,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 371,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0802622,
+              36.8570553
+            ],
+            [
+              139.0798116,
+              36.8571712
+            ],
+            [
+              139.078964,
+              36.857463
+            ],
+            [
+              139.0784753,
+              36.857633
+            ],
+            [
+              139.0779501,
+              36.8578794
+            ],
+            [
+              139.0778428,
+              36.8579438
+            ],
+            [
+              139.0777463,
+              36.8580296
+            ],
+            [
+              139.0773278,
+              36.8584588
+            ],
+            [
+              139.077173,
+              36.8589861
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238156,
+        "properties": {
+          "osmId": 503238156,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "advanced",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 263,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0862381,
+              36.8592357
+            ],
+            [
+              139.0859646,
+              36.8592314
+            ],
+            [
+              139.0858626,
+              36.8591627
+            ],
+            [
+              139.0858197,
+              36.8590597
+            ],
+            [
+              139.0857983,
+              36.8585146
+            ],
+            [
+              139.08575,
+              36.8583043
+            ],
+            [
+              139.0856105,
+              36.857888
+            ],
+            [
+              139.0855,
+              36.8576947
+            ],
+            [
+              139.0849453,
+              36.8574158
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238157,
+        "properties": {
+          "osmId": 503238157,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 324,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0843552,
+              36.857154
+            ],
+            [
+              139.0839207,
+              36.8563985
+            ],
+            [
+              139.0835559,
+              36.856038
+            ],
+            [
+              139.0833306,
+              36.855759
+            ],
+            [
+              139.0831643,
+              36.8555873
+            ],
+            [
+              139.0826815,
+              36.8551795
+            ],
+            [
+              139.0825742,
+              36.8551108
+            ],
+            [
+              139.0823382,
+              36.8550164
+            ],
+            [
+              139.0821022,
+              36.8550207
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238158,
+        "properties": {
+          "osmId": 503238158,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 863,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0877831,
+              36.8581755
+            ],
+            [
+              139.0877348,
+              36.8583987
+            ],
+            [
+              139.0876114,
+              36.8587121
+            ],
+            [
+              139.087429,
+              36.8590168
+            ],
+            [
+              139.0873164,
+              36.8590812
+            ],
+            [
+              139.0867799,
+              36.8592185
+            ],
+            [
+              139.0866512,
+              36.85924
+            ],
+            [
+              139.0862381,
+              36.8592357
+            ],
+            [
+              139.0861362,
+              36.859167
+            ],
+            [
+              139.0861309,
+              36.8590597
+            ],
+            [
+              139.0862971,
+              36.8588966
+            ],
+            [
+              139.0866029,
+              36.8586992
+            ],
+            [
+              139.0866136,
+              36.8585962
+            ],
+            [
+              139.0864849,
+              36.8585447
+            ],
+            [
+              139.0862328,
+              36.8586047
+            ],
+            [
+              139.0861684,
+              36.8585103
+            ],
+            [
+              139.0862655,
+              36.8581301
+            ],
+            [
+              139.0862998,
+              36.857828
+            ],
+            [
+              139.0862812,
+              36.8577913
+            ],
+            [
+              139.0862278,
+              36.8578004
+            ],
+            [
+              139.0861564,
+              36.8579721
+            ],
+            [
+              139.08609,
+              36.857987
+            ],
+            [
+              139.0860619,
+              36.8579442
+            ],
+            [
+              139.0860438,
+              36.8574257
+            ],
+            [
+              139.0859577,
+              36.8574336
+            ],
+            [
+              139.0857827,
+              36.8576431
+            ],
+            [
+              139.0856551,
+              36.8575845
+            ],
+            [
+              139.0856569,
+              36.8572617
+            ],
+            [
+              139.0856125,
+              36.8572449
+            ],
+            [
+              139.0853897,
+              36.8574587
+            ],
+            [
+              139.0849453,
+              36.8574158
+            ],
+            [
+              139.0843552,
+              36.857154
+            ],
+            [
+              139.0839475,
+              36.8570767
+            ],
+            [
+              139.0831146,
+              36.856841
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238160,
+        "properties": {
+          "osmId": 503238160,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "easy",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 845,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0818644,
+              36.8587775
+            ],
+            [
+              139.0824447,
+              36.8584834
+            ],
+            [
+              139.0826641,
+              36.8581209
+            ],
+            [
+              139.082859,
+              36.8576988
+            ],
+            [
+              139.0829939,
+              36.8572852
+            ],
+            [
+              139.0829184,
+              36.8570936
+            ],
+            [
+              139.0828447,
+              36.8570072
+            ],
+            [
+              139.0826651,
+              36.8569424
+            ],
+            [
+              139.082483,
+              36.8569308
+            ],
+            [
+              139.0820485,
+              36.8569222
+            ],
+            [
+              139.0815014,
+              36.8569823
+            ],
+            [
+              139.0810883,
+              36.8569909
+            ],
+            [
+              139.0805358,
+              36.8570724
+            ],
+            [
+              139.0802622,
+              36.8570553
+            ],
+            [
+              139.0801871,
+              36.8569694
+            ],
+            [
+              139.0800959,
+              36.8567548
+            ],
+            [
+              139.0800154,
+              36.8566647
+            ],
+            [
+              139.0799081,
+              36.8566003
+            ],
+            [
+              139.0796667,
+              36.8565187
+            ],
+            [
+              139.0792805,
+              36.8563427
+            ],
+            [
+              139.0791625,
+              36.8562698
+            ],
+            [
+              139.0790713,
+              36.8561839
+            ],
+            [
+              139.0789801,
+              36.8557976
+            ],
+            [
+              139.0789801,
+              36.8554671
+            ],
+            [
+              139.0788835,
+              36.8551538
+            ],
+            [
+              139.0787923,
+              36.8549477
+            ],
+            [
+              139.0787119,
+              36.8548619
+            ],
+            [
+              139.0785885,
+              36.854819
+            ],
+            [
+              139.0783203,
+              36.8547932
+            ],
+            [
+              139.0781861,
+              36.8548147
+            ],
+            [
+              139.0781003,
+              36.8548962
+            ],
+            [
+              139.0780628,
+              36.8550078
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238163,
+        "properties": {
+          "osmId": 503238163,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "easy",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 576,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0750185,
+              36.8546687
+            ],
+            [
+              139.0751982,
+              36.8545228
+            ],
+            [
+              139.0753055,
+              36.8544627
+            ],
+            [
+              139.0753967,
+              36.8543854
+            ],
+            [
+              139.075461,
+              36.8542953
+            ],
+            [
+              139.075461,
+              36.8541923
+            ],
+            [
+              139.0753484,
+              36.8539905
+            ],
+            [
+              139.0751177,
+              36.8538789
+            ],
+            [
+              139.074989,
+              36.853836
+            ],
+            [
+              139.0748602,
+              36.8538188
+            ],
+            [
+              139.0741736,
+              36.853866
+            ],
+            [
+              139.0737498,
+              36.8539261
+            ],
+            [
+              139.0734708,
+              36.8539219
+            ],
+            [
+              139.073208,
+              36.8538703
+            ],
+            [
+              139.0728003,
+              36.8537029
+            ],
+            [
+              139.072575,
+              36.8535827
+            ],
+            [
+              139.0724838,
+              36.8535055
+            ],
+            [
+              139.0723979,
+              36.853411
+            ],
+            [
+              139.0723443,
+              36.8533123
+            ],
+            [
+              139.0721887,
+              36.8528788
+            ],
+            [
+              139.0720814,
+              36.8522478
+            ],
+            [
+              139.0720171,
+              36.8521405
+            ],
+            [
+              139.071942,
+              36.8520503
+            ],
+            [
+              139.0718186,
+              36.8520117
+            ],
+            [
+              139.0715665,
+              36.8521319
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 568836636,
+        "properties": {
+          "osmId": 568836636,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 578,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0831146,
+              36.856841
+            ],
+            [
+              139.082939,
+              36.8566647
+            ],
+            [
+              139.0826762,
+              36.8564071
+            ],
+            [
+              139.0825099,
+              36.8561067
+            ],
+            [
+              139.0822363,
+              36.855686
+            ],
+            [
+              139.0821558,
+              36.8554671
+            ],
+            [
+              139.0821022,
+              36.8550207
+            ],
+            [
+              139.0819895,
+              36.8546988
+            ],
+            [
+              139.0818071,
+              36.8545314
+            ],
+            [
+              139.0816677,
+              36.8544541
+            ],
+            [
+              139.0814531,
+              36.8543811
+            ],
+            [
+              139.0811151,
+              36.8543382
+            ],
+            [
+              139.0801817,
+              36.8544284
+            ],
+            [
+              139.0792,
+              36.854673
+            ],
+            [
+              139.0787119,
+              36.8548619
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 568836639,
+        "properties": {
+          "osmId": 568836639,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "easy",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 1206,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0780628,
+              36.8550078
+            ],
+            [
+              139.0778643,
+              36.8558405
+            ],
+            [
+              139.0773158,
+              36.8566647
+            ],
+            [
+              139.0770388,
+              36.8573775
+            ],
+            [
+              139.0769242,
+              36.8579827
+            ],
+            [
+              139.0770418,
+              36.8582542
+            ],
+            [
+              139.0771274,
+              36.8585652
+            ],
+            [
+              139.077173,
+              36.8589861
+            ],
+            [
+              139.0770489,
+              36.8594074
+            ],
+            [
+              139.0768826,
+              36.8595791
+            ],
+            [
+              139.0762871,
+              36.8600641
+            ],
+            [
+              139.0757927,
+              36.860418
+            ],
+            [
+              139.0756426,
+              36.8604512
+            ],
+            [
+              139.075461,
+              36.8604632
+            ],
+            [
+              139.0747637,
+              36.8603516
+            ],
+            [
+              139.0743399,
+              36.8603345
+            ],
+            [
+              139.0742004,
+              36.8603559
+            ],
+            [
+              139.0740716,
+              36.860386
+            ],
+            [
+              139.0736747,
+              36.8605319
+            ],
+            [
+              139.0732884,
+              36.8607208
+            ],
+            [
+              139.0730792,
+              36.8608538
+            ],
+            [
+              139.072516,
+              36.8613302
+            ],
+            [
+              139.0723765,
+              36.8615362
+            ],
+            [
+              139.0721351,
+              36.8621758
+            ],
+            [
+              139.0719795,
+              36.8627423
+            ],
+            [
+              139.0718347,
+              36.8630728
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151580,
+        "properties": {
+          "osmId": 569151580,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 263,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0704176,
+              36.8494921
+            ],
+            [
+              139.070417,
+              36.8497603
+            ],
+            [
+              139.0699774,
+              36.8500296
+            ],
+            [
+              139.068897,
+              36.8506048
+            ],
+            [
+              139.0684467,
+              36.8511038
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151581,
+        "properties": {
+          "osmId": 569151581,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "advanced",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 72,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0688746,
+              36.8556159
+            ],
+            [
+              139.0688294,
+              36.8549678
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151583,
+        "properties": {
+          "osmId": 569151583,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "advanced",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 388,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0682808,
+              36.8556495
+            ],
+            [
+              139.0682788,
+              36.8553791
+            ],
+            [
+              139.0688294,
+              36.8549678
+            ],
+            [
+              139.0694538,
+              36.854181
+            ],
+            [
+              139.0694821,
+              36.8536551
+            ],
+            [
+              139.0694154,
+              36.8530362
+            ],
+            [
+              139.0692746,
+              36.8525154
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151586,
+        "properties": {
+          "osmId": 569151586,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "advanced",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 82,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0684438,
+              36.8556403
+            ],
+            [
+              139.0688294,
+              36.8549678
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151588,
+        "properties": {
+          "osmId": 569151588,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "intermediate",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 116,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0693465,
+              36.8489889
+            ],
+            [
+              139.0692578,
+              36.8490733
+            ],
+            [
+              139.069581,
+              36.849437
+            ],
+            [
+              139.0690717,
+              36.8496962
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151594,
+        "properties": {
+          "osmId": 569151594,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "advanced",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 308,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0682808,
+              36.8556495
+            ],
+            [
+              139.0684438,
+              36.8556403
+            ],
+            [
+              139.0688746,
+              36.8556159
+            ],
+            [
+              139.0693039,
+              36.8553038
+            ],
+            [
+              139.0694461,
+              36.8547696
+            ],
+            [
+              139.0697261,
+              36.8545317
+            ],
+            [
+              139.0698385,
+              36.8542089
+            ],
+            [
+              139.0696883,
+              36.8539754
+            ],
+            [
+              139.0694821,
+              36.8536551
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151595,
+        "properties": {
+          "osmId": 569151595,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "novice",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 475,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0702566,
+              36.8520941
+            ],
+            [
+              139.0707655,
+              36.8519666
+            ],
+            [
+              139.0708896,
+              36.8515257
+            ],
+            [
+              139.0707812,
+              36.8512052
+            ],
+            [
+              139.0703247,
+              36.8511286
+            ],
+            [
+              139.0684467,
+              36.8511038
+            ],
+            [
+              139.0670102,
+              36.851384
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151597,
+        "properties": {
+          "osmId": 569151597,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": null,
+          "grooming": null,
+          "lit": null,
+          "distanceM": 554,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0704176,
+              36.8494921
+            ],
+            [
+              139.069941,
+              36.8491116
+            ],
+            [
+              139.0693465,
+              36.8489889
+            ],
+            [
+              139.0687171,
+              36.848922
+            ],
+            [
+              139.0683405,
+              36.8490667
+            ],
+            [
+              139.0683662,
+              36.8492268
+            ],
+            [
+              139.0690717,
+              36.8496962
+            ],
+            [
+              139.0688029,
+              36.8498605
+            ],
+            [
+              139.0681077,
+              36.8501851
+            ],
+            [
+              139.0669377,
+              36.8510862
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151599,
+        "properties": {
+          "osmId": 569151599,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "novice",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 477,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0702566,
+              36.8520941
+            ],
+            [
+              139.0707186,
+              36.8523531
+            ],
+            [
+              139.0706095,
+              36.852676
+            ],
+            [
+              139.0704395,
+              36.852848
+            ],
+            [
+              139.0700433,
+              36.8528539
+            ],
+            [
+              139.0692746,
+              36.8525154
+            ],
+            [
+              139.0687989,
+              36.8519932
+            ],
+            [
+              139.0686183,
+              36.8518311
+            ],
+            [
+              139.06819,
+              36.8516952
+            ],
+            [
+              139.0672899,
+              36.8515864
+            ],
+            [
+              139.0670102,
+              36.851384
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151600,
+        "properties": {
+          "osmId": 569151600,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "easy",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 247,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0704176,
+              36.8494921
+            ],
+            [
+              139.071045,
+              36.8500753
+            ],
+            [
+              139.0712715,
+              36.8503951
+            ],
+            [
+              139.071387,
+              36.850575
+            ],
+            [
+              139.0713267,
+              36.8508216
+            ],
+            [
+              139.0711518,
+              36.8511069
+            ],
+            [
+              139.0707812,
+              36.8512052
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 569151601,
+        "properties": {
+          "osmId": 569151601,
+          "name": null,
+          "nameJa": null,
+          "pisteType": "downhill",
+          "difficulty": "advanced",
+          "grooming": null,
+          "lit": null,
+          "distanceM": 65,
+          "descentM": null,
+          "avgSlope": null,
+          "maxSlope": null,
+          "nameEn": null,
+          "nameZh": null
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0694461,
+              36.8547696
+            ],
+            [
+              139.0694538,
+              36.854181
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "lifts": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": 503238165,
+        "properties": {
+          "osmId": 503238165,
+          "name": "第3ロマンス",
+          "nameJa": "第3ロマンス",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": 2,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 417,
+          "verticalM": null,
+          "avgSlope": null,
+          "access": null,
+          "nameEn": "No.3 Romance Lift",
+          "nameZh": "第3浪漫"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0715665,
+              36.8521319
+            ],
+            [
+              139.0718247,
+              36.8523216
+            ],
+            [
+              139.0724071,
+              36.8527497
+            ],
+            [
+              139.0727125,
+              36.8529741
+            ],
+            [
+              139.0733729,
+              36.8534594
+            ],
+            [
+              139.0738805,
+              36.8538324
+            ],
+            [
+              139.0744579,
+              36.8542567
+            ],
+            [
+              139.0750185,
+              36.8546687
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238167,
+        "properties": {
+          "osmId": 503238167,
+          "name": "第1ロマンス",
+          "nameJa": "第1ロマンス",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": 2,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 494,
+          "verticalM": null,
+          "avgSlope": null,
+          "access": null,
+          "nameEn": "No.1 Romance Lift",
+          "nameZh": "第1浪漫"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0827754,
+              36.856259
+            ],
+            [
+              139.083336,
+              36.8564735
+            ],
+            [
+              139.0839107,
+              36.8566935
+            ],
+            [
+              139.0846542,
+              36.856978
+            ],
+            [
+              139.0851133,
+              36.8571538
+            ],
+            [
+              139.0853025,
+              36.8572262
+            ],
+            [
+              139.086228,
+              36.8575803
+            ],
+            [
+              139.0863977,
+              36.8576453
+            ],
+            [
+              139.0868606,
+              36.8578224
+            ],
+            [
+              139.0873871,
+              36.8580239
+            ],
+            [
+              139.0877831,
+              36.8581755
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238168,
+        "properties": {
+          "osmId": 503238168,
+          "name": "第2ロマンス",
+          "nameJa": "第2ロマンス",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": 2,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 604,
+          "verticalM": null,
+          "avgSlope": null,
+          "access": null,
+          "nameEn": "No.2 Romance Lift",
+          "nameZh": "第2浪漫"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0780655,
+              36.8604584
+            ],
+            [
+              139.0784302,
+              36.8604388
+            ],
+            [
+              139.0791475,
+              36.8604002
+            ],
+            [
+              139.0795791,
+              36.860377
+            ],
+            [
+              139.0805668,
+              36.8603084
+            ],
+            [
+              139.0812154,
+              36.8602608
+            ],
+            [
+              139.0817074,
+              36.8602303
+            ],
+            [
+              139.0822403,
+              36.8602056
+            ],
+            [
+              139.0824296,
+              36.8601953
+            ],
+            [
+              139.0835295,
+              36.8601177
+            ],
+            [
+              139.0838539,
+              36.8600948
+            ],
+            [
+              139.0848381,
+              36.8600254
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503238169,
+        "properties": {
+          "osmId": 503238169,
+          "name": "みなかみクワッド",
+          "nameJa": "みなかみクワッド",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": 4,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 1012,
+          "verticalM": null,
+          "avgSlope": null,
+          "access": null,
+          "nameEn": "みなかみ Quad Lift",
+          "nameZh": "みなかみ四人缆车"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0718347,
+              36.8630728
+            ],
+            [
+              139.0721609,
+              36.8629331
+            ],
+            [
+              139.0726187,
+              36.862737
+            ],
+            [
+              139.0731846,
+              36.8624947
+            ],
+            [
+              139.0742586,
+              36.8620348
+            ],
+            [
+              139.0746387,
+              36.861872
+            ],
+            [
+              139.0753303,
+              36.8615758
+            ],
+            [
+              139.0763836,
+              36.8611248
+            ],
+            [
+              139.0773963,
+              36.8606911
+            ],
+            [
+              139.0779298,
+              36.8604625
+            ],
+            [
+              139.0785713,
+              36.8601879
+            ],
+            [
+              139.0788639,
+              36.8600625
+            ],
+            [
+              139.0797621,
+              36.8596779
+            ],
+            [
+              139.0802075,
+              36.8594871
+            ],
+            [
+              139.0805042,
+              36.85936
+            ],
+            [
+              139.0812181,
+              36.8590543
+            ],
+            [
+              139.0818644,
+              36.8587775
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503255522,
+        "properties": {
+          "osmId": 503255522,
+          "name": "第1リフト",
+          "nameJa": "第1リフト",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": 2,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 358,
+          "verticalM": null,
+          "avgSlope": null,
+          "access": null,
+          "nameEn": "No.1 Lift",
+          "nameZh": "第1缆车"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0670443,
+              36.8512541
+            ],
+            [
+              139.0674287,
+              36.8510421
+            ],
+            [
+              139.068023,
+              36.8507144
+            ],
+            [
+              139.0681682,
+              36.8506402
+            ],
+            [
+              139.068452,
+              36.8504954
+            ],
+            [
+              139.068881,
+              36.8502764
+            ],
+            [
+              139.0695091,
+              36.8499558
+            ],
+            [
+              139.069787,
+              36.849814
+            ],
+            [
+              139.0704176,
+              36.8494921
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503255523,
+        "properties": {
+          "osmId": 503255523,
+          "name": "第2リフト",
+          "nameJa": "第2リフト",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": 2,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 267,
+          "verticalM": null,
+          "avgSlope": null,
+          "access": null,
+          "nameEn": "No.2 Lift",
+          "nameZh": "第2缆车"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0673812,
+              36.8514202
+            ],
+            [
+              139.067796,
+              36.8515174
+            ],
+            [
+              139.0685006,
+              36.8516825
+            ],
+            [
+              139.0691282,
+              36.8518296
+            ],
+            [
+              139.0695849,
+              36.8519367
+            ],
+            [
+              139.0700981,
+              36.8520569
+            ],
+            [
+              139.0702566,
+              36.8520941
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 503255525,
+        "properties": {
+          "osmId": 503255525,
+          "name": "第3リフト",
+          "nameJa": "第3リフト",
+          "aerialwayType": "chair_lift",
+          "capacity": null,
+          "duration": null,
+          "occupancy": 2,
+          "bubble": null,
+          "heating": null,
+          "distanceM": 334,
+          "verticalM": null,
+          "avgSlope": null,
+          "access": null,
+          "nameEn": "No.3 Lift",
+          "nameZh": "第3缆车"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              139.0697721,
+              36.8528895
+            ],
+            [
+              139.0696152,
+              36.85318
+            ],
+            [
+              139.0690646,
+              36.8541988
+            ],
+            [
+              139.0687496,
+              36.8547819
+            ],
+            [
+              139.0684194,
+              36.855393
+            ],
+            [
+              139.0682808,
+              36.8556495
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}
