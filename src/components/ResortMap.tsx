@@ -1140,7 +1140,7 @@ export function ResortMap({
         <button
           onClick={handleBackClick}
           className={`absolute z-10 flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full glass-strong text-xs sm:text-sm font-medium text-ink hover:bg-white/80 transition-colors shadow-[0_10px_30px_-16px_rgba(30,91,163,0.45)] ${backButtonPosition === "hero-right"
-            ? "top-4 left-[396px] sm:top-6 sm:left-[476px] lg:top-8 lg:left-[504px]"
+            ? "top-3.5 left-3.5 sm:top-6 sm:left-[476px] lg:top-8 lg:left-[504px]"
             : "top-4 left-4"
             }`}
         >

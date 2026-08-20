@@ -18,7 +18,7 @@ export default async function Home() {
       <HomeHero />
 
       {/* 最新消息 */}
-      <section className="mx-auto max-w-[1040px] px-8 mb-12">
+      <section className="mt-8 sm:mt-12 mx-auto max-w-[1040px] px-4 sm:px-8 mb-12">
         <SnowDivider label={t("news")} />
         <div className="mt-8 flex flex-wrap items-end justify-between gap-4">
           <div>
