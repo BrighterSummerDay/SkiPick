@@ -414,15 +414,17 @@ function ComparePageContent() {
           <p className="text-sm text-ink-muted bg-white/40 px-6 py-4 rounded-2xl border border-white/60">{t("emptyMetrics")}</p>
         </div>
       ) : (
-        <div className="overflow-x-auto flex-1 pb-4 sm:pr-1">
+        <div className="overflow-x-auto flex-1 pb-4 px-0.5 sm:px-1">
           <div
-            className="grid gap-3.5 sm:gap-5 justify-center min-w-[640px] sm:min-w-0 sm:pr-2"
+            className="grid gap-3.5 sm:gap-5 w-max min-w-full justify-start items-stretch"
             style={{
-              gridTemplateColumns: `repeat(${activeResorts.length}, minmax(210px, 1fr))`,
+              gridTemplateColumns: `repeat(${activeResorts.length}, minmax(250px, ${
+                activeResorts.length === 1 ? "420px" : "1fr"
+              }))`,
             }}
           >
             {activeResorts.map((r) => (
-              <GlassCard key={r.slug} className="p-4 sm:p-6 flex flex-col">
+              <GlassCard key={r.slug} className="p-4 sm:p-6 flex flex-col min-w-0">
                 {/* ── 雪场名称 ── */}
                 <span className="text-xs text-ink-faint">{r.region}</span>
                 <h3 className="mt-1 text-lg font-black">{r.name}</h3>

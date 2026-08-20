@@ -197,7 +197,7 @@ export function ResortList({ resorts }: { resorts: LocalizedResort[] }) {
             value={mobileSearch}
             onChange={(e) => setMobileSearch(e.target.value)}
             placeholder={t("searchPlaceholder")}
-            className="w-full pl-7 pr-6 py-1.5 rounded-full text-xs bg-white/90 border border-sky-300/80 focus:bg-white focus:border-accent-ice focus:ring-2 focus:ring-accent-ice/30 text-ink shadow-2xs font-medium placeholder:text-ink-muted/70"
+            className="w-full pl-7 pr-6 py-1.5 rounded-full text-xs bg-white/90 border border-sky-300/80 focus:bg-white focus:border-accent-ice focus:ring-2 focus:ring-accent-ice/30 text-ink shadow-2xs font-medium placeholder:text-ink-muted/70 truncate"
           />
           {mobileSearch && (
             <button
@@ -468,7 +468,7 @@ export function ResortList({ resorts }: { resorts: LocalizedResort[] }) {
       )}
 
       {/* ── 雪场卡片区（独立滚动） ────────────────────────── */}
-      <div className="flex-1 overflow-y-auto mt-2.5 sm:mt-4 pb-8">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden mt-2.5 sm:mt-4 pb-8 px-0.5 sm:px-1 w-full min-w-0">
         {filteredResorts.length === 0 ? (
           <GlassCard className="p-8 text-center text-ink-muted text-sm space-y-4">
             <p>{t("emptyFiltered")}</p>
@@ -481,10 +481,10 @@ export function ResortList({ resorts }: { resorts: LocalizedResort[] }) {
             </button>
           </GlassCard>
         ) : (
-          <div className="grid gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+          <div className="grid gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 items-stretch w-full min-w-0">
             {filteredResorts.map((resort) => (
-              <GlassCard key={resort.slug} className="p-3.5 sm:p-6 flex h-full flex-col">
-                <div className="flex-1">
+              <GlassCard key={resort.slug} className="p-3.5 sm:p-6 flex h-full flex-col w-full min-w-0">
+                <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <span className="text-[11px] text-ink-faint">{resort.region}</span>
@@ -502,10 +502,10 @@ export function ResortList({ resorts }: { resorts: LocalizedResort[] }) {
                   </div>
                 </div>
 
-                <div className="mt-3 sm:mt-6 flex flex-col gap-2">
-                  <div className="flex flex-wrap gap-1.5">
+                <div className="mt-3 sm:mt-6 flex flex-col gap-2 min-w-0">
+                  <div className="flex flex-wrap gap-1.5 min-w-0">
                     {resort.hasNightSkiing ? (
-                      <span className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-accent-ice/10 text-[10.5px] sm:text-[11px] text-accent-ice font-medium">
+                      <span className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-accent-ice/10 text-[10.5px] sm:text-[11px] text-accent-ice font-medium max-w-full break-words">
                         {t("hasNight")}{resort.nightSkiingHours ? ` (${resort.nightSkiingHours})` : ""}
                       </span>
                     ) : (
@@ -537,7 +537,7 @@ export function ResortList({ resorts }: { resorts: LocalizedResort[] }) {
                     {resort.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-accent-ice/10 text-[10.5px] sm:text-[11px] text-accent-ice font-medium"
+                        className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-accent-ice/10 text-[10.5px] sm:text-[11px] text-accent-ice font-medium max-w-full break-words"
                       >
                         {tag}
                       </span>
