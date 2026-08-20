@@ -3,7 +3,7 @@ import crypto from "crypto";
 import { getSupabaseClient, isSupabaseConfigured, type FeedbackRecord } from "@/lib/supabase";
 
 // 内存中降级备选（当未配置 Supabase 环境变量时提供流畅体验）
-let fallbackFeedbacks: FeedbackRecord[] = [
+const fallbackFeedbacks: FeedbackRecord[] = [
   {
     id: "demo-1",
     nickname: "滑雪爱好者小张",

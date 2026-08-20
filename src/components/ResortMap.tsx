@@ -9,6 +9,7 @@ import {
 } from "maplibre-gl";
 import { useLocale } from "next-intl";
 import { resorts } from "@/lib/resorts";
+import { resortPolygons } from "@/lib/resort-polygons";
 import { REGIONS, OVERVIEW_CAMERA, getRegionById } from "@/lib/regions";
 import { getMapStyleUrl } from "@/lib/mapStyle";
 
@@ -94,13 +95,14 @@ function toFeatureCollection(names: Record<string, string>) {
   return {
     type: "FeatureCollection" as const,
     features: resorts.map((r) => {
-      if (isMultiPolygon(r.areaPolygon)) {
+      const poly = resortPolygons[r.slug];
+      if (poly && isMultiPolygon(poly)) {
         return {
           type: "Feature" as const,
           properties: { slug: r.slug, name: names[r.slug] ?? r.slug, regionId: r.regionId },
           geometry: {
             type: "MultiPolygon" as const,
-            coordinates: r.areaPolygon.map((poly) => [poly]),
+            coordinates: poly.map((subPoly) => [subPoly]),
           },
         };
       }
@@ -109,7 +111,7 @@ function toFeatureCollection(names: Record<string, string>) {
         properties: { slug: r.slug, name: names[r.slug] ?? r.slug, regionId: r.regionId },
         geometry: {
           type: "Polygon" as const,
-          coordinates: [r.areaPolygon],
+          coordinates: poly ? [poly] : [],
         },
       };
     }),
@@ -190,11 +192,15 @@ function getResortBounds(
 function toPointCollection(names: Record<string, string>) {
   return {
     type: "FeatureCollection" as const,
-    features: resorts.map((r) => ({
-      type: "Feature" as const,
-      properties: { slug: r.slug, name: names[r.slug] ?? r.slug, regionId: r.regionId },
-      geometry: { type: "Point" as const, coordinates: getAreaCentroid(r.areaPolygon) },
-    })),
+    features: resorts.map((r) => {
+      const poly = resortPolygons[r.slug];
+      const coords: [number, number] = poly ? getAreaCentroid(poly) : [r.lng, r.lat];
+      return {
+        type: "Feature" as const,
+        properties: { slug: r.slug, name: names[r.slug] ?? r.slug, regionId: r.regionId },
+        geometry: { type: "Point" as const, coordinates: coords },
+      };
+    }),
   };
 }
 
@@ -990,8 +996,13 @@ export function ResortMap({
       if (selectedSlug) {
         const resort = resorts.find((r) => r.slug === selectedSlug);
         if (resort) {
-          const bounds = getResortBounds(resort.areaPolygon);
-          map.fitBounds(bounds, { padding: 60, maxZoom: 13.8, animate: false });
+          const poly = resortPolygons[resort.slug];
+          if (poly) {
+            const bounds = getResortBounds(poly);
+            map.fitBounds(bounds, { padding: 60, maxZoom: 13.8, animate: false });
+          } else {
+            map.jumpTo({ center: [resort.lng, resort.lat], zoom: 12 });
+          }
         }
       } else if (activeRegion) {
         const region = getRegionById(activeRegion);
@@ -1073,7 +1084,6 @@ export function ResortMap({
       setRegionLayersVisible(map, true);
       map.flyTo({ center: OVERVIEW_CAMERA.center, zoom: OVERVIEW_CAMERA.zoom, duration: 1200 });
       removeOsmLayers(map);
-      setPopup(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeRegionProp]);
@@ -1086,14 +1096,15 @@ export function ResortMap({
     if (selectedSlug) {
       const resort = resorts.find((r) => r.slug === selectedSlug);
       if (resort) {
-        if (resort.regionId !== activeRegion) {
-          setInternalActiveRegion(resort.regionId);
-          onRegionSelect?.(resort.regionId);
-        }
         applyRegionFilter(map, resort.regionId);
         setRegionLayersVisible(map, false);
-        const bounds = getResortBounds(resort.areaPolygon);
-        map.fitBounds(bounds, { padding: 60, maxZoom: 13.8, duration: 1200 });
+        const poly = resortPolygons[resort.slug];
+        if (poly) {
+          const bounds = getResortBounds(poly);
+          map.fitBounds(bounds, { padding: 60, maxZoom: 13.8, duration: 1200 });
+        } else {
+          map.flyTo({ center: [resort.lng, resort.lat], zoom: 12, duration: 1200 });
+        }
         // 加载 OSM 雪道/lift 图层
         loadOsmData(selectedSlug);
       }
@@ -1105,7 +1116,6 @@ export function ResortMap({
         map.flyTo({ center: region.center, zoom: region.zoom, duration: 1200 });
       }
       removeOsmLayers(map);
-      setPopup(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSlug]);

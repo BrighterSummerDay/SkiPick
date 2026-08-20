@@ -1,13 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { ResortMap } from "@/components/ResortMap";
+import { MapSkeleton } from "@/components/MapSkeleton";
 import { GlassCard } from "@/components/GlassCard";
 import { REGIONS } from "@/lib/regions";
 import { useLocalizedResorts } from "@/lib/useLocalizedResorts";
 import { formatCarMin, formatShinkansenMin } from "@/lib/utils";
+
+const ResortMap = dynamic(
+  () => import("@/components/ResortMap").then((m) => m.ResortMap),
+  {
+    ssr: false,
+    loading: () => <MapSkeleton label="正在加载探索地图..." />,
+  }
+);
 
 export function HomeHero() {
   const t = useTranslations("home");

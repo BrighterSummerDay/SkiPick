@@ -1,5 +1,7 @@
 export type Difficulty = "beginner" | "intermediate" | "advanced";
 
+export type ResortPolygon = [number, number][] | [number, number][][];
+
 export interface Resort {
   slug: string;
   /** 雪场的日文原名，作为固定参考信息，不随界面语言切换 */
@@ -8,8 +10,6 @@ export interface Resort {
   regionId: string;
   lat: number;
   lng: number;
-  /** 雪场轮廓（支持单多边形或 MultiPolygon 数组） */
-  areaPolygon: [number, number][] | [number, number][][];
   basePrice: number; // 单日券，日元
   seasonPassPrice: number; // season pass，日元
   lastSeasonVisitors?: number; // 上个雪季来场人数（人次），例如 350000

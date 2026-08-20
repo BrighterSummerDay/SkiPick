@@ -98,7 +98,7 @@ function ComparePageContent() {
   const groupedResorts = useMemo(() => {
     return REGIONS.map((region) => {
       const list = resorts.filter((r) => r.regionId === region.id);
-      const regionName = tr(region.id as any) || list[0]?.region || region.id;
+      const regionName = (tr.has(region.id) ? tr(region.id) : list[0]?.region) || region.id;
       return {
         regionId: region.id,
         regionName,
@@ -114,17 +114,18 @@ function ComparePageContent() {
       id="compare-page-container"
       className="mx-4 sm:mx-8 h-[calc(100vh-var(--header-offset)-44px)] pb-1 flex flex-col overflow-hidden"
     >
-      {/* ── 顶部单行搜索与控制栏 (Compact Control Bar) ── */}
+      {/* ── 顶部搜索与控制栏 (Responsive Control Bar) ── */}
       <GlassCard
-        className="p-2 sm:p-2.5 mb-2 shrink-0 flex flex-wrap items-center justify-between gap-2.5 z-20 relative border border-white/80 shadow-xs"
+        className="p-2 sm:p-2.5 mb-2 shrink-0 flex flex-col lg:flex-row lg:items-center justify-between gap-2 sm:gap-2.5 z-20 relative border border-white/80 shadow-xs"
         frost={false}
       >
-        {/* 左侧控制：【所有雪场 Modal 按钮】最靠左 + 已选数量 + 实时搜索框 */}
-        <div className="flex items-center flex-wrap gap-2.5 flex-1 min-w-0">
-          {/* 最左侧：所有雪场 Modal 触发按钮 */}
+        {/* 左侧区域：【所有雪场】+【实时搜索框】紧凑并排在最左侧 */}
+        <div className="flex items-center justify-between lg:justify-start gap-2 sm:gap-2.5 shrink-0">
+          {/* 所有雪场 Modal 触发按钮 */}
           <button
+            type="button"
             onClick={() => setIsModalOpen(true)}
-            className="px-3.5 py-1.5 rounded-full bg-accent-ice hover:bg-accent-ice/90 text-white font-bold text-xs transition-all shadow-sm flex items-center gap-1.5 active:scale-95 shrink-0"
+            className="px-3 sm:px-3.5 py-1.5 rounded-full bg-accent-ice hover:bg-accent-ice/90 text-white font-bold text-xs transition-all shadow-sm flex items-center gap-1.5 active:scale-95 shrink-0 cursor-pointer"
           >
             <span>{t("allResorts")} ({resorts.length})</span>
             <svg className="w-3.5 h-3.5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,10 +133,10 @@ function ComparePageContent() {
             </svg>
           </button>
 
-          {/* 实时搜索框与下拉菜单 (明显增强边框与对比度) */}
-          <div className="relative min-w-[200px] sm:min-w-[240px] max-w-[300px] flex-1">
+          {/* 实时搜索框（紧挨着所有雪场按钮） */}
+          <div className="relative flex-1 sm:flex-initial w-full sm:w-[200px] lg:w-[220px]">
             <div className="relative flex items-center">
-              <svg className="w-4 h-4 absolute left-3 text-ink-muted/80 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 absolute left-2.5 text-ink-muted/80 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
@@ -147,12 +148,13 @@ function ComparePageContent() {
                 }}
                 onFocus={() => setIsSearchOpen(true)}
                 placeholder={t("searchPlaceholder")}
-                className="w-full pl-9 pr-7 py-1.5 rounded-full text-xs bg-white/90 border border-sky-300/80 focus:bg-white focus:border-accent-ice focus:ring-2 focus:ring-accent-ice/30 text-ink shadow-xs transition-all placeholder:text-ink-muted/70 font-medium"
+                className="w-full pl-8 pr-7 py-1.5 rounded-full text-xs bg-white/90 border border-sky-300/80 focus:bg-white focus:border-accent-ice focus:ring-2 focus:ring-accent-ice/30 text-ink shadow-xs transition-all placeholder:text-ink-muted/70 font-medium"
               />
               {searchQuery && (
                 <button
+                  type="button"
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-2.5 text-ink-muted hover:text-ink text-xs p-0.5"
+                  className="absolute right-2.5 text-ink-muted hover:text-ink text-xs p-0.5 cursor-pointer"
                 >
                   ✕
                 </button>
@@ -173,6 +175,7 @@ function ComparePageContent() {
                       return (
                         <button
                           key={r.slug}
+                          type="button"
                           disabled={disabled}
                           onClick={() => {
                             toggleResort(r.slug);
@@ -180,7 +183,7 @@ function ComparePageContent() {
                             setIsSearchOpen(false);
                           }}
                           className={clsx(
-                            "w-full px-3.5 py-2 flex items-center justify-between text-left transition-colors",
+                            "w-full px-3.5 py-2 flex items-center justify-between text-left transition-colors cursor-pointer",
                             isSelected
                               ? "bg-accent-ice/15 text-accent-ice font-semibold"
                               : "hover:bg-accent-ice/10 text-ink",
@@ -202,43 +205,65 @@ function ComparePageContent() {
               </>
             )}
           </div>
-        </div>
 
-        {/* 已选雪场 Pill 标签 */}
-        <div className="flex items-center gap-1.5 flex-wrap shrink-0">
-          {activeResorts.map((r) => (
-            <span
-              key={r.slug}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent-ice/15 text-accent-ice border border-accent-ice/30 shadow-2xs transition-all"
-            >
-              <span>{r.name}</span>
-              <button
-                onClick={() => toggleResort(r.slug)}
-                className="w-4 h-4 rounded-full bg-accent-ice/20 hover:bg-accent-ice/40 text-accent-ice flex items-center justify-center text-[10px] leading-none transition-colors"
-                title="Remove"
-              >
-                ✕
-              </button>
+          {/* 仅在移动端 (< lg) 显示在第一行右侧的已选计数 */}
+          <div className="flex lg:hidden items-center gap-1.5 shrink-0 text-xs">
+            <span className="text-ink font-semibold bg-white/80 px-2 py-1 rounded-lg border border-sky-200/80 shadow-2xs whitespace-nowrap">
+              {t("selectedCount", { count: selectedResorts.length, max: MAX_SELECT })}
             </span>
-          ))}
+            {selectedResorts.length > 0 && (
+              <button
+                type="button"
+                onClick={() => setSelectedResorts([])}
+                className="text-ink-muted hover:text-red-500 transition-colors px-1 py-0.5 text-xs underline cursor-pointer whitespace-nowrap"
+              >
+                {t("clearAll")}
+              </button>
+            )}
+          </div>
         </div>
 
-        {/* 已选数量提示 + 清空 */}
-        <div className="flex items-center gap-1.5 shrink-0 text-xs">
-          <span className="text-ink font-medium bg-white/60 px-2 py-0.5 rounded-md border border-white/80">
+        {/* 已选雪场 Pill 标签列表：PC 端自然排在中间，移动端换行在下方 */}
+        {activeResorts.length > 0 && (
+          <div className="flex items-center gap-1.5 flex-wrap pt-2 lg:pt-0 border-t lg:border-t-0 border-sky-100/80 flex-1 min-w-0">
+            <span className="text-[11px] font-semibold text-ink-muted shrink-0 mr-0.5 lg:hidden">
+              已选:
+            </span>
+            {activeResorts.map((r) => (
+              <span
+                key={r.slug}
+                className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-xs font-semibold bg-accent-ice/15 text-accent-ice border border-accent-ice/30 shadow-2xs transition-all shrink-0"
+              >
+                <span className="truncate max-w-[130px] sm:max-w-none">{r.name}</span>
+                <button
+                  type="button"
+                  onClick={() => toggleResort(r.slug)}
+                  className="w-4 h-4 rounded-full bg-accent-ice/20 hover:bg-accent-ice/40 text-accent-ice flex items-center justify-center text-[10px] leading-none transition-colors cursor-pointer"
+                  title="Remove"
+                >
+                  ✕
+                </button>
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* 仅在 PC 端 (>= lg) 显示在最右侧的已选计数与清空 */}
+        <div className="hidden lg:flex items-center gap-2 shrink-0 text-xs">
+          <span className="text-ink font-semibold bg-white/80 px-2.5 py-1 rounded-lg border border-sky-200/80 shadow-2xs whitespace-nowrap">
             {t("selectedCount", { count: selectedResorts.length, max: MAX_SELECT })}
           </span>
 
           {selectedResorts.length > 0 && (
             <button
+              type="button"
               onClick={() => setSelectedResorts([])}
-              className="text-ink-muted hover:text-red-500 transition-colors px-1 py-0.5 text-xs underline"
+              className="text-ink-muted hover:text-red-500 transition-colors px-1 py-0.5 text-xs underline cursor-pointer whitespace-nowrap"
             >
               {t("clearAll")}
             </button>
           )}
         </div>
-
       </GlassCard>
 
       {/* ── 对比项选择器 (Compact Metric Selector) ── */}

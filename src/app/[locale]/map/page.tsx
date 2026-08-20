@@ -1,13 +1,22 @@
 "use client";
 
 import { useMemo, useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { ResortMap } from "@/components/ResortMap";
+import { MapSkeleton } from "@/components/MapSkeleton";
 import { GlassCard } from "@/components/GlassCard";
 import { REGIONS } from "@/lib/regions";
 import { useLocalizedResorts } from "@/lib/useLocalizedResorts";
 import { formatCarMin, formatShinkansenMin } from "@/lib/utils";
+
+const ResortMap = dynamic(
+  () => import("@/components/ResortMap").then((m) => m.ResortMap),
+  {
+    ssr: false,
+    loading: () => <MapSkeleton label="正在加载雪场地图..." />,
+  }
+);
 
 export default function MapPage() {
   const t = useTranslations("map");
@@ -28,21 +37,28 @@ export default function MapPage() {
   const names = Object.fromEntries(resorts.map((r) => [r.slug, r.name]));
   const regionNames = Object.fromEntries(REGIONS.map((r) => [r.id, tr(r.id)]));
 
-  // 当选中的雪场或大区域发生改变时，自动展开对应折叠层并平滑滚动聚焦到左侧列表对应项
-  useEffect(() => {
-    const targetRegion = selected
-      ? resorts.find((res) => res.slug === selected)?.regionId
-      : selectedRegion;
-
-    if (targetRegion) {
-      setCollapsedRegions((prev) => {
-        if (prev[targetRegion]) {
-          return { ...prev, [targetRegion]: false };
-        }
-        return prev;
-      });
+  const selectResort = (slug: string | null) => {
+    setSelected(slug);
+    if (slug) {
+      const r = resorts.find((res) => res.slug === slug);
+      if (r) {
+        setSelectedRegion(r.regionId);
+        setCollapsedRegions((prev) => ({ ...prev, [r.regionId]: false }));
+      }
     }
+  };
 
+  const selectRegion = (regId: string | null) => {
+    setSelectedRegion(regId);
+    if (regId) {
+      setCollapsedRegions((prev) => ({ ...prev, [regId]: false }));
+    } else {
+      setSelected(null);
+    }
+  };
+
+  // 当选中的雪场或大区域发生改变时，平滑滚动聚焦到左侧列表对应项
+  useEffect(() => {
     if (selected) {
       const timer = setTimeout(() => {
         const panel = document.getElementById("left-resort-panel");
@@ -62,7 +78,7 @@ export default function MapPage() {
       }, 60);
       return () => clearTimeout(timer);
     }
-  }, [selected, selectedRegion, resorts]);
+  }, [selected, selectedRegion]);
 
   const filteredResorts = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -244,18 +260,9 @@ export default function MapPage() {
         <div className="relative h-full w-full">
           <ResortMap
             selectedSlug={selected}
-            onSelect={(slug) => {
-              setSelected(slug);
-              if (slug) {
-                const r = resorts.find((res) => res.slug === slug);
-                if (r) setSelectedRegion(r.regionId);
-              }
-            }}
+            onSelect={selectResort}
             activeRegion={selectedRegion}
-            onRegionSelect={(regId) => {
-              setSelectedRegion(regId);
-              if (!regId) setSelected(null);
-            }}
+            onRegionSelect={selectRegion}
             names={names}
             regionNames={regionNames}
             backLabel={t("backToOverview")}

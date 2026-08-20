@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -13,6 +14,26 @@ export function Navbar() {
   const tNews = useTranslations("news");
   const tFeedback = useTranslations("feedbackPage");
   const pathname = usePathname();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(pathname);
+
+  // 路由变化时自动重置菜单状态（React 官方标准模式）
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setIsOpen(false);
+  }
+
+  // 监听 Esc 键关闭菜单
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const navItems = [
     {
@@ -67,11 +88,11 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* ── 分隔线 ────────────────────────────── */}
-          <div className="w-px h-5 bg-white/30 mx-4 shrink-0" />
+          {/* ── 分隔线（仅桌面端显示） ────────────────────── */}
+          <div className="hidden md:block w-px h-5 bg-white/30 mx-4 shrink-0" />
 
-          {/* ── 导航项（靠左） ───────────────────── */}
-          <nav className="flex items-center gap-1 sm:gap-1.5 flex-1">
+          {/* ── 桌面端导航项（>= 768px 显示） ───────────────── */}
+          <nav className="hidden md:flex items-center gap-1 sm:gap-1.5 flex-1">
             {navItems.map((item) => (
               <div key={item.href} className="group relative">
                 <Link
@@ -113,9 +134,84 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* ── 语言切换（靠右） ─────────────────── */}
-          <LocaleSwitcher />
+          {/* ── 右侧区域：语言切换 + 移动端汉堡按钮 ───────────────── */}
+          <div className="flex items-center gap-1 sm:gap-1.5">
+            <LocaleSwitcher />
+
+            {/* 移动端汉堡切换按钮 (< 768px 显示) */}
+            <button
+              type="button"
+              onClick={() => setIsOpen((prev) => !prev)}
+              className="md:hidden relative w-8 h-8 rounded-full bg-white/60 hover:bg-white border border-accent-ice/25 flex items-center justify-center text-ink transition-all shadow-xs active:scale-95 cursor-pointer ml-1"
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+            >
+              <div className="w-3.5 h-3 relative flex flex-col justify-between items-center">
+                <span
+                  className={`w-full h-0.5 bg-accent-ice rounded-full transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-1.25" : ""
+                    }`}
+                />
+                <span
+                  className={`w-full h-0.5 bg-accent-ice rounded-full transition-all duration-200 ${isOpen ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"
+                    }`}
+                />
+                <span
+                  className={`w-full h-0.5 bg-accent-ice rounded-full transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-1.25" : ""
+                    }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
+
+        {/* ── 移动端下拉抽屉菜单 (< 768px 展开) ───────────────── */}
+        {isOpen && (
+          <>
+            {/* 全屏半透明遮罩 */}
+            <div
+              className="fixed inset-0 z-40 bg-slate-900/20 backdrop-blur-xs md:hidden"
+              onClick={() => setIsOpen(false)}
+            />
+
+            {/* 下拉菜单卡片 */}
+            <div className="md:hidden relative z-50 mt-2">
+              <div className="glass-strong rounded-2xl p-2 sm:p-2.5 shadow-2xl border border-white/90 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-start justify-between p-3 rounded-xl transition-all ${item.isActive
+                      ? "bg-accent-ice/15 text-accent-ice font-bold border border-accent-ice/30 shadow-2xs"
+                      : "text-ink hover:bg-white/80 active:bg-white/90"
+                      }`}
+                  >
+                    <div className="flex flex-col gap-0.5 pr-2">
+                      <div className="flex items-center gap-2">
+                        {item.isActive && (
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent-ice animate-pulse shrink-0" />
+                        )}
+                        <span className="text-sm font-semibold">{item.label}</span>
+                      </div>
+                      <span className="text-[11px] text-ink-muted leading-relaxed pl-3.5">
+                        {item.subtitle}
+                      </span>
+                    </div>
+                    <svg
+                      className={`w-4 h-4 mt-0.5 shrink-0 transition-transform ${item.isActive ? "text-accent-ice translate-x-0.5" : "text-ink-faint"
+                        }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </header>
   );

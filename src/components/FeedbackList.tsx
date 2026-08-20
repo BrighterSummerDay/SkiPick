@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { GlassCard } from "@/components/GlassCard";
 import type { FeedbackRecord } from "@/lib/supabase";
@@ -14,28 +14,34 @@ export function FeedbackList({ refreshTrigger }: { refreshTrigger: number }) {
   const [loading, setLoading] = useState(true);
   const [isConfigured, setIsConfigured] = useState(true);
 
-  const fetchFeedbacks = useCallback(async (targetPage: number) => {
-    setLoading(true);
-    try {
-      const res = await fetch(`/api/feedback?page=${targetPage}&pageSize=10`);
-      const data = await res.json();
-      if (res.ok) {
-        setItems(data.items || []);
-        setTotalPages(data.totalPages || 1);
-        setTotalCount(data.totalCount || 0);
-        setPage(data.page || 1);
-        setIsConfigured(data.isConfigured ?? true);
-      }
-    } catch (err) {
-      console.error("Failed to fetch feedbacks:", err);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
   useEffect(() => {
-    fetchFeedbacks(page);
-  }, [page, refreshTrigger, fetchFeedbacks]);
+    let ignore = false;
+    async function load() {
+      setLoading(true);
+      try {
+        const res = await fetch(`/api/feedback?page=${page}&pageSize=10`);
+        const data = await res.json();
+        if (res.ok && !ignore) {
+          setItems(data.items || []);
+          setTotalPages(data.totalPages || 1);
+          setTotalCount(data.totalCount || 0);
+          setIsConfigured(data.isConfigured ?? true);
+        }
+      } catch (err) {
+        if (!ignore) {
+          console.error("Failed to fetch feedbacks:", err);
+        }
+      } finally {
+        if (!ignore) {
+          setLoading(false);
+        }
+      }
+    }
+    load();
+    return () => {
+      ignore = true;
+    };
+  }, [page, refreshTrigger]);
 
   const formatDate = (dateStr: string) => {
     try {

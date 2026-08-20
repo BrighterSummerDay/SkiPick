@@ -1,12 +1,8 @@
-import { getTranslations } from "next-intl/server";
 import { ResortList } from "@/components/ResortList";
 import { getLocalizedResorts } from "@/lib/getLocalizedResorts";
 
 export default async function ResortsPage() {
-  const [t, resorts] = await Promise.all([
-    getTranslations("resortsPage"),
-    getLocalizedResorts(),
-  ]);
+  const resorts = await getLocalizedResorts();
 
   return (
     <div
