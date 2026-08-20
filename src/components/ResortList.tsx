@@ -68,11 +68,10 @@ function CustomSelect({ value, options, onChange }: CustomSelectProps) {
                   onChange(opt.value);
                   setOpen(false);
                 }}
-                className={`w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all cursor-pointer flex items-center justify-between gap-3 ${
-                  isSelected
-                    ? "bg-accent-ice/15 text-accent-ice font-semibold"
-                    : "text-slate-700 hover:bg-accent-ice/10 hover:text-accent-ice"
-                }`}
+                className={`w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all cursor-pointer flex items-center justify-between gap-3 ${isSelected
+                  ? "bg-accent-ice/15 text-accent-ice font-semibold"
+                  : "text-slate-700 hover:bg-accent-ice/10 hover:text-accent-ice"
+                  }`}
               >
                 <span>{opt.label}</span>
                 {isSelected && (
@@ -280,11 +279,10 @@ export function ResortList({ resorts }: { resorts: LocalizedResort[] }) {
           <button
             type="button"
             onClick={() => setFilterNight((prev) => !prev)}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all cursor-pointer ${
-              filterNight
-                ? "bg-accent-ice text-white border-accent-ice shadow-sm"
-                : "bg-white/5 text-ink-muted border-accent-ice/20 hover:border-accent-ice/50 hover:text-ink"
-            }`}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all cursor-pointer ${filterNight
+              ? "bg-accent-ice text-white border-accent-ice shadow-sm"
+              : "bg-white/5 text-ink-muted border-accent-ice/20 hover:border-accent-ice/50 hover:text-ink"
+              }`}
           >
             {t("hasNight")}
           </button>
@@ -292,11 +290,10 @@ export function ResortList({ resorts }: { resorts: LocalizedResort[] }) {
           <button
             type="button"
             onClick={() => setFilterPark((prev) => !prev)}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all cursor-pointer ${
-              filterPark
-                ? "bg-accent-ice text-white border-accent-ice shadow-sm"
-                : "bg-white/5 text-ink-muted border-accent-ice/20 hover:border-accent-ice/50 hover:text-ink"
-            }`}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all cursor-pointer ${filterPark
+              ? "bg-accent-ice text-white border-accent-ice shadow-sm"
+              : "bg-white/5 text-ink-muted border-accent-ice/20 hover:border-accent-ice/50 hover:text-ink"
+              }`}
           >
             {t("hasPark")}
           </button>
@@ -304,11 +301,10 @@ export function ResortList({ resorts }: { resorts: LocalizedResort[] }) {
           <button
             type="button"
             onClick={() => setFilterGondola((prev) => !prev)}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all cursor-pointer ${
-              filterGondola
-                ? "bg-accent-ice text-white border-accent-ice shadow-sm"
-                : "bg-white/5 text-ink-muted border-accent-ice/20 hover:border-accent-ice/50 hover:text-ink"
-            }`}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all cursor-pointer ${filterGondola
+              ? "bg-accent-ice text-white border-accent-ice shadow-sm"
+              : "bg-white/5 text-ink-muted border-accent-ice/20 hover:border-accent-ice/50 hover:text-ink"
+              }`}
           >
             {t("hasGondola")}
           </button>
